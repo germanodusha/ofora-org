@@ -58,7 +58,7 @@ export default class Oquee extends React.Component {
               /Culturas
             </div></P>
             <P><span>
-              Como canal de comunicação e cultura o Fora reúne um grupo diverso e multidisciplinar para promover encontros e disparar imaginações sobre nossos corpos, a cidade e a vida comum. Por meio da produção e difusão de conteúdo na esfera digital e de um programa de arte e pedagogia nas ruas, aborda assuntos de interesse global a partir de perspectivas locais, fazendo circular afetos e maneiras de viver espaços públicos.
+              Como canal de comunicação e cultura o Fora reúne um grupo diverso e multidisciplinar para promover encontros e disparar imaginações sobre nossos corpos, a cidade e a vida comum. Por meio da produção e difusão de conteúdo na esfera digital e de um programa de arte e pedagogia nas ruas, aborda assuntos de interesse global a partir de perspectivas locais, fazendo circular afetos e maneiras de viver espaços públicos.
             </span></P>
             <P><div className='title'>/Paisagens</div></P>
             <P><span>
@@ -165,7 +165,7 @@ export default class Oquee extends React.Component {
 
             <P><div className='title'>/Financiamento</div></P>
             <P><div className='grid'>
-              <div>O Fora é um projeto <b>autofinanciado.</b></div>
+              <div>O Fora é <b>autofinanciado.</b></div>
               <div></div>
               <div></div>
               <div></div>
