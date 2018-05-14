@@ -33,16 +33,16 @@ export default class Oquee extends React.Component {
             </div></P>
             <div className='heading'>
               <P><span>
-                Para levantar histórias, urgências e possíveis futuros dos grandes centros urbanos, o Fora parte da escuta da população e da análise de dados para trazer à tona pontos de vista, impressões e demandas ligadas ao espaço público em São Paulo.
+                Para levantar histórias, urgências e possíveis futuros dos centros urbanos, o Fora parte da escuta da população e da análise de dados para trazer à tona pontos de vista, impressões e demandas ligadas ao espaço público de São Paulo.
               </span></P>
               <P><span>
-                A partir dessas pesquisas, o Fora impulsiona uma programação de práticas artísticas, atividades educativas e ações que repensam as paisagens de diferentes áreas da cidade.
+                Em diálogo com essas pesquisas, o Fora impulsiona uma programação de práticas artísticas, atividades educativas e ações materiais que repensam as paisagens de diferentes áreas da cidade.
               </span></P>
               <P><span>
-                Atuando também como canal de cultura e comunicação nas ruas e na internet, o Fora estimula uma diversidade de práticas, narrativas e encontros para refletir e imaginar sobre o que nos é comum.
+               Atuando como canal de cultura e comunicação nas ruas e na internet, o Fora estimula uma diversidade de práticas, narrativas e encontros para imaginar e refletir sobre o que nos é comum.
               </span></P>
               <P><span>
-                Diante dos atuais esgotamentos históricos e políticos, é no Fora que nos encontramos para conhecer e exercer diferentes formas de vida.
+                Diante dos esgotamentos atuais, é no Fora que nos encontramos para conhecer e exercer diferentes formas de vida.
               </span></P>
             </div>
             <div style={{textAlign: 'center', marginTop: 25}}>
@@ -52,17 +52,17 @@ export default class Oquee extends React.Component {
               /Pesquisas
             </div></P>
             <P><span>
-              Para propor reflexões públicas e nortear as ações do Fora, a área de pesquisa social atua por meios digitais e trabalhos de campo, colhendo dados e realizando escutas de diferentes vivências, visões e vozes na cidade de São Paulo. Investiga possibilidades de vida no espaço público e o que se perde na ausência desses locais, refletindo sobre formas viáveis de criar, manter e viver a rua.
+              Para propor reflexões públicas e nortear as ações do Fora a área de pesquisa social atua por meios digitais e trabalhos de campo, colhendo dados e realizando escutas de diferentes vivências, visões e vozes na cidade de São Paulo. Investiga possibilidades de vida no espaço público e o que se perde na ausência desses locais, refletindo sobre formas viáveis de criar, manter e viver a rua.
             </span></P>
             <P><div className='title' id='cultures'>
               /Culturas
             </div></P>
             <P><span>
-              Como canal de comunicação e cultura o Fora reúne um grupo diverso e multidisciplinar para promover encontros e disparar imaginações sobre nossos corpos, a cidade e a vida comum. Por meio da produção e difusão de conteúdo na esfera digital e de um programa de arte e pedagogia nas ruas, aborda assuntos de interesse global a partir de perspectivas locais, fazendo circular afetos e maneiras de viver espaços públicos.
+              Como canal de comunicação e cultura o Fora reúne um grupo diverso e multidisciplinar para promover encontros e provocar imaginações sobre nossos corpos, a cidade e a vida comum. Por meio da produção e difusão de conteúdo na esfera digital e com programas de arte e educação nas ruas, aborda assuntos de interesse global e perspectivas locais, fazendo circular <i>afetos</i> e maneiras de viver espaços públicos.
             </span></P>
             <P><div className='title' id='landscapes'>/Paisagens</div></P>
             <P><span>
-              Para atuar na paisagem urbana o Fora investiga o que se pode ver, ouvir, cheirar, provar e tocar na cidade. Promove práticas paisagísticas com pequenas infraestruturas, mobiliários, vestuários e composições botânicas. A partir da pesquisa social e das experiências artísticas e pedagógicas, buscará também desenvolver projetos para atuar na criação de espaços comuns.
+              Para atuar na paisagem urbana o Fora investiga o que se pode ver, ouvir, cheirar, provar e tocar na cidade, promovendo práticas paisagísticas com pequenas infraestruturas, mobiliários, vestuários e composições botânicas. Partindo da pesquisa social e das experiências artísticas e educativas, também desenvolve projetos para conceber e manter espaços comuns ao ar livre.
             </span></P>
           </ContentWrapper>
         </div>
@@ -74,7 +74,7 @@ export default class Oquee extends React.Component {
             <P><div className='subtitle'>_Pesquisa social e análise de dados</div></P>
             <P><div className='grid'>
               <div><b>Fabricia Ramos</b><br />Pesquisadora social e advogada, é coordenadora da área de pesquisa social e qualitativa do Fora.</div>
-              <div><b>Fernanda Moraes</b><br />Jornalista livre e graduanda em Gestão de Políticas Públicas pela USP, é pesquisadora do Fora.</div>
+              <div><b>Fernanda Moraes</b><br />Jornalista livre e graduanda em Gestão de Políticas Públicas, é pesquisadora do Fora.</div>
               <div><b>Glória Maria</b><br />Jornalista livre e produtora cultural, é pesquisadora do Fora.</div>
               <div><b>João Meirelles</b><br />Engenheiro e cientista de dados, é coordenador da área de coleta de dados quantitativos no Fora.</div>
             </div></P>
@@ -86,7 +86,7 @@ export default class Oquee extends React.Component {
             </div></P>
             <P><div className='subtitle'>_Cultura e comunicação</div></P>
             <P><div className='grid'>
-              <div><b>Germano Dushá</b><br />Escritor, curador e produtor cultural, é co-idealizador do Fora e trabalha com a articulação geral da equipe do projeto e da área de Cultura e comunicação.</div>
+              <div><b>Germano Dushá</b><br />Escritor, curador e produtor cultural, é co-idealizador do Fora e trabalha com a orientação da equipe do projeto e articulação geral da área de Cultura e comunicação.</div>
               <div><b>Gilberto Vieira</b><br />Comunicador e pesquisador sobre culturas e territórios, articula estratégias, tecnologia e ferramentas de comunicação.</div>
               <div><b>Johanna Stein</b><br />Pesquisadora em artes visuais, é co-idealizadora do Fora e atua no posicionamento público e captação de recursos.</div>
               <div><b>Manuela Rached</b><br />Jornalista, é responsável pela articulação interna e assessoria na área de Cultura e comunicação do Fora.</div>
@@ -99,7 +99,7 @@ export default class Oquee extends React.Component {
             </div></P>
             <P><div className='subtitle'>_Paisagem</div></P>
             <P><div className='grid'>
-              <div><b>Guil Blanche</b><br />Escritor, curador e produtor cultural, é co-idealizador do Fora e trabalha com a articulação geral da equipe do projeto e da área de Cultura e comunicação.</div>
+              <div><b>Guil Blanche</b><br />Paisagista com foco na reabilitação de paisagens urbanas, é co-idealizador do Fora e trabalha com a condução executiva do projeto e articulação geral da área de paisagem.</div>
               <div></div>
               <div></div>
               <div></div>
@@ -113,8 +113,8 @@ export default class Oquee extends React.Component {
             </div></P>
             <P><div className='subtitle'>_Design Grafico</div></P>
             <P><div className='grid'>
-              <div><b>Frederico Dietzsch</b><br />Designer gráfico e calígrafo, é o criador do logo, identidade visual, desenho do site e responsável pelos demais projetos gráficos do Fora.</div>
-              <div><b>Raul Luna</b><br />Diretor de arte, é responsável pela identidade visual, desenho do site e pelos projetos gráficos editoriais do Fora.</div>
+              <div><b>Frederico Dietzsch</b><br />Designer gráfico, criador da identidade visual e responsável pelos projetos gráficos do Fora.</div>
+              <div><b>Raul Luna</b><br />Diretor de arte, é responsável pelo desenho do site e pelos projetos gráficos do Fora.</div>
               <div></div>
               <div></div>
             </div></P>
@@ -131,13 +131,7 @@ export default class Oquee extends React.Component {
             <P><div className='grid'>
               <div><b>Marcela Amorozo</b><br />Geógrafa e educadora, é pesquisadora na área de levantamento e processamento de dados quantitativos do Fora.</div>
               <div><b>Ronaldo</b><br /></div>
-              <div></div>
-              <div></div>
-            </div></P>
-            <P><div className='subtitle'>_Programação</div></P>
-            <P><div className='grid'>
               <div><b>Vinicius Pereira</b><br />Desenvolvedor web e designer, é responsável pela programação do questionário online do Fora.</div>
-              <div></div>
               <div></div>
               <div></div>
             </div></P>
@@ -165,7 +159,7 @@ export default class Oquee extends React.Component {
 
             <P><div className='title'>/Financiamento</div></P>
             <P><div className='grid'>
-              <div>O Fora é um projeto <b>autofinanciado.</b></div>
+              <div>Projeto <b>autofinanciado.</b></div>
               <div></div>
               <div></div>
               <div></div>
