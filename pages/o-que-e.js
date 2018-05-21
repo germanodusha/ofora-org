@@ -36,10 +36,10 @@ export default class Oquee extends React.Component {
                 Para levantar histórias, urgências e possíveis futuros dos centros urbanos, o Fora parte da escuta da população e da análise de dados para trazer à tona pontos de vista, impressões e demandas ligadas ao espaço público de São Paulo.
               </span></P>
               <P><span>
-                Em diálogo com essas pesquisas, o Fora impulsiona uma programação de práticas artísticas, atividades educativas e ações materiais que repensam as paisagens de diferentes áreas da cidade.
+                Em diálogo com essas pesquisas, o Fora impulsiona práticas artísticas, atividades educativas e ações materiais que repensam as paisagens de diferentes áreas da cidade.
               </span></P>
               <P><span>
-                Atuando como canal de cultura e comunicação nas ruas e na internet, o Fora estimula uma diversidade de práticas, narrativas e encontros para imaginar e refletir sobre o que nos é comum.
+                Atuando como canal de cultura e comunicação nas ruas e na internet, o Fora estimula uma diversidade de narrativas para imaginar e refletir sobre o que nos é comum.
               </span></P>
               <P><span>
                 Diante dos esgotamentos atuais, é no Fora que nos encontramos para conhecer e exercer diferentes formas de vida.
