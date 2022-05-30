@@ -1,10 +1,7 @@
-export const Logo = (props) => (
+export const Logo = ({...props}) => (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 417.5 497.35"
-    style={{
-      enableBackground: "new 0 0 417.5 497.35",
-    }}
+    viewBox="-35 0 500 500"
     xmlSpace="preserve"
     {...props}
   >
