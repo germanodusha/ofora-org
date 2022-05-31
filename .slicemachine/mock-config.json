@@ -45,7 +45,9 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "projects": {},
+    "project": {}
   },
   "slices": {
     "Text": {

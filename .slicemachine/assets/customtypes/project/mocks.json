@@ -1,0 +1,17 @@
+{
+  "id": "475c0549-7f8f-4b9b-96f2-30ce92f34dab",
+  "uid": "illum-aut-nihil",
+  "type": "project",
+  "data": {
+    "title": "target bricks-and-clicks functionalities",
+    "cover": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=900&h=500&fit=crop"
+    }
+  }
+}
