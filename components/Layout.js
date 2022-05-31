@@ -23,6 +23,7 @@ export const Layout = ({ children }) => {
           top: 0;
           left: 0;
           width: 100%;
+          z-index: 9999;
           background: linear-gradient(
             180deg,
             rgba(152, 152, 152, 1) 0%,
@@ -34,6 +35,7 @@ export const Layout = ({ children }) => {
           bottom: 0;
           left: 0;
           width: 100%;
+          z-index: 9999;
           background: linear-gradient(
             180deg,
             rgba(152, 152, 152, 0) ${isHome ? 100 : 0}%,

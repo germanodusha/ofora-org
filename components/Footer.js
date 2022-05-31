@@ -10,10 +10,10 @@ export const Footer = () => {
   const languages = page ? [page.lang, ...page.alternate_languages] : [];
 
   return (
-    <Bounded as="header" yPadding="sm">
+    <Bounded as="footer" yPadding="sm">
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
         <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
+          <ul className="flex flex-wrap gap-6 md:gap-10 uppercase font-bold">
             {languages.map((lang) => {
               return lang.lang ? (
                 <li key={lang.lang}>
@@ -32,6 +32,11 @@ export const Footer = () => {
           </ul>
         </nav>
       </div>
+      <style jsx>{`
+        li:hover :global(a) {
+          color: #E8FF00;
+        }
+      `}</style>
     </Bounded>
   );
 };
