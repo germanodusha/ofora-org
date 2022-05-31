@@ -9,7 +9,7 @@ export const Layout = ({ children }) => {
   return (
     <div className="layout-root text-slate-800 flex flex-col">
       <Header />
-      <main className="grow">{children}</main>
+      {children}
       <Footer />
       <style jsx>{`
         .layout-root {
@@ -19,6 +19,10 @@ export const Layout = ({ children }) => {
           height: fill-available;
         }
         .layout-root > :global(:first-child) {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           background: linear-gradient(
             180deg,
             rgba(152, 152, 152, 1) 0%,
@@ -26,6 +30,10 @@ export const Layout = ({ children }) => {
           );
         }
         .layout-root > :global(:last-child) {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
           background: linear-gradient(
             180deg,
             rgba(152, 152, 152, 0) ${isHome ? 100 : 0}%,
