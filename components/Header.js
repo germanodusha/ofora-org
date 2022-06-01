@@ -11,7 +11,7 @@ export const Header = () => {
             <Link href={"/"}>Home</Link>
           </li>
           <li className="w-1/2">
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}>Arquivo 2018-2020</Link>
           </li>
         </ul>
       </nav>
