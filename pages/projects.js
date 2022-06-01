@@ -1,6 +1,5 @@
 import { useEffect, useContext, useState } from "react";
 import { Context } from "./_app.js";
-
 import { createClient } from "../prismicio";
 
 const Projects = ({ projects, page }) => {
@@ -9,7 +8,7 @@ const Projects = ({ projects, page }) => {
 
   useEffect(() => {
     context.setPage(page);
-  }, []);
+  }, [page]);
 
   return (
     <div className="projects-page flex grow items-stretch">
@@ -69,7 +68,7 @@ export default Projects;
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home", { lang: locale });
+  const page = await client.getByUID("page", "projects", { lang: locale });
   const projects = await client.getByType("project", { lang: locale });
 
   return {

@@ -2,12 +2,10 @@ import NextImage from "next/image";
 import * as prismicH from "@prismicio/helpers";
 import clsx from "clsx";
 
-import { Bounded } from "../../components/Bounded";
 
 const Image = ({ slice }) => {
   return (
-    <Bounded
-      as="section"
+    <section
       className={clsx(
         slice.variation === "lightSlate" && "bg-slate-100",
         slice.variation === "white" && "bg-white"
@@ -30,7 +28,7 @@ const Image = ({ slice }) => {
           />
         )}
       </div>
-    </Bounded>
+    </section>
   );
 };
 

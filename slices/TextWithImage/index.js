@@ -2,12 +2,11 @@ import NextImage from "next/image";
 import { PrismicRichText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
-import { Bounded } from "../../components/Bounded";
 import { Heading } from "../../components/Heading";
 
 const TextWithImage = ({ slice }) => {
   return (
-    <Bounded as="section" className="bg-white">
+    <section>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16 lg:gap-28">
         <div className="relative max-w-xs md:col-span-5 md:max-w-none">
           <div className="absolute -top-6 -left-6 w-2/3">
@@ -42,7 +41,7 @@ const TextWithImage = ({ slice }) => {
           />
         </div>
       </div>
-    </Bounded>
+    </section>
   );
 };
 

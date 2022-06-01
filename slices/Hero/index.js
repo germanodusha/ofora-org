@@ -1,13 +1,11 @@
 import NextImage from "next/image";
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-
-import { Bounded } from "../../components/Bounded";
 import { Heading } from "../../components/Heading";
 
 const Hero = ({ slice }) => {
   return (
-    <Bounded as="section" collapsible={false} className="bg-white pb-0 md:pb-0">
+    <section collapsible={false} className="bg-white pb-0 md:pb-0">
       <div className="grid grid-cols-1 justify-items-center gap-10">
         <div className="max-w-2xl text-center leading-relaxed">
           <PrismicRichText
@@ -44,7 +42,7 @@ const Hero = ({ slice }) => {
           </div>
         )}
       </div>
-    </Bounded>
+    </section>
   );
 };
 
