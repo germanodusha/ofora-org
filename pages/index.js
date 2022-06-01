@@ -1,10 +1,7 @@
 import { useEffect, useContext } from "react";
 import Head from "next/head";
-import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-
 import { createClient } from "../prismicio";
-import { components } from "../slices/";
 import { Context } from "./_app.js";
 import { Logo } from "../components/Logo";
 
@@ -20,7 +17,6 @@ const Index = ({ page }) => {
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
       <div className="logo-container">
         <Logo />
       </div>

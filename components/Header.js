@@ -1,30 +1,25 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
-import { Bounded } from "./Bounded";
-import { useContext } from "react";
-import { Context } from "../pages/_app";
+import Link from "next/link";
 
 export const Header = () => {
-  const { navigation } = useContext(Context);
-
   return (
-    <Bounded as="header" yPadding="sm">
-      <div className="header-root flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
-        <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data.links.map((item) => (
-              <li
-                key={prismicH.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800 uppercase"
-              >
-                <PrismicLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </Bounded>
+    <header className="header-root flex flex-wrap py-8">
+      <nav className="w-full">
+        <ul className="flex flex-wrap font-semibold uppercase w-full text-center">
+          <li className="w-1/2">
+            <Link href={"/"}>Home</Link>
+          </li>
+          <li className="w-1/2">
+            <Link href={"/"}>Home</Link>
+          </li>
+        </ul>
+      </nav>
+      <style jsx>{`
+        .header-root :global(a):hover {
+          color: #E8FF00;
+        }
+      `}</style>
+    </header>
   );
 };
