@@ -1,10 +1,11 @@
 import { useEffect, useContext, useState } from "react";
 import { Context } from "./_app.js";
 import { createClient } from "../prismicio";
+import Link from "next/link";
 
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
-  const [cover, setCover] = useState(null);
+  const [selected, setSelected] = useState(projects[0]);
 
   useEffect(() => {
     context.setPage(page);
@@ -17,16 +18,18 @@ const Projects = ({ projects, page }) => {
           {projects.map((project) => (
             <li
               key={project.uid}
-              onMouseEnter={() => setCover(project.data.cover)}
-              onMouseLeave={() => setCover(null)}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
             >
-              {project.data.title}
+              <Link href={`/projects/${project.uid}`}>
+                {project.data.title}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
       <div>
-        {cover && <img src={cover?.url} />}
+        {selected?.data?.cover && <img src={selected?.data?.cover?.url} />}
       </div>
       <style jsx>{`
         .projects-page > div {
@@ -40,7 +43,7 @@ const Projects = ({ projects, page }) => {
         li {
           padding: 5px;
         }
-        li:hover {
+        li.selected {
           background: rgb(232, 255, 0);
           background: linear-gradient(
             180deg,
