@@ -52,5 +52,6 @@ export async function getStaticProps({ locale, previewData }) {
     props: {
       page
     },
+    revalidate: 300
   };
 }

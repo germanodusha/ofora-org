@@ -3,11 +3,11 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 export const Layout = ({ children }) => {
-  const router = useRouter()
-  const showFrame = router.pathname.startsWith("/projects/")
+  const router = useRouter();
+  const showFrame = router.pathname.startsWith("/projects/");
 
   return (
-    <div className="layout-root text-slate-800 flex flex-col">
+    <div className="layout-root flex flex-col text-slate-800">
       <Header />
       {children}
       <Footer />
@@ -24,11 +24,16 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
+          ${
+            showFrame &&
+            `
           background: linear-gradient(
             180deg,
-            rgba(152, 152, 152, 1) 0%,
-            rgba(152, 152, 152, 0) ${showFrame ? 100 : 0}%
+            rgba(152, 152, 152, 1) 30%,
+            rgba(152, 152, 152, 0) 100%
           );
+          `
+          }
         }
         .layout-root > :global(:last-child) {
           position: fixed;
@@ -36,11 +41,16 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
+          ${
+            showFrame &&
+            `
           background: linear-gradient(
             180deg,
-            rgba(152, 152, 152, 0) ${showFrame ? 0 : 100}%,
-            rgba(152, 152, 152, 1) 100%
+            rgba(152, 152, 152, 0) 0%,
+            rgba(152, 152, 152, 1) 70%
           );
+          `
+          }
       `}</style>
     </div>
   );

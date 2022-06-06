@@ -79,5 +79,6 @@ export async function getStaticProps({ locale, previewData }) {
       page,
       projects: projects.results,
     },
+    revalidate: 300
   };
 }
