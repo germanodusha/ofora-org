@@ -1,9 +1,10 @@
 {
-  "id": "475c0549-7f8f-4b9b-96f2-30ce92f34dab",
-  "uid": "illum-aut-nihil",
+  "id": "94b5e209-cab5-42b1-a58d-a4a65151c245",
+  "uid": "nemo-nesciunt-mollitia",
   "type": "project",
   "data": {
-    "title": "target bricks-and-clicks functionalities",
+    "title": "empower mission-critical methodologies",
+    "year": "utilize sexy markets",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -11,7 +12,30 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=900&h=500&fit=crop"
-    }
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+    },
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Elit consequat aute laboris anim in do sit fugiat elit consectetur sunt eiusmod ut.",
+        "spans": []
+      }
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Non excepteur fugiat duis minim sint nisi proident minim consequat tempor consectetur elit esse magna labore.",
+        "spans": []
+      }
+    ]
   }
 }
