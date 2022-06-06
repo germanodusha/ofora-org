@@ -7,7 +7,7 @@ export const Layout = ({ children }) => {
   const showFrame = router.pathname.startsWith("/projects/");
 
   return (
-    <div className="layout-root flex flex-col text-slate-800">
+    <div className="layout-root flex flex-col">
       <Header />
       {children}
       <Footer />
