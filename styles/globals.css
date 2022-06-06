@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body, html, .__next {
+  height: 100%;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
 [data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white,
 [data-collapsible="true"].bg-slate-100
   + [data-collapsible="true"].bg-slate-100 {

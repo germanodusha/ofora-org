@@ -39,7 +39,14 @@
     },
     "projects": {},
     "project": {},
-    "what": {}
+    "what": {
+      "content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "Text": {

@@ -4,7 +4,7 @@ import { Header } from "./Header";
 
 export const Layout = ({ children }) => {
   const router = useRouter()
-  const isHome = router.pathname === "/"
+  const showFrame = router.pathname.startsWith("/projects/")
 
   return (
     <div className="layout-root text-slate-800 flex flex-col">
@@ -27,7 +27,7 @@ export const Layout = ({ children }) => {
           background: linear-gradient(
             180deg,
             rgba(152, 152, 152, 1) 0%,
-            rgba(152, 152, 152, 0) ${isHome ? 0 : 100}%
+            rgba(152, 152, 152, 0) ${showFrame ? 100 : 0}%
           );
         }
         .layout-root > :global(:last-child) {
@@ -38,7 +38,7 @@ export const Layout = ({ children }) => {
           z-index: 9999;
           background: linear-gradient(
             180deg,
-            rgba(152, 152, 152, 0) ${isHome ? 100 : 0}%,
+            rgba(152, 152, 152, 0) ${showFrame ? 0 : 100}%,
             rgba(152, 152, 152, 1) 100%
           );
       `}</style>
