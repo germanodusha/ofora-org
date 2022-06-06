@@ -1,48 +1,10 @@
 {
-  "id": "4aea07fc-2bc2-427d-be9f-ad7456353e86",
-  "uid": "est-blanditiis-fuga",
+  "id": "a9acbc00-235e-465f-a213-27756f35706f",
+  "uid": "nobis-voluptate-aut",
   "type": "navigation",
   "data": {
-    "links": [
-      {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Transition distributed solutions",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
-      },
-      {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Engage sexy synergies",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
-      },
-      {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Productize collaborative e-markets",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      }
-    ]
+    "home": "expedite out-of-the-box metrics",
+    "archive": "grow e-business initiatives",
+    "what": "orchestrate value-added web-readiness"
   }
 }

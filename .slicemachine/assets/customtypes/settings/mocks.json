@@ -1,35 +1,26 @@
 {
-  "id": "6ee0b532-19e4-4aa0-9f64-cddefaabe355",
-  "uid": "similique-dignissimos-veritatis",
+  "id": "5460ba44-ed3e-4b97-9c4f-da98af9e5166",
+  "uid": "iure-architecto-incidunt",
   "type": "settings",
   "data": {
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Expedite impactful ROI",
+        "text": "Synthesize world-class blockchains",
         "spans": []
       }
     ],
-    "logo": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
-    },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Laborum aliqua commodo proident occaecat. Cupidatat sunt exercitation eu irure duis Lorem non non ex cupidatat. Exercitation veniam enim ut amet enim irure ullamco ut id occaecat proident officia.",
+        "text": "Esse labore ex cillum pariatur magna aliqua ullamco deserunt. Elit cupidatat sit et culpa sunt ea fugiat.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Enim deserunt consectetur deserunt nisi eiusmod nostrud fugiat occaecat velit est dolore. Cupidatat pariatur et amet commodo et.",
+        "text": "Exercitation quis quis non aliquip ipsum.",
         "spans": []
       }
     ]

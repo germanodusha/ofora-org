@@ -14,14 +14,6 @@
           "single": "heading1"
         }
       },
-      "logo": {
-        "type": "Image",
-        "config": {
-          "constraint": {},
-          "thumbnails": [],
-          "label": "Logo"
-        }
-      },
       "newsletterDescription": {
         "type": "StructuredText",
         "config": {

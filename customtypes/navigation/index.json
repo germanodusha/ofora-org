@@ -5,29 +5,25 @@
   "status": true,
   "json": {
     "Main": {
-      "links": {
-        "type": "Group",
+      "home": {
+        "type": "Text",
         "config": {
-          "label": "Links",
-          "fields": {
-            "label": {
-              "type": "StructuredText",
-              "config": {
-                "label": "Label",
-                "placeholder": "Optional - Label for the link",
-                "allowTargetBlank": false,
-                "single": "heading3"
-              }
-            },
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "placeholder": "Link for navigation item",
-                "select": null
-              }
-            }
-          }
+          "label": "Home",
+          "placeholder": ""
+        }
+      },
+      "archive": {
+        "type": "Text",
+        "config": {
+          "label": "Archive",
+          "placeholder": ""
+        }
+      },
+      "what": {
+        "type": "Text",
+        "config": {
+          "label": "What",
+          "placeholder": ""
         }
       }
     }
