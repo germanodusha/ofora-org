@@ -3,25 +3,40 @@ import Image from "next/image";
 import { createClient } from "../../prismicio";
 
 const Project = ({ project }) => {
-  const cover = project?.data?.cover;
+  const { cover, banner } = project.data;
+  const image = banner.url ? banner : cover;
 
   return (
-    <div>
+    <div className="page-root">
       <div className="background" />
-      <div className="flex grow items-center justify-center h-screen">
+      <div className="flex h-screen grow items-center justify-center">
         <div className="banner">
           <Image
-            src={cover.url}
-            width={cover.dimensions.width}
-            height={cover.dimensions.height}
-            alt={cover.alt}
+            src={image.url}
+            width={image.dimensions.width}
+            height={image.dimensions.height}
+            alt={image.alt}
             layout="fill"
             objectFit="contain"
           />
         </div>
-        <h1 className="text-8xl">{project.data.title}</h1>
+        <h1 className="text-9xl">{project.data.title}</h1>
       </div>
-      <div className="mx-auto p-20 text-center text-3xl">
+      <div className="intro p-20 text-center text-3xl">
+        <PrismicRichText field={project.data.intro} />
+      </div>
+      <div className="gallery p-20">
+        {project.data.gallery.map((item) => (
+          <Image
+            key={item.thumb.url}
+            src={item.thumb.url}
+            width={item.thumb.width}
+            height={item.thumb.height}
+            alt={item.thumb.alt}
+          />
+        ))}
+      </div>
+      <div className="content columns-2 p-20">
         <PrismicRichText field={project.data.content} />
       </div>
       <style jsx>{`
@@ -63,7 +78,7 @@ export async function getStaticProps({ params, locale, previewData }) {
     props: {
       project,
     },
-    revalidate: 300,
+    revalidate: 60,
   };
 }
 

@@ -1,10 +1,10 @@
 {
-  "id": "94b5e209-cab5-42b1-a58d-a4a65151c245",
-  "uid": "nemo-nesciunt-mollitia",
+  "id": "882f26ea-21ec-40e0-8e16-641a901d14ab",
+  "uid": "tenetur-amet-vero",
   "type": "project",
   "data": {
-    "title": "empower mission-critical methodologies",
-    "year": "utilize sexy markets",
+    "title": "expedite sexy bandwidth",
+    "year": "repurpose wireless infomediaries",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -12,7 +12,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -21,20 +21,43 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Elit consequat aute laboris anim in do sit fugiat elit consectetur sunt eiusmod ut.",
+        "text": "Nulla ut aliqua cillum proident proident id dolor consectetur magna enim eiusmod. Incididunt aliqua proident laborum ut enim ut veniam id sit sunt qui quis. Et magna qui qui in ea est dolor eiusmod amet et enim.",
         "spans": []
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "Non excepteur fugiat duis minim sint nisi proident minim consequat tempor consectetur elit esse magna labore.",
+        "text": "Labore eu et elit consectetur excepteur sit et aliqua est nisi. Consequat enim proident voluptate cillum esse veniam laborum laboris qui aliquip irure laboris ad minim tempor.",
         "spans": []
+      }
+    ],
+    "gallery": [
+      {
+        "title": "evolve dynamic markets",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "benchmark ubiquitous models",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "expedite magnetic applications",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
       }
     ]
   }

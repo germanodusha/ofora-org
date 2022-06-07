@@ -51,6 +51,29 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
+      "gallery": {
+        "type": "Group",
+        "config": {
+          "label": "Gallery",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "thumb": {
+              "type": "Link",
+              "config": {
+                "label": "Thumb",
+                "placeholder": "",
+                "select": "media"
+              }
+            }
+          }
+        }
+      },
       "content": {
         "type": "StructuredText",
         "config": {

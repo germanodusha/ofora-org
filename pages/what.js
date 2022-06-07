@@ -12,11 +12,13 @@ const About = ({ page }) => {
 
   return (
     <>
-      <video autoPlay loop muted playsInline>
-        <source src={page.data.video.url} type="video/mp4" />
-      </video>
+      <div className="video">
+        <video autoPlay loop muted playsInline>
+          <source src={page.data.video.url} type="video/mp4" />
+        </video>
+      </div>
       <h1>{page.data.title}</h1>
-      <div className="mx-auto text-center p-20 text-3xl">
+      <div className="mx-auto p-20 text-center text-3xl">
         <PrismicRichText field={page.data.content} />
       </div>
       <style jsx>{`
@@ -26,6 +28,38 @@ const About = ({ page }) => {
         video {
           object-fit: cover;
           min-height: 100vh;
+          width: 100%;
+        }
+        .video {
+          position: relative;
+        }
+        .video:after,
+        .video:before {
+          position: absolute;
+          content: "";
+          display: block;
+          left: 0;
+          right: 0;
+          height: 100px;
+          z-index: 1;
+        }
+        .video:after {
+          top: 0;
+          bottom: auto;
+          background: linear-gradient(
+            180deg,
+            rgba(232, 255, 0, 1) 30%,
+            rgba(232, 255, 0, 0) 100%
+          );
+        }
+        .video:before {
+          top: auto;
+          bottom: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(232, 255, 0, 0) 0%,
+            rgba(232, 255, 0, 1) 70%
+          );
         }
         h1 {
           position: absolute;
@@ -49,7 +83,7 @@ export async function getStaticProps({ locale, previewData }) {
     props: {
       page,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
