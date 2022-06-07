@@ -30,37 +30,6 @@ const About = ({ page }) => {
           min-height: 100vh;
           width: 100%;
         }
-        .video {
-          position: relative;
-        }
-        .video:after,
-        .video:before {
-          position: absolute;
-          content: "";
-          display: block;
-          left: 0;
-          right: 0;
-          height: 100px;
-          z-index: 1;
-        }
-        .video:after {
-          top: 0;
-          bottom: auto;
-          background: linear-gradient(
-            180deg,
-            rgba(232, 255, 0, 1) 30%,
-            rgba(232, 255, 0, 0) 100%
-          );
-        }
-        .video:before {
-          top: auto;
-          bottom: 0;
-          background: linear-gradient(
-            180deg,
-            rgba(232, 255, 0, 0) 0%,
-            rgba(232, 255, 0, 1) 70%
-          );
-        }
         h1 {
           position: absolute;
           top: 50%;

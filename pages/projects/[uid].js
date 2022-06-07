@@ -1,6 +1,7 @@
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
+import { Logo } from "../../components/Logo";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -20,20 +21,25 @@ const Project = ({ project }) => {
             objectFit="contain"
           />
         </div>
-        <h1 className="text-9xl">{project.data.title}</h1>
+        <h1 className="text-8xl">{project.data.title}</h1>
+        <div className="logo">
+          <Logo />
+        </div>
       </div>
       <div className="intro p-20 text-center text-3xl">
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
         {project.data.gallery.map((item) => (
-          <Image
-            key={item.thumb.url}
-            src={item.thumb.url}
-            width={item.thumb.width}
-            height={item.thumb.height}
-            alt={item.thumb.alt}
-          />
+          <div className="item" key={item.url}>
+            <Image
+              key={item.thumb.url}
+              src={item.thumb.url}
+              width={item.thumb.width}
+              height={item.thumb.height}
+              alt={item.thumb.alt}
+            />
+          </div>
         ))}
       </div>
       <div className="content columns-2 p-20">
@@ -59,6 +65,18 @@ const Project = ({ project }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+        .logo {
+          position: absolute;
+          top: 10vh;
+          right: 10vh;
+          height: 200px;
+          width: 200px;
+          fill: #e8ff00;
+        }
+        .gallery .item {
+          width: 26vw;
+          display: inline-block;
         }
       `}</style>
     </div>

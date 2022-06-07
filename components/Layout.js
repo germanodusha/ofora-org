@@ -4,7 +4,7 @@ import { Header } from "./Header";
 
 export const Layout = ({ children }) => {
   const router = useRouter();
-  const showFrame = router.pathname.startsWith("/projects/");
+  const showFrame = router.pathname !== "/projects"
 
   return (
     <div className="layout-root flex flex-col">
@@ -24,6 +24,7 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
+          padding-bottom: 40px;
           ${
             showFrame &&
             `
@@ -41,6 +42,7 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
+          padding-top: 40px;
           ${
             showFrame &&
             `
