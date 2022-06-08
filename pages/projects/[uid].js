@@ -21,10 +21,18 @@ const Project = ({ project }) => {
             objectFit="contain"
           />
         </div>
-        <h1 className="text-8xl text-center">
-          {project.data.title}<br />
-          {project.data.year}
-        </h1>
+        <div className="title text-center uppercase">
+          <h1 className="text-8xl">
+            {project.data.title}
+          </h1>
+          <h2 className="text-8xl">
+            {project.data.year}
+            <br />
+          </h2>
+          <div className="text-xl pt-5">
+            {project.data.category}
+          </div>
+        </div>
         <div className="logo">
           <Logo />
         </div>
@@ -63,12 +71,17 @@ const Project = ({ project }) => {
           height: 60vh;
           position: relative;
         }
-        h1 {
+        .title {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+        h1, h2 {
           text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
+        }
+        .title > div {
+          color: #e8ff00;
         }
         .logo {
           position: absolute;
