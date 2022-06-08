@@ -12,26 +12,24 @@ const Project = ({ project }) => {
       <div className="background" />
       <div className="flex h-screen grow items-center justify-center">
         <div className="banner">
-          <Image
-            src={image.url}
-            width={image.dimensions.width}
-            height={image.dimensions.height}
-            alt={image.alt}
-            layout="fill"
-            objectFit="contain"
-          />
+          {image.url && (
+            <Image
+              src={image.url}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+              alt={image.alt}
+              layout="fill"
+              objectFit="contain"
+            />
+          )}
         </div>
         <div className="title text-center uppercase">
-          <h1 className="text-8xl">
-            {project.data.title}
-          </h1>
+          <h1 className="text-8xl">{project.data.title}</h1>
           <h2 className="text-8xl">
             {project.data.year}
             <br />
           </h2>
-          <div className="text-xl pt-5">
-            {project.data.category}
-          </div>
+          <div className="pt-5 text-xl">{project.data.category}</div>
         </div>
         <div className="logo">
           <Logo />
@@ -43,13 +41,15 @@ const Project = ({ project }) => {
       <div className="gallery p-20">
         {project.data.gallery.map((item) => (
           <div className="item" key={item.url}>
-            <Image
-              key={item.thumb.url}
-              src={item.thumb.url}
-              width={item.thumb.width}
-              height={item.thumb.height}
-              alt={item.thumb.alt}
-            />
+            {item.thumb.url && (
+              <Image
+                key={item.thumb.url}
+                src={item.thumb.url}
+                width={item.thumb.width}
+                height={item.thumb.height}
+                alt={item.thumb.alt}
+              />
+            )}
           </div>
         ))}
       </div>
@@ -77,7 +77,8 @@ const Project = ({ project }) => {
           left: 50%;
           transform: translate(-50%, -50%);
         }
-        h1, h2 {
+        h1,
+        h2 {
           text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
         }
         .title > div {
@@ -104,11 +105,14 @@ export default Project;
 
 export async function getStaticProps({ params, locale, previewData }) {
   const client = createClient({ previewData });
-
-  const project = await client.getByUID("project", params.uid, {
-    lang: locale,
-  });
-
+  let project;
+  try {
+    project = await client.getByUID("project", params.uid, {
+      lang: locale,
+    });
+  } catch (e) {
+    console.log(e);
+  }
   return {
     props: {
       project,
@@ -119,7 +123,6 @@ export async function getStaticProps({ params, locale, previewData }) {
 
 export async function getStaticPaths() {
   const client = createClient();
-
   const pages = await client.getAllByType("project", { lang: "*" });
 
   return {

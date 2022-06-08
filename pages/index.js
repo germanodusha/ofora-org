@@ -6,11 +6,11 @@ import { Context } from "./_app.js";
 import { Logo } from "../components/Logo";
 
 const Index = ({ page }) => {
-  const context = useContext(Context);
+  const { setPage } = useContext(Context);
 
   useEffect(() => {
-    context.setPage(page);
-  }, []);
+    setPage(page);
+  }, [page, setPage]);
 
   return (
     <>
