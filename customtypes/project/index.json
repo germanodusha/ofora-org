@@ -26,6 +26,13 @@
           "placeholder": ""
         }
       },
+      "category": {
+        "type": "Text",
+        "config": {
+          "label": "Category",
+          "placeholder": ""
+        }
+      },
       "cover": {
         "type": "Image",
         "config": {

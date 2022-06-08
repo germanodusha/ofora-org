@@ -5,6 +5,7 @@ import { Header } from "./Header";
 export const Layout = ({ children }) => {
   const router = useRouter();
   const showFrame = router.pathname !== "/projects"
+  const rgb = router.pathname !== "/what" ? "152, 152, 152" : "232, 255, 0";
 
   return (
     <div className="layout-root flex flex-col">
@@ -30,8 +31,8 @@ export const Layout = ({ children }) => {
             `
           background: linear-gradient(
             180deg,
-            rgba(152, 152, 152, 1) 30%,
-            rgba(152, 152, 152, 0) 100%
+            rgba(${rgb}, 1) 30%,
+            rgba(${rgb}, 0) 100%
           );
           `
           }
@@ -48,8 +49,8 @@ export const Layout = ({ children }) => {
             `
           background: linear-gradient(
             180deg,
-            rgba(152, 152, 152, 0) 0%,
-            rgba(152, 152, 152, 1) 70%
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
           );
           `
           }

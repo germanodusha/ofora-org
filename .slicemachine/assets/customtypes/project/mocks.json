@@ -1,10 +1,11 @@
 {
-  "id": "882f26ea-21ec-40e0-8e16-641a901d14ab",
-  "uid": "tenetur-amet-vero",
+  "id": "401788c7-8536-4f54-9627-761df159b539",
+  "uid": "aut-ipsam-sed",
   "type": "project",
   "data": {
-    "title": "expedite sexy bandwidth",
-    "year": "repurpose wireless infomediaries",
+    "title": "extend proactive ROI",
+    "year": "incentivize value-added content",
+    "category": "transition cross-media e-services",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -12,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -21,39 +22,53 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Nulla ut aliqua cillum proident proident id dolor consectetur magna enim eiusmod. Incididunt aliqua proident laborum ut enim ut veniam id sit sunt qui quis. Et magna qui qui in ea est dolor eiusmod amet et enim.",
+        "text": "Ullamco aliquip sunt proident dolor culpa elit.",
         "spans": []
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "Labore eu et elit consectetur excepteur sit et aliqua est nisi. Consequat enim proident voluptate cillum esse veniam laborum laboris qui aliquip irure laboris ad minim tempor.",
+        "text": "Id occaecat veniam veniam eu excepteur labore minim irure adipisicing. Culpa id aliquip ullamco voluptate adipisicing amet fugiat officia ad dolor occaecat ut mollit laborum et. Sunt id id veniam sint nostrud eiusmod deserunt est eiusmod enim occaecat reprehenderit Lorem.",
         "spans": []
       }
     ],
     "gallery": [
       {
-        "title": "evolve dynamic markets",
+        "title": "syndicate viral schemas",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
         }
       },
       {
-        "title": "benchmark ubiquitous models",
+        "title": "scale ubiquitous blockchains",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
         }
       },
       {
-        "title": "expedite magnetic applications",
+        "title": "implement proactive channels",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "synergize magnetic interfaces",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "disintermediate innovative applications",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"

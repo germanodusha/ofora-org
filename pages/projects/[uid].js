@@ -21,7 +21,10 @@ const Project = ({ project }) => {
             objectFit="contain"
           />
         </div>
-        <h1 className="text-8xl">{project.data.title}</h1>
+        <h1 className="text-8xl text-center">
+          {project.data.title}<br />
+          {project.data.year}
+        </h1>
         <div className="logo">
           <Logo />
         </div>
@@ -65,6 +68,7 @@ const Project = ({ project }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
         }
         .logo {
           position: absolute;
