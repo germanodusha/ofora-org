@@ -9,7 +9,7 @@ export const Footer = () => {
   const languages = page ? [page.lang, ...page.alternate_languages] : [];
 
   return (
-    <footer className="flex py-5 font-bold uppercase">
+    <footer className="flex py-3 pt-14 font-bold uppercase">
       <div className="flex w-1/2 justify-center">
         <Link href={"/what"}>{navigation.data.what}</Link>
       </div>

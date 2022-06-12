@@ -21,6 +21,10 @@ const About = ({ page }) => {
       <div className="mx-auto p-20 text-center text-3xl">
         <PrismicRichText field={page.data.content} />
       </div>
+      <div>
+      <PrismicRichText field={page.data.infoLeft} />
+      <PrismicRichText field={page.data.infoRight} />
+      </div>
       <style jsx>{`
         :global(body) {
           background-color: #e8ff00;

@@ -1,17 +1,31 @@
 {
-  "id": "52146992-9b40-441b-8a4c-b6c4ad0add18",
-  "uid": "delectus-quaerat-aut",
+  "id": "161db8f3-35d5-4585-bcee-b151031c3ce9",
+  "uid": "ut-nobis-dolor",
   "type": "what",
   "data": {
     "video": {
       "link_type": "media",
       "url": "https://source.unsplash.com/daily"
     },
-    "title": "strategize magnetic mindshare",
+    "title": "streamline cutting-edge functionalities",
     "content": [
       {
         "type": "paragraph",
-        "text": "Dolore magna elit laborum. Ex adipisicing nisi amet duis magna deserunt eiusmod voluptate do consequat. Minim laborum et ipsum qui enim minim consequat deserunt eu.",
+        "text": "Eiusmod ut magna culpa.",
+        "spans": []
+      }
+    ],
+    "infoLeft": [
+      {
+        "type": "paragraph",
+        "text": "Exercitation fugiat cupidatat laborum consequat laboris nostrud incididunt ea ea excepteur magna incididunt velit commodo. Consectetur deserunt sunt culpa.",
+        "spans": []
+      }
+    ],
+    "infoRight": [
+      {
+        "type": "paragraph",
+        "text": "Est nulla incididunt ut minim labore mollit. Voluptate cillum occaecat excepteur magna.",
         "spans": []
       }
     ]
