@@ -68,7 +68,7 @@ const Project = ({ project }) => {
               <div className="item">
                 <img src='/square.jpg'/>
               </div>
-            </div>
+            
         {project.data.gallery.map((item) => (
           <div className="item" key={item.url}>
             {item.thumb.url && (
@@ -82,6 +82,7 @@ const Project = ({ project }) => {
             )}
           </div>
         ))}
+        </div>
       </div>
       <div className="content columns-2 p-20">
         <PrismicRichText field={project.data.content} />
