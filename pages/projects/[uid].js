@@ -6,7 +6,6 @@ import { Logo } from "../../components/Logo";
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const image = banner.url ? banner : cover;
-
   return (
     <div className="page-root">
       <div className="background" />
@@ -39,6 +38,41 @@ const Project = ({ project }) => {
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
+          <div className="row">
+            <div className="item">
+              <img src='/portrait.webp'/>
+              <span>blalblbal</span>
+            </div>
+            <div className="item">
+              <img src='/square.jpg'/>
+            </div>
+            <div className="item">
+              <img src='/portrait.webp'/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="item">
+              <img src='/square.jpg'/>
+            </div>
+            <div className="item">
+              <span> blalblbal</span>
+              <img src='/portrait.webp'/>
+            </div>
+            <div className="item">
+              <img src='/square.jpg'/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="item">
+              <img src='/landscape.jpg'/>
+            </div>
+            <div className="item">
+              <img src='/portrait.webp'/>
+            </div>
+            <div className="item">
+              <img src='/square.jpg'/>
+            </div>
+          </div>
         {project.data.gallery.map((item) => (
           <div className="item" key={item.url}>
             {item.thumb.url && (
@@ -77,6 +111,11 @@ const Project = ({ project }) => {
           left: 50%;
           transform: translate(-50%, -50%);
         }
+        .row{
+          width: 100%;
+          display: flex;
+          justify-content:space-between;
+        }
         h1,
         h2 {
           text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
@@ -93,8 +132,42 @@ const Project = ({ project }) => {
           fill: #e8ff00;
         }
         .gallery .item {
-          width: 26vw;
           display: inline-block;
+        }
+        .gallery{
+          display: flex;
+          justify-content:space-between;
+          flex-wrap: wrap;
+        }
+        
+        .item{
+          margin-top:10px;
+          cursor:pointer;
+          background-repeat: no-repeat;
+          background-size:contain;
+          position: relative;
+          text-align: center;
+          color: transparent;
+        }
+        .item:hover{
+          box-shadow:0px 0px 50px 6px #E8FF00;
+          background: #E8FF00;
+          color: black;
+        }
+        .item > img {
+          position: relative;
+          max-height:28.5vw;
+          object-fit:contain;
+
+        }
+        .item > span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .item > img:hover {
+          opacity:0.4;
         }
       `}</style>
     </div>
