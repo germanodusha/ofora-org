@@ -134,7 +134,7 @@ const Project = ({ project }) => {
           display: flex;
           justify-content:center;
           flex-wrap: wrap;
-          max-width:800px;
+          max-width:1120px;
         }
         .item{
           margin-top:10px;
