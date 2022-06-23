@@ -38,34 +38,36 @@ const Project = ({ project }) => {
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
-            <div className="item">
-              <img src='/portrait.webp'/>
-              <span>blalblbal</span>
-            </div>
-            <div className="item">
-              <img src='/square.jpg'/>
-            </div>
-            <div className="item">
-              <img src='/portrait.webp'/>
-            </div>
-            <div className="item">
-              <img src='/square.jpg'/>
-            </div>
-            <div className="item">
-              <span> blalblbal</span>
-              <img src='/portrait.webp'/>
-            </div>
-            <div className="item">
-              <img src='/square.jpg'/>
-            </div>
-            <div className="item">
-              <img src='/landscape.jpg'/>
-            </div>
-            <div className="item">
-              <img src='/portrait.webp'/>
-            </div>
-            <div className="item">
-              <img src='/square.jpg'/>
+            <div className="wrapper">
+              <div className="item">
+                <img src='/portrait.webp'/>
+                <span>blalblbal</span>
+              </div>
+              <div className="item">
+                <img src='/square.jpg'/>
+              </div>
+              <div className="item">
+                <img src='/portrait.webp'/>
+              </div>
+              <div className="item">
+                <img src='/square.jpg'/>
+              </div>
+              <div className="item">
+                <span> blalblbal</span>
+                <img src='/portrait.webp'/>
+              </div>
+              <div className="item">
+                <img src='/square.jpg'/>
+              </div>
+              <div className="item">
+                <img src='/landscape.jpg'/>
+              </div>
+              <div className="item">
+                <img src='/portrait.webp'/>
+              </div>
+              <div className="item">
+                <img src='/square.jpg'/>
+              </div>
             </div>
         {project.data.gallery.map((item) => (
           <div className="item" key={item.url}>
@@ -126,7 +128,12 @@ const Project = ({ project }) => {
         .gallery{
           display: flex;
           justify-content:center;
+        }
+        .wrapper{
+          display: flex;
+          justify-content:center;
           flex-wrap: wrap;
+          max-width:800px;
         }
         .item{
           margin-top:10px;
@@ -144,7 +151,7 @@ const Project = ({ project }) => {
         }
         .item > img {
           position: relative;
-          max-height:28.5vw;
+          max-height:250px;
           object-fit:contain;
           margin: 5px;
         }
