@@ -1,9 +1,10 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
 import { Logo } from "../components/Logo";
+import Modal from "../components/Modal";
 
 const Index = ({ page }) => {
   const { setPage } = useContext(Context);
