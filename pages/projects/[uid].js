@@ -38,50 +38,21 @@ const Project = ({ project }) => {
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
-            <div className="wrapper">
-              <div className="item">
-                <img src='/portrait.webp'/>
-                <span>blalblbal</span>
-              </div>
-              <div className="item">
-                <img src='/square.jpg'/>
-              </div>
-              <div className="item">
-                <img src='/portrait.webp'/>
-              </div>
-              <div className="item">
-                <img src='/square.jpg'/>
-              </div>
-              <div className="item">
-                <span> blalblbal</span>
-                <img src='/portrait.webp'/>
-              </div>
-              <div className="item">
-                <img src='/square.jpg'/>
-              </div>
-              <div className="item">
-                <img src='/landscape.jpg'/>
-              </div>
-              <div className="item">
-                <img src='/portrait.webp'/>
-              </div>
-              <div className="item">
-                <img src='/square.jpg'/>
-              </div>
-            
-        {project.data.gallery.map((item) => (
-          <div className="item" key={item.url}>
-            {item.thumb.url && (
-              <Image
-                key={item.thumb.url}
-                src={item.thumb.url}
-                width={item.thumb.width}
-                height={item.thumb.height}
-                alt={item.thumb.alt}
-              />
-            )}
-          </div>
-        ))}
+        <div className="wrapper">
+          {project.data.gallery.map((item) => (
+            <div className="item" key={item.url}>
+              {item.thumb.url && (
+                <Image
+                  key={item.thumb.url}
+                  src={item.thumb.url}
+                  width={item.thumb.width}
+                  height={item.thumb.height}
+                  alt={item.thumb.alt}
+                  layout='fill'
+                />
+              )}
+            </div>
+          ))}
         </div>
       </div>
       <div className="content columns-2 p-20">
