@@ -17,17 +17,20 @@ const nextConfig = async () => {
       // This is the default locale
       defaultLocale: locales[0],
     },
+    images: {
+      loader: "imgix",
+      path: "",
+      domains: ["images.prismic.io"],
+    },
     experimental: {
       images: {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'images.prismic.io',
-            port: '',
-            pathname: '/ofora/**',
-          },
-        ],
-      },
+            hostname: 'images.prismic.io'
+          }
+        ]
+      }
     }
   };
 };
