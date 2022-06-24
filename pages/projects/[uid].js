@@ -6,7 +6,6 @@ import { Logo } from "../../components/Logo";
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const image = banner.url ? banner : cover;
-
   return (
     <div className="page-root">
       <div className="background" />
@@ -41,15 +40,20 @@ const Project = ({ project }) => {
       <div className="gallery p-20">
         {project.data.gallery.map((item) => (
           <div className="item" key={item.url}>
-            {item.thumb.url && (
+            {item.thumb.kind === "image" ? (
               <Image
                 key={item.thumb.url}
                 src={item.thumb.url}
-                width={item.thumb.width}
-                height={item.thumb.height}
+                width={item.thumb.width/item.thumb.height*250}
+                height={250}
                 alt={item.thumb.alt}
               />
+            ) : (
+              <video autoPlay playsInline muted>
+                <source src={item.thumb.url} type="video/mp4" />
+              </video>
             )}
+            <span>{item.title}</span>
           </div>
         ))}
       </div>
@@ -92,9 +96,54 @@ const Project = ({ project }) => {
           width: 200px;
           fill: #e8ff00;
         }
-        .gallery .item {
-          width: 26vw;
-          display: inline-block;
+        .item {
+          margin-top: 10px;
+          cursor: pointer;
+          position: relative;
+          text-align: center;
+          color: transparent;
+          margin: 10px;
+          transition: .4s box-shadow;
+          line-height: 0px;
+        }
+        .item:hover {
+          box-shadow: 0px 0px 50px 6px #e8ff00;
+          background: #e8ff00;
+          color: black;
+        }
+        .item :global(img),
+        .item :global(video) {
+          transition: .4s opacity;
+        }
+        .item > span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none; 
+          text-transform: uppercase;
+          line-height: 1.5rem;
+        }
+        .item :global(img):hover,
+        .item :global(video):hover {
+          opacity: 0.4;
+        }
+        @media only screen and (min-width: 800px) {
+          .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .item :global(img),
+          .item :global(video) {
+            max-height: 200px;
+          }
+        }
+        @media only screen and (min-width: 1200px) {
+          .item :global(img),
+          .item :global(video) {
+            max-height: 250px;
+          }
         }
       `}</style>
     </div>
