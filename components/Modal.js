@@ -1,15 +1,17 @@
 import {AiOutlineClose} from 'react-icons/ai'
 
-const Modal = ({children, isModalOpen, onChange}) =>{
-    console.log(isModalOpen)
+const Modal = ({children, visible, onClose}) =>{
+    console.log(children)
     return(
-        <div style={{display:isModalOpen?'flex':'none'}}>
+        <div style={{display:visible?'flex':'none', zIndex:'10000', position:'fixed', left:0, top:0, opacity:'1'}}>
             <div>
-                <div className="backdrop" onClick={()=>onChange(false)}/>
+                <div className="backdrop" onClick={()=>onClose(false)}/>
                 <div className="content" onClick={()=>{console.log("spam")}}>
-                    {children}
-                    <div className='closeIcon' onClick={()=>onChange(false)}>
-                        <AiOutlineClose className='closeIcon'/>
+                    <div className='contentContainer'>
+                        {children}
+                        <div className='closeIcon' onClick={()=>onClose(false)}>
+                            <AiOutlineClose className='closeIcon'/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -17,13 +19,12 @@ const Modal = ({children, isModalOpen, onChange}) =>{
                 img{
                 height: auto;
                 width: auto;
+                max-height:70vh;
+                max-width:70vw;
              }
              .backdrop{
-                display: flex;
-                justify-content:center;
-                align-items: center;
                 position: fixed;
-                width: 100%;
+                width: 100vw;
                 height: 100vh;
                 background: black;
                 opacity:.5;
@@ -32,6 +33,7 @@ const Modal = ({children, isModalOpen, onChange}) =>{
                 pointer-event:none;
              }
              .closeIcon{
+                align-self:flex-start;
                 padding-left:200px;
                 color: white;
                 height: 0px;
@@ -41,13 +43,20 @@ const Modal = ({children, isModalOpen, onChange}) =>{
                 color:#E8FF00
              }
              .content{
-                display: flex;
                 position: fixed;
-                top:25%;
-                left:25%;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content:center;
+                align-items:center;
                 z-index:10001;
+                max-widht:10vw;
              }
-                
+             .contentContainer{
+                height: 10vh;
+                display: flex;
+                padding-left:200px;
+             }
             `}</style>
         </div>
     )

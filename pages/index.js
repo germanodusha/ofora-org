@@ -15,6 +15,7 @@ const Index = ({ page }) => {
 
   return (
     <>
+    
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>

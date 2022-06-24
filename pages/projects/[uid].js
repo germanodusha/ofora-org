@@ -2,25 +2,30 @@ import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import { Logo } from "../../components/Logo";
+import Modal from "../../components/Modal";
+import { useState } from "react";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
+  const [content, setContent] = useState()
+
   const image = banner.url ? banner : cover;
   return (
+    
     <div className="page-root">
       <div className="background" />
       <div className="flex h-screen grow items-center justify-center">
         <div className="banner">
           {image.url && (
             <Image
-              src={image.url}
-              width={image.dimensions.width}
-              height={image.dimensions.height}
-              alt={image.alt}
-              layout="fill"
-              objectFit="contain"
+            src={image.url}
+            width={image.dimensions.width}
+            height={image.dimensions.height}
+            alt={image.alt}
+            layout="fill"
+            objectFit="contain"
             />
-          )}
+            )}
         </div>
         <div className="title text-center uppercase">
           <h1 className="text-8xl">{project.data.title}</h1>
@@ -38,22 +43,25 @@ const Project = ({ project }) => {
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
-        {project.data.gallery.map((item) => (
-          <div className="item" key={item.url}>
+        {project.data.gallery.map((item, index) => (
+          <div className="item" key={item.url} onClick={(e)=>{console.log(e)}}>
+          <Modal visible={index===1}>
             {item.thumb.kind === "image" ? (
-              <Image
-                key={item.thumb.url}
-                src={item.thumb.url}
-                width={item.thumb.width/item.thumb.height*250}
-                height={250}
-                alt={item.thumb.alt}
-              />
+                  <Image
+                  key={item.thumb.url}
+                  src={item.thumb.url}
+                  width={item.thumb.width/item.thumb.height*250}
+                  height={250}
+                  alt={item.thumb.alt}
+                  onClick={()=>{(e)=>console.log(e.target)}}
+                  />
             ) : (
               <video autoPlay playsInline muted>
                 <source src={item.thumb.url} type="video/mp4" />
               </video>
             )}
             <span>{item.title}</span>
+            </Modal>
           </div>
         ))}
       </div>
