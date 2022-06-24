@@ -1,6 +1,7 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { Context } from "../pages/_app";
 

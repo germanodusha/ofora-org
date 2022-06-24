@@ -17,17 +17,18 @@ const About = ({ page }) => {
           <source src={page.data.video.url} type="video/mp4" />
         </video>
       </div>
-      <h1>{page.data.title}</h1>
-      <div className="mx-auto p-20 text-center text-3xl">
+      <h1 className="title">{page.data.title}</h1>
+      <div className="mx-auto p-20 text-center text-3xl content">
         <PrismicRichText field={page.data.content} />
       </div>
-      <div>
+      <div className="content">
       <PrismicRichText field={page.data.infoLeft} />
       <PrismicRichText field={page.data.infoRight} />
       </div>
       <style jsx>{`
         :global(body) {
           background-color: #e8ff00;
+          height: 400vh;
         }
         video {
           object-fit: cover;
@@ -41,6 +42,16 @@ const About = ({ page }) => {
           transform: translate(-50%, -50%);
           color: #e8ff00;
           font-size: 8rem;
+        }
+        .title{
+          position: fixed;
+          top:25%;
+          left:50%;
+          overflow: hidden;
+          z-index:0;
+        }
+        .content{
+          z-index:1;
         }
       `}</style>
     </>

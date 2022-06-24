@@ -3,6 +3,7 @@ import { PrismicLink } from "@prismicio/react";
 import { linkResolver } from "../prismicio";
 import { useContext } from "react";
 import { Context } from "../pages/_app";
+import { useRouter } from "next/router";
 
 export const Footer = () => {
   const { page, navigation } = useContext(Context);
