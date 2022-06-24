@@ -77,6 +77,14 @@
                 "placeholder": "",
                 "select": "media"
               }
+            },
+            "media": {
+              "type": "Link",
+              "config": {
+                "label": "Media",
+                "placeholder": "",
+                "select": "media"
+              }
             }
           }
         }

@@ -1,11 +1,11 @@
 {
-  "id": "401788c7-8536-4f54-9627-761df159b539",
-  "uid": "aut-ipsam-sed",
+  "id": "d1294572-bdd3-4e69-9533-6a987704f605",
+  "uid": "qui-aut-iste",
   "type": "project",
   "data": {
-    "title": "extend proactive ROI",
-    "year": "incentivize value-added content",
-    "category": "transition cross-media e-services",
+    "title": "transition B2B methodologies",
+    "year": "envisioneer cutting-edge e-business",
+    "category": "enhance 24/7 ROI",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -13,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -22,54 +22,52 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Ullamco aliquip sunt proident dolor culpa elit.",
+        "text": "Anim veniam ut nostrud aliqua adipisicing nulla sunt laboris enim nostrud officia sit nisi Lorem.",
         "spans": []
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "Id occaecat veniam veniam eu excepteur labore minim irure adipisicing. Culpa id aliquip ullamco voluptate adipisicing amet fugiat officia ad dolor occaecat ut mollit laborum et. Sunt id id veniam sint nostrud eiusmod deserunt est eiusmod enim occaecat reprehenderit Lorem.",
+        "text": "Aliquip nisi occaecat proident quis nostrud veniam elit veniam eu cupidatat esse ut consequat duis nulla. Labore aliqua ullamco ad ut incididunt nostrud non incididunt elit exercitation duis. Laboris do elit elit pariatur elit in proident.",
         "spans": []
       }
     ],
     "gallery": [
       {
-        "title": "syndicate viral schemas",
+        "title": "synergize B2B channels",
         "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
         }
       },
       {
-        "title": "scale ubiquitous blockchains",
+        "title": "aggregate synergistic systems",
         "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
         }
       },
       {
-        "title": "implement proactive channels",
+        "title": "disintermediate dot-com ROI",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
-        }
-      },
-      {
-        "title": "synergize magnetic interfaces",
-        "thumb": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        }
-      },
-      {
-        "title": "disintermediate innovative applications",
-        "thumb": {
+        },
+        "media": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
         }
