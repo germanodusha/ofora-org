@@ -44,8 +44,8 @@ const Project = ({ project }) => {
               <Image
                 key={item.thumb.url}
                 src={item.thumb.url}
-                width={item.thumb.width}
-                height={item.thumb.height}
+                width={item.thumb.width/item.thumb.height*500}
+                height={500}
                 alt={item.thumb.alt}
               />
             ) : (
@@ -96,11 +96,6 @@ const Project = ({ project }) => {
           width: 200px;
           fill: #e8ff00;
         }
-        .gallery {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
         .item {
           margin-top: 10px;
           cursor: pointer;
@@ -108,7 +103,8 @@ const Project = ({ project }) => {
           text-align: center;
           color: transparent;
           margin: 10px;
-          height: 250px;
+          transition: .4s box-shadow;
+          line-height: 0px;
         }
         .item:hover {
           box-shadow: 0px 0px 50px 6px #e8ff00;
@@ -117,17 +113,37 @@ const Project = ({ project }) => {
         }
         .item :global(img),
         .item :global(video) {
-          max-height: 250px;
+          transition: .4s opacity;
         }
         .item > span {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          pointer-events:none; 
+          pointer-events: none; 
+          text-transform: uppercase;
+          line-height: 1.5rem;
         }
-        .item :global(img):hover {
+        .item :global(img):hover,
+        .item :global(video):hover {
           opacity: 0.4;
+        }
+        @media only screen and (min-width: 800px) {
+          .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .item :global(img),
+          .item :global(video) {
+            max-height: 200px;
+          }
+        }
+        @media only screen and (min-width: 1200px) {
+          .item :global(img),
+          .item :global(video) {
+            max-height: 250px;
+          }
         }
       `}</style>
     </div>
