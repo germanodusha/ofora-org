@@ -44,8 +44,8 @@ const Project = ({ project }) => {
               <Image
                 key={item.thumb.url}
                 src={item.thumb.url}
-                width={item.thumb.width/item.thumb.height*500}
-                height={500}
+                width={item.thumb.width/item.thumb.height*250}
+                height={250}
                 alt={item.thumb.alt}
               />
             ) : (
