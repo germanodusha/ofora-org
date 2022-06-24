@@ -17,11 +17,6 @@ const nextConfig = async () => {
       // This is the default locale
       defaultLocale: locales[0],
     },
-    images: {
-      loader: "imgix",
-      path: "",
-      domains: ["images.prismic.io"],
-    },
     experimental: {
       images: {
         remotePatterns: [
