@@ -108,11 +108,14 @@ const Project = ({ project }) => {
           text-align: center;
           color: transparent;
           margin: 10px;
+          line-height:0px;
+          height: 250px;
         }
         .item:hover {
           box-shadow: 0px 0px 50px 6px #e8ff00;
           background: #e8ff00;
           color: black;
+          line-height:100%;
         }
         .item :global(img),
         .item :global(video) {
@@ -123,6 +126,7 @@ const Project = ({ project }) => {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          pointer-events:none; 
         }
         .item :global(img):hover {
           opacity: 0.4;
