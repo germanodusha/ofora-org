@@ -38,22 +38,24 @@ const Project = ({ project }) => {
         <PrismicRichText field={project.data.intro} />
       </div>
       <div className="gallery p-20">
-        <div className="wrapper">
-          {project.data.gallery.map((item) => (
-            <div className="item" key={item.url}>
-              {item.thumb.url && (
-                <Image
-                  key={item.thumb.url}
-                  src={item.thumb.url}
-                  width={item.thumb.width}
-                  height={item.thumb.height}
-                  alt={item.thumb.alt}
-                  layout='fill'
-                />
-              )}
-            </div>
-          ))}
-        </div>
+        {project.data.gallery.map((item) => (
+          <div className="item" key={item.url}>
+            {item.thumb.kind === "image" ? (
+              <Image
+                key={item.thumb.url}
+                src={item.thumb.url}
+                width={item.thumb.width}
+                height={item.thumb.height}
+                alt={item.thumb.alt}
+              />
+            ) : (
+              <video autoPlay playsInline muted>
+                <source src={item.thumb.url} type="video/mp4" />
+              </video>
+            )}
+            <span>{item.title}</span>
+          </div>
+        ))}
       </div>
       <div className="content columns-2 p-20">
         <PrismicRichText field={project.data.content} />
@@ -94,38 +96,27 @@ const Project = ({ project }) => {
           width: 200px;
           fill: #e8ff00;
         }
-        .gallery .item {
-          display: inline-block;
-        }
-        .gallery{
+        .gallery {
           display: flex;
-          justify-content:center;
-        }
-        .wrapper{
-          display: flex;
-          justify-content:center;
           flex-wrap: wrap;
-          max-width:1120px;
+          justify-content: center;
         }
-        .item{
-          margin-top:10px;
-          cursor:pointer;
-          background-repeat: no-repeat;
-          background-size:contain;
+        .item {
+          margin-top: 10px;
+          cursor: pointer;
           position: relative;
           text-align: center;
           color: transparent;
+          margin: 10px;
         }
-        .item:hover{
-          box-shadow:0px 0px 50px 6px #E8FF00;
-          background: #E8FF00;
+        .item:hover {
+          box-shadow: 0px 0px 50px 6px #e8ff00;
+          background: #e8ff00;
           color: black;
         }
-        .item > img {
-          position: relative;
-          max-height:250px;
-          object-fit:contain;
-          margin: 5px;
+        .item :global(img),
+        .item :global(video) {
+          max-height: 250px;
         }
         .item > span {
           position: absolute;
@@ -133,8 +124,8 @@ const Project = ({ project }) => {
           left: 50%;
           transform: translate(-50%, -50%);
         }
-        .item > img:hover {
-          opacity:0.4;
+        .item :global(img):hover {
+          opacity: 0.4;
         }
       `}</style>
     </div>
