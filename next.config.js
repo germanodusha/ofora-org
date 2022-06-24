@@ -17,15 +17,8 @@ const nextConfig = async () => {
       // This is the default locale
       defaultLocale: locales[0],
     },
-    experimental: {
-      images: {
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'images.prismic.io'
-          }
-        ]
-      }
+    images: {
+      domains: ['images.prismic.io'],
     }
   };
 };
