@@ -136,13 +136,13 @@ const Project = ({ project }) => {
           }
           .item :global(img),
           .item :global(video) {
-            max-height: 200px;
+            max-height: 160px;
           }
         }
         @media only screen and (min-width: 1200px) {
           .item :global(img),
           .item :global(video) {
-            max-height: 250px;
+            max-height: 220px;
           }
         }
       `}</style>
