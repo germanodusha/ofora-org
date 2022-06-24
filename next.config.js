@@ -12,18 +12,23 @@ const nextConfig = async () => {
   return {
     reactStrictMode: true,
     i18n: {
-      // These are all the locales you want to support in
-      // your application
+      // These are all the locales you want to support
       locales,
-      // This is the default locale you want to be used when visiting
-      // a non-locale prefixed path e.g. `/hello`
+      // This is the default locale
       defaultLocale: locales[0],
     },
-    images: {
-      loader: "imgix",
-      path: "",
-      domains: ["images.prismic.io"],
-    },
+    experimental: {
+      images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'images.prismic.io',
+            port: '',
+            pathname: '/ofora/**',
+          },
+        ],
+      },
+    }
   };
 };
 
