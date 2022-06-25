@@ -36,10 +36,10 @@ const Project = ({ project }) => {
             <Logo />
           </div>
         </div>
-        <div className="intro p-10 md:p-20 text-center md:text-xl lg:text-3xl">
+        <div className="intro p-10 md:p-20 text-center text-lg md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
         </div>
-        <div className="gallery p-20">
+        <div className="gallery p-10 sm:p-20">
           {project.data.gallery.map((item) => (
             <div className="item" key={item.url}>
               {item.thumb.kind === "image" ? (
@@ -74,13 +74,13 @@ const Project = ({ project }) => {
           z-index: -1;
         }
         .banner {
-          width: 60vw;
-          height: 60vh;
+          width: 90vw;
+          height: 90vh;
           position: relative;
         }
         .title {
           position: absolute;
-          top: 50%;
+          top: 25%;
           left: 50%;
           transform: translate(-50%, -50%);
         }
@@ -93,8 +93,9 @@ const Project = ({ project }) => {
         }
         .logo {
           position: absolute;
-          top: 10vh;
-          right: 10vw;
+          top: 80%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           fill: #e8ff00;
         }
         .item {
@@ -130,6 +131,18 @@ const Project = ({ project }) => {
           opacity: 0.4;
         }
         @media only screen and (min-width: 780px) {
+          .logo {
+            top: 20%;
+            left: 80%;
+          }
+          .title {
+            top: 50%;
+          }
+          .banner {
+            width: 60vw;
+            height: 60vh;
+            position: relative;
+          }
           .gallery {
             display: flex;
             flex-wrap: wrap;
