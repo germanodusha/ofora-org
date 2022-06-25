@@ -45,7 +45,7 @@ const Project = ({ project }) => {
       <div className="gallery p-20">
         {project.data.gallery.map((item, index) => (
           <div className="item" key={item.url} onClick={(e)=>{console.log(e)}}>
-          <Modal visible={index===1}>
+          <Modal visible={index===0}>
             {item.thumb.kind === "image" ? (
                   <Image
                   key={item.thumb.url}
@@ -53,7 +53,6 @@ const Project = ({ project }) => {
                   width={item.thumb.width/item.thumb.height*250}
                   height={250}
                   alt={item.thumb.alt}
-                  onClick={()=>{(e)=>console.log(e.target)}}
                   />
             ) : (
               <video autoPlay playsInline muted>

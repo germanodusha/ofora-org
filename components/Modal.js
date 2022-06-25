@@ -1,62 +1,49 @@
 import {AiOutlineClose} from 'react-icons/ai'
 
 const Modal = ({children, visible, onClose}) =>{
-    console.log(children)
+    console.log(children[1].props.children)
     return(
-        <div style={{display:visible?'flex':'none', zIndex:'10000', position:'fixed', left:0, top:0, opacity:'1'}}>
-            <div>
-                <div className="backdrop" onClick={()=>onClose(false)}/>
-                <div className="content" onClick={()=>{console.log("spam")}}>
-                    <div className='contentContainer'>
-                        {children}
-                        <div className='closeIcon' onClick={()=>onClose(false)}>
-                            <AiOutlineClose className='closeIcon'/>
-                        </div>
-                    </div>
+        <div className="container" style={{display:visible?'':'none'}}>
+            <div className='wrapper'>
+                <div className='title'>
+                    adaoksoasdkasodksoadkasodaodkasdaodkoasdksadoaksodkask
+                </div>
+                <div className='cover'>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/6/6e/John_Mayer_performing_in_Atlanta%2C_Georgia_%2817_March_2010%29_-_068.jpg'/>
                 </div>
             </div>
             <style jsx>{`
-                img{
-                height: auto;
-                width: auto;
-                max-height:70vh;
-                max-width:70vw;
-             }
-             .backdrop{
-                position: fixed;
-                width: 100vw;
-                height: 100vh;
-                background: black;
-                opacity:.5;
-                z-index:10000;
-                color: white;
-                pointer-event:none;
-             }
-             .closeIcon{
-                align-self:flex-start;
-                padding-left:200px;
-                color: white;
-                height: 0px;
-                cursor:pointer
-             }
-             .closeIcon:hover{
-                color:#E8FF00
-             }
-             .content{
-                position: fixed;
-                height: 100%;
-                width: 100%;
-                display: flex;
-                justify-content:center;
-                align-items:center;
-                z-index:10001;
-                max-widht:10vw;
-             }
-             .contentContainer{
-                height: 10vh;
-                display: flex;
-                padding-left:200px;
-             }
+                .container{
+                    all:unset;
+                    height: 100%;
+                    width: 100%;
+                    position: fixed;
+                    top:0;
+                    left:0;
+                    background: red;
+                    color:white;
+                    z-index:1;
+                }
+                .wrapper{
+                    padding-top:92px;
+                    height: 100vh;
+                    width: 100%;
+                }
+                .title{
+                    width: 100%;
+                    background: blue;
+                    display: flex;
+                    justify-content:center;
+                    align-items:flex-end;
+                    height: 50px;
+                    padding-bottom:20px;
+                }
+                .cover{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content:center;
+                }
             `}</style>
         </div>
     )
