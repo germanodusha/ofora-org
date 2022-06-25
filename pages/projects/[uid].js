@@ -45,7 +45,7 @@ const Project = ({ project }) => {
       <div className="gallery p-20">
         {project.data.gallery.map((item, index) => (
           <div className="item" key={item.url} onClick={(e)=>{console.log(e)}}>
-          <Modal visible={index===0}>
+          <Modal visible={index===2}>
             {item.thumb.kind === "image" ? (
                   <Image
                   key={item.thumb.url}
