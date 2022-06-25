@@ -7,7 +7,9 @@ const Modal = ({children, visible, onClose}) =>{
         return(
             <div className='container'>
                 <div className='backdrop' onClick={()=>console.log('adas')}/>
+
                 <div className='modalContent' onClick={()=>console.log('content')}>
+                    <div>
                     <span className='title'>{children.props.children[1].props.children}</span>
                     <Image 
                     alt={children.props.children[1].props.children} 
@@ -15,9 +17,10 @@ const Modal = ({children, visible, onClose}) =>{
                     layout='fill' 
                     objectFit='contain' 
                     />
-                </div>
-                <div className='closeIcon'>
-                    X
+                    </div>
+                    <div className='closeIcon'>
+                        X
+                    </div>
                 </div>
                 <style jsx>{`
                     .backdrop{
@@ -53,8 +56,9 @@ const Modal = ({children, visible, onClose}) =>{
                     }
                     .closeIcon{
                         position: relative;
-                        right: 0;
-                        top: 92px;
+                        right: -40%;
+                        top: 0;
+                        width: 1%;
                     }
                 `}</style>
             </div>
