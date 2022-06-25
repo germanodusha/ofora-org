@@ -25,14 +25,14 @@ const Project = ({ project }) => {
             )}
           </div>
           <div className="title text-center uppercase">
-            <h1 className="text-8xl">{project.data.title}</h1>
-            <h2 className="text-8xl">
+            <h1 className="text-5xl md:text-8xl">{project.data.title}</h1>
+            <h2 className="text-5xl md:text-8xl">
               {project.data.year}
               <br />
             </h2>
             <div className="pt-5 text-xl">{project.data.category}</div>
           </div>
-          <div className="logo">
+          <div className="logo w-24 h-24 md:w-52 md:h-52">
             <Logo />
           </div>
         </div>
@@ -59,7 +59,7 @@ const Project = ({ project }) => {
             </div>
           ))}
         </div>
-        <div className="content columns-2 p-20">
+        <div className="content md:columns-2 p-10 md:p-20">
           <PrismicRichText field={project.data.content} />
         </div>
       </Limiter>
@@ -94,9 +94,7 @@ const Project = ({ project }) => {
         .logo {
           position: absolute;
           top: 10vh;
-          right: 10vh;
-          height: 200px;
-          width: 200px;
+          right: 10vw;
           fill: #e8ff00;
         }
         .item {
