@@ -44,24 +44,24 @@ const Project = ({ project }) => {
       </div>
       <div className="gallery p-20">
         {project.data.gallery.map((item, index) => (
-          <div className="item" key={item.url} onClick={(e)=>{console.log(e)}}>
-          <Modal visible={index===2}>
-            {item.thumb.kind === "image" ? (
-                  <Image
-                  key={item.thumb.url}
-                  src={item.thumb.url}
-                  width={item.thumb.width/item.thumb.height*250}
-                  height={250}
-                  alt={item.thumb.alt}
-                  />
-            ) : (
-              <video autoPlay playsInline muted>
-                <source src={item.thumb.url} type="video/mp4" />
-              </video>
-            )}
-            <span>{item.title}</span>
-            </Modal>
-          </div>
+          <Modal visible={index===2} key={index}>
+            <div className="item" key={item.url}>
+              {item.thumb.kind === "image" ? (
+                    <Image
+                    key={item.thumb.url}
+                    src={item.thumb.url}
+                    width={item.thumb.width/item.thumb.height*250}
+                    height={250}
+                    alt={item.thumb.alt}
+                    />
+              ) : (
+                <video autoPlay playsInline muted>
+                  <source src={item.thumb.url} type="video/mp4" />
+                </video>
+              )}
+              <span>{item.title}</span>
+            </div>
+          </Modal>
         ))}
       </div>
       <div className="content columns-2 p-20">
