@@ -4,6 +4,7 @@ import { createClient } from "../../prismicio";
 import { Logo } from "../../components/Logo";
 import Modal from "../../components/Modal";
 import { useState } from "react";
+import { Limiter } from "../../components/Limiter";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -13,6 +14,7 @@ const Project = ({ project }) => {
   return (
     
     <div className="page-root">
+    <Limiter>
       <div className="background" />
       <div className="flex h-screen grow items-center justify-center">
         <div className="banner">
@@ -68,42 +70,17 @@ const Project = ({ project }) => {
       <div className="content columns-2 p-20">
         <PrismicRichText field={project.data.content} />
       </div>
+      </Limiter>
       <style jsx>{`
-        .background {
-          box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
+        // cover
         .banner {
-          width: 60vw;
-          height: 60vh;
           position: relative;
         }
         .title {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+
         }
-        h1,
-        h2 {
-          text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
-        }
-        .title > div {
-          color: #e8ff00;
-        }
-        .logo {
-          position: absolute;
-          top: 10vh;
-          right: 10vh;
-          height: 200px;
-          width: 200px;
-          fill: #e8ff00;
-        }
+
+        // gallery
         .item {
           margin-top: 10px;
           cursor: pointer;
@@ -136,21 +113,32 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.4;
         }
-        @media only screen and (min-width: 800px) {
+        @media only screen and (min-width: 780px) {
+          .title > div{
+            margin-top: calc(50vh - 200px);
+          }
+          .banner {
+
+          }
           .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
           }
           .item :global(img),
           .item :global(video) {
-            max-height: 160px;
+            max-height: 100px;
           }
         }
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 980px) {
           .item :global(img),
           .item :global(video) {
-            max-height: 220px;
+            max-height: 140px;
+          }
+        @media only screen and (min-width: 1280px) {
+          .item :global(img),
+          .item :global(video) {
+            max-height: 180px;
           }
         }
       `}</style>

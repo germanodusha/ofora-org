@@ -14,7 +14,7 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div>
-        <ul className="text-center text-3xl font-semibold capitalize">
+        <ul className="text-center text-4xl xl:text-5xl font-semibold capitalize">
           {projects.map((project) => (
             <li
               key={project.uid}
