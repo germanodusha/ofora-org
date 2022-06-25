@@ -5,7 +5,7 @@ const Modal = ({children, visible, onClose}) =>{
     console.log(children.props.children[1].props.children)
     if(visible){
         return(
-            <div>
+            <div className='container'>
                 <div className='backdrop' onClick={()=>console.log('adas')}/>
                 <div className='modalContent' onClick={()=>console.log('content')}>
                     <span className='title'>{children.props.children[1].props.children}</span>
@@ -16,6 +16,9 @@ const Modal = ({children, visible, onClose}) =>{
                     objectFit='contain' 
                     />
                 </div>
+                <div className='closeIcon'>
+                    X
+                </div>
                 <style jsx>{`
                     .backdrop{
                         position: fixed;
@@ -23,21 +26,35 @@ const Modal = ({children, visible, onClose}) =>{
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        background: black;
-                        z-index:1;
+                        background: white;
+                    }
+                    .container{
+                        all:unset;
+                        position: fixed;
+                        width: 100vw;
+                        height: 100vh;
+                        top:0;
+                        left: 0;
+                        background: white;
+                        z-index:3;
                     }
                     .modalContent{
-                        position: fixed;
+                        position: relative;
                         top: 92px;
                         left: 50%;
                         transform: translate(-50%, 0);
-                        width: 50vw;
-                        height: 40vw;
-                        background: red;
-                        z-index:2;
+                        width: 1000px;
+                        height: 700px;
+                        background: gray;
                         display: flex;
                         justify-content:center;
                         padding:10px;
+                        z-index:1000
+                    }
+                    .closeIcon{
+                        position: relative;
+                        right: 0;
+                        top: 92px;
                     }
                 `}</style>
             </div>
