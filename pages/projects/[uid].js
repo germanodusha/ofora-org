@@ -10,9 +10,16 @@ const Project = ({ project }) => {
   return (
     <div className="page-root">
       <Limiter>
-        <div className="background" />
-        <div className="flex h-screen grow items-center justify-center">
-          <div className="banner">
+        <div className="flex h-screen grow">
+          <div className="title text-center uppercase w-1/2 pt-24">
+            <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
+            <h2 className="text-3xl md:text-5xl">
+              {project.data.year}
+              <br />
+            </h2>
+            <div className="pt-5 text-xl pt-1/2">{project.data.category}</div>
+          </div>
+          <div className="banner w-1/2">
             {image.url && (
               <Image
                 src={image.url}
@@ -24,19 +31,8 @@ const Project = ({ project }) => {
               />
             )}
           </div>
-          <div className="title text-center uppercase">
-            <h1 className="text-5xl md:text-8xl">{project.data.title}</h1>
-            <h2 className="text-5xl md:text-8xl">
-              {project.data.year}
-              <br />
-            </h2>
-            <div className="pt-5 text-xl">{project.data.category}</div>
-          </div>
-          <div className="logo w-24 h-24 md:w-52 md:h-52">
-            <Logo />
-          </div>
         </div>
-        <div className="intro p-10 md:p-20 text-center text-lg md:text-xl lg:text-3xl">
+        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
         </div>
         <div className="gallery p-10 sm:p-20">
@@ -59,45 +55,20 @@ const Project = ({ project }) => {
             </div>
           ))}
         </div>
-        <div className="content md:columns-2 p-10 md:p-20">
+        <div className="content p-10 md:columns-2 md:p-20">
           <PrismicRichText field={project.data.content} />
         </div>
       </Limiter>
       <style jsx>{`
-        .background {
-          box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
+        // cover
         .banner {
-          width: 90vw;
-          height: 90vh;
           position: relative;
         }
         .title {
-          position: absolute;
-          top: 25%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+
         }
-        h1,
-        h2 {
-          text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
-        }
-        .title > div {
-          color: #e8ff00;
-        }
-        .logo {
-          position: absolute;
-          top: 80%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          fill: #e8ff00;
-        }
+
+        // gallery
         .item {
           margin-top: 10px;
           cursor: pointer;
@@ -131,17 +102,11 @@ const Project = ({ project }) => {
           opacity: 0.4;
         }
         @media only screen and (min-width: 780px) {
-          .logo {
-            top: 20%;
-            left: 80%;
-          }
-          .title {
-            top: 50%;
+          .title > div{
+            margin-top: calc(50vh - 200px);
           }
           .banner {
-            width: 60vw;
-            height: 60vh;
-            position: relative;
+
           }
           .gallery {
             display: flex;
