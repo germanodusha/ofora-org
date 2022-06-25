@@ -37,8 +37,8 @@ const Modal = ({children, visible, onClose}) =>{
                         position: relative;
                         top:0;
                         left: 0;
-                        height: 600px;
-                        width: 600px;
+                        height: 50vh;
+                        width: 40vw;
                     }
                     .title{
                         width: 100%;
@@ -56,15 +56,15 @@ const Modal = ({children, visible, onClose}) =>{
                         align-items:center;
                         padding:10px;
                         z-index:1000
+                        flex-shrink:0;
                     }
                     .closeIcon{
-                        
-                        right: -40%;
-                        top: 0;
+                        all:unset;
                         width: 1%;
                         cursor: pointer;
-                        height: 0px;
+                        height: 1px;
                         font-size:32px;
+                        padding-left: 30px;
                         align-self:flex-start;
                     }
                     .closeIcon:hover{
