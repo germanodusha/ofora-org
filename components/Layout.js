@@ -25,16 +25,6 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
-          ${
-            showFrame &&
-            `
-          background: linear-gradient(
-            180deg,
-            rgba(${rgb}, 1) 30%,
-            rgba(${rgb}, 0) 100%
-          );
-          `
-          }
         }
         .layout-root > :global(:last-child) {
           position: fixed;
@@ -42,16 +32,7 @@ export const Layout = ({ children }) => {
           left: 0;
           width: 100%;
           z-index: 9999;
-          ${
-            showFrame &&
-            `
-          background: linear-gradient(
-            180deg,
-            rgba(${rgb}, 0) 0%,
-            rgba(${rgb}, 1) 70%
-          );
-          `
-          }
+        }
       `}</style>
     </div>
   );
