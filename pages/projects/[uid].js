@@ -1,7 +1,6 @@
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
-import { Logo } from "../../components/Logo";
 import { Limiter } from "../../components/Limiter";
 
 const Project = ({ project }) => {
@@ -10,7 +9,7 @@ const Project = ({ project }) => {
   return (
     <div className="page-root">
       <div className="flex h-screen grow">
-        <div className="title w-1/2 pt-24 text-center uppercase">
+        <div className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
           <h2 className="text-3xl md:text-5xl">
             {project.data.year}
@@ -69,12 +68,11 @@ const Project = ({ project }) => {
 
         // gallery
         .item {
-          margin-top: 10px;
           cursor: pointer;
           position: relative;
           text-align: center;
           color: transparent;
-          margin: 10px;
+          margin: 15px 10px;
           transition: .4s box-shadow;
           line-height: 0px;
         }
@@ -106,11 +104,11 @@ const Project = ({ project }) => {
           }
           .banner {
             position: relative;
-            margin: 4rem;
+            margin: 4rem 1rem;
             margin-left: 0;
           }
           .banner :global(img) {
-            object-position: 100% 0;
+            object-position: 100% 50%;
           }
           .gallery {
             display: flex;
