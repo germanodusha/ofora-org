@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
-  const [content, setContent] = useState()
+  const [selected, onSelect] = useState()
 
   const image = banner.url ? banner : cover;
   return (
@@ -44,7 +44,7 @@ const Project = ({ project }) => {
       </div>
       <div className="gallery p-20">
         {project.data.gallery.map((item, index) => (
-          <Modal visible={index===2} key={index}>
+          <Modal visible={selected===index} onClose={onSelect} key={index}>
             <div className="item" key={item.url}>
               {item.thumb.kind === "image" ? (
                     <Image
@@ -53,6 +53,7 @@ const Project = ({ project }) => {
                     width={item.thumb.width/item.thumb.height*250}
                     height={250}
                     alt={item.thumb.alt}
+                    onClick={()=>{onSelect(index)}}
                     />
               ) : (
                 <video autoPlay playsInline muted>

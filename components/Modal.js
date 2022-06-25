@@ -6,7 +6,7 @@ const Modal = ({children, visible, onClose}) =>{
     if(visible){
         return(
             <div className='container'>
-                <div className='backdrop' onClick={()=>console.log('adas')}/>
+                <div className='backdrop' onClick={()=>onClose(null)}/>
 
                 <div className='modalContent' onClick={()=>console.log('content')}>
                     <div>
@@ -18,7 +18,7 @@ const Modal = ({children, visible, onClose}) =>{
                     objectFit='contain' 
                     />
                     </div>
-                    <div className='closeIcon'>
+                    <div className='closeIcon' onClick={()=>onClose(null)}>
                         X
                     </div>
                 </div>
