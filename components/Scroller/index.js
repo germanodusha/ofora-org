@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ProjectTitle = ({ title, date }) => {
+const Scroller = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -23,14 +23,11 @@ const ProjectTitle = ({ title, date }) => {
   const isVisible = scrollPosition > 220;
 
   return (
-    <div>
-      <div className="project-title">
-        <span>{title}</span>
-        <span> {date}</span>
-      </div>
+    <div className="root">
+      {children}
       <style jsx>
         {`
-          .project-title {
+          .root {
             position: relative;
             width: 100%;
             background: var(--yellow);
@@ -42,16 +39,13 @@ const ProjectTitle = ({ title, date }) => {
             top: 0px;
             font-weight: bold;
             transition: transform 0.9s;
-            transform: translate3d(0,${isVisible ? "0px" : "-150px"},0);
+            transform: translate3d(0, ${isVisible ? "0px" : "-150px"}, 0);
             z-index: 3;
             text-transform: uppercase;
-          }
-          .project-title > span {
-            margin-left: 10px;
           }
         `}
       </style>
     </div>
   );
 };
-export default ProjectTitle;
+export default Scroller;
