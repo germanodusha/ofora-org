@@ -34,7 +34,9 @@ const ProjectTitle = ({title}) =>{
                     display: flex;
                     justify-content:center;
                     position: fixed;
-                    top:92px;
+                    padding-top:92px;
+                    padding-bottom:16px;
+                    top:0px;
                     font-weight:bold;
                     transition: all 0.3s;
                     opacity: ${scrollPosition - height};
