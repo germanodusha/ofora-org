@@ -20,7 +20,7 @@ const ProjectTitle = ({ title, date }) => {
     };
   }, []);
 
-  const isVisible = scrollPosition > 350;
+  const isVisible = scrollPosition > 220;
 
   return (
     <div>
@@ -42,7 +42,7 @@ const ProjectTitle = ({ title, date }) => {
             top: 0px;
             font-weight: bold;
             transition: transform 0.9s;
-            transform: translateY(${isVisible ? "0px" : "-140px"});
+            transform: translate3d(0,${isVisible ? "0px" : "-150px"},0);
             z-index: 3;
             text-transform: uppercase;
           }
