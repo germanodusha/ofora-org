@@ -4,7 +4,6 @@ const Modal = ({ title, media, visible, onClose }) => {
   return (
     <div className="backdrop">
       <div className="content">
-        <span className="title">{title}</span>
         <div className="cover">
           {media.kind === "image" ? (
             <Image
