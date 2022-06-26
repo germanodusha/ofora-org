@@ -4,7 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root{
+  --yellow:#E8FF00
+}
 body, html, .__next {
   height: 100%;
   cursor: url("/Fora_Cursor1.png"), auto;

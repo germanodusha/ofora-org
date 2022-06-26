@@ -2,15 +2,29 @@ import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import { Logo } from "../../components/Logo";
+import Modal from "../../components/Modal";
+import { useState } from "react";
+
+import { Limiter } from "../../components/Limiter";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
+  const [selected, onSelect] = useState();
+
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <div className="background" />
-      <div className="flex h-screen grow items-center justify-center">
-        <div className="banner">
+
+      <div className="flex h-screen grow">
+        <div className="title w-1/2 pt-16 text-center uppercase">
+          <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
+          <h2 className="text-3xl md:text-5xl">
+            {project.data.year}
+            <br />
+          </h2>
+          <div className="pt-1/2 pt-5 text-xl">{project.data.category}</div>
+        </div>
+        <div className="banner w-1/2">
           {image.url && (
             <Image
               src={image.url}
@@ -22,87 +36,62 @@ const Project = ({ project }) => {
             />
           )}
         </div>
-        <div className="title text-center uppercase">
-          <h1 className="text-8xl">{project.data.title}</h1>
-          <h2 className="text-8xl">
-            {project.data.year}
-            <br />
-          </h2>
-          <div className="pt-5 text-xl">{project.data.category}</div>
-        </div>
-        <div className="logo">
-          <Logo />
-        </div>
       </div>
-      <div className="intro p-20 text-center text-3xl">
-        <PrismicRichText field={project.data.intro} />
-      </div>
-      <div className="gallery p-20">
-        {project.data.gallery.map((item) => (
-          <div className="item" key={item.url}>
-            {item.thumb.kind === "image" ? (
-              <Image
-                key={item.thumb.url}
-                src={item.thumb.url}
-                width={item.thumb.width/item.thumb.height*250}
-                height={250}
-                alt={item.thumb.alt}
+      <Limiter>
+        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
+          <PrismicRichText field={project.data.intro} />
+        </div>
+        <div className="gallery p-20">
+          {project.data.gallery.map((item, index) => (
+            <>
+              <Modal
+                media={item.media}
+                title={item.title}
+                visible={selected === index}
+                onClose={onSelect}
+                key={index}
               />
-            ) : (
-              <video autoPlay playsInline muted>
-                <source src={item.thumb.url} type="video/mp4" />
-              </video>
-            )}
-            <span>{item.title}</span>
-          </div>
-        ))}
-      </div>
-      <div className="content columns-2 p-20">
-        <PrismicRichText field={project.data.content} />
-      </div>
+              <div className="item" key={item.url}>
+                {item.thumb.kind === "image" ? (
+                  <Image
+                    key={item.thumb.url}
+                    src={item.thumb.url}
+                    width={(item.thumb.width / item.thumb.height) * 250}
+                    height={250}
+                    alt={item.thumb.alt}
+                    onClick={() => {
+                      onSelect(index);
+                    }}
+                  />
+                ) : (
+                  <video autoPlay playsInline muted>
+                    <source src={item.thumb.url} type="video/mp4" />
+                  </video>
+                )}
+                <span>{item.title}</span>
+              </div>
+            </>
+          ))}
+        </div>
+        <div className="content columns-2 p-20">
+          <PrismicRichText field={project.data.content} />
+        </div>
+      </Limiter>
       <style jsx>{`
-        .background {
-          box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
+        // cover
         .banner {
-          width: 60vw;
-          height: 60vh;
-          position: relative;
         }
         .title {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+
         }
-        h1,
-        h2 {
-          text-shadow: 0px 2px 15px rgba(152, 152, 152, 1);
-        }
-        .title > div {
-          color: #e8ff00;
-        }
-        .logo {
-          position: absolute;
-          top: 10vh;
-          right: 10vh;
-          height: 200px;
-          width: 200px;
-          fill: #e8ff00;
-        }
+
+        // gallery
         .item {
-          margin-top: 10px;
           cursor: pointer;
           position: relative;
           text-align: center;
           color: transparent;
-          margin: 10px;
+          margin: 15px 10px;
           transition: .4s box-shadow;
           line-height: 0px;
         }
@@ -128,21 +117,37 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.4;
         }
-        @media only screen and (min-width: 800px) {
+        @media only screen and (min-width: 780px) {
+          .title > div {
+            margin-top: calc(50vh - 200px);
+          }
+          .banner {
+            position: relative;
+            margin: 4rem 1rem;
+            margin-left: 0;
+          }
+          .banner :global(img) {
+            object-position: 100% 50%;
+          }
           .gallery {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
           }
           .item :global(img),
           .item :global(video) {
-            max-height: 160px;
+            max-height: 100px;
           }
         }
-        @media only screen and (min-width: 1200px) {
+        @media only screen and (min-width: 980px) {
           .item :global(img),
           .item :global(video) {
-            max-height: 220px;
+            max-height: 140px;
+          }
+        @media only screen and (min-width: 1280px) {
+          .item :global(img),
+          .item :global(video) {
+            max-height: 180px;
           }
         }
       `}</style>
