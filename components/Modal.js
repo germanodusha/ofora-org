@@ -37,7 +37,7 @@ const Modal = ({ title, media, visible, onClose }) => {
             align-items: center;
             pointer-events: ${visible ? "all" : "none"};
             opacity: ${visible ? 1 : 0};
-            transition: 0.6s opacity 0.1s;
+            transition: 0.7s opacity;
         }
         .cover{
             position: relative;
