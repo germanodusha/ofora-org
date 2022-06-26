@@ -47,14 +47,18 @@ const Modal = ({ title, media, visible, onClose }) => {
             width: 75vw;
         }
         .title {
+            height: 30px;
             display: block;
             text-align: center;
         }
         .close {
             position: absolute;
-            top: 10vw;
+            top: 122px;
             right: 10vw;
-            background: red;
+            cursor:pointer;
+            font-size:52px;
+            color: gray;
+            text-shadow: 2px 2px 2px gray;
         }
         .close:hover{
             color:var(--yellow)
