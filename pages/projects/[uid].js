@@ -5,7 +5,7 @@ import Modal from "../../components/Modal";
 import { useState } from "react";
 
 import { Limiter } from "../../components/Limiter";
-import ProjectTitle from "./components/projectTitle";
+import ProjectTitle from "../../components/project/ProjectTitle";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
