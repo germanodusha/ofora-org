@@ -36,7 +36,7 @@ const Project = ({ project }) => {
           )}
         </div>
       </div>
-      <ProjectTitle title={project.data.title}/>
+      <ProjectTitle title={project.data.title} date={project.data.year}/>
       <Limiter>
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />

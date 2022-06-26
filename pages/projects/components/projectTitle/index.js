@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-const ProjectTitle = ({title}) =>{
+const ProjectTitle = ({title, date}) =>{
 
     const [scrollPosition, setScrollPosition] = useState(0);
     const [height, setHeight] = useState(0)
@@ -25,6 +25,7 @@ const ProjectTitle = ({title}) =>{
         <div>
             <div className="secondHeader">
                 <span>{title}</span>
+                <span> {date}</span>
             </div>
             <style jsx>{`        
                 .secondHeader{
@@ -41,6 +42,9 @@ const ProjectTitle = ({title}) =>{
                     transition: all 0.3s;
                     opacity: ${scrollPosition - height};
                     z-index:3;
+                    }
+                    .secondHeader>span{
+                    margin-left:10px;
                     }
             `}
             </style>
