@@ -14,7 +14,6 @@ const Project = ({ project }) => {
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-
       <div className="flex h-screen grow">
         <div className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
@@ -64,7 +63,15 @@ const Project = ({ project }) => {
                     }}
                   />
                 ) : (
-                  <video autoPlay playsInline muted>
+                  <video
+                    autoPlay
+                    playsInline
+                    muted
+                    loop
+                    onClick={() => {
+                      onSelect(index);
+                    }}
+                  >
                     <source src={item.thumb.url} type="video/mp4" />
                   </video>
                 )}

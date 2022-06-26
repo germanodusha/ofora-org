@@ -63,6 +63,10 @@ const Modal = ({ title, media, visible, onClose }) => {
         .close:hover{
             color:var(--yellow)
         }
+        video {
+          width: 100%;
+          height: 100%;
+        }
      `}</style>
     </div>
   );
