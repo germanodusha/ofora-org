@@ -24,7 +24,7 @@ const Scroller = ({ children }) => {
 
   return (
     <div className="root">
-      {children}
+      <div className="content">{children}</div>
       <style jsx>
         {`
           .root {
@@ -39,9 +39,18 @@ const Scroller = ({ children }) => {
             top: 0px;
             font-weight: bold;
             transition: transform 0.9s;
-            transform: translate3d(0, ${isVisible ? "0px" : "-150px"}, 0);
+            transform: translate3d(
+              0,
+              ${children && isVisible ? "0px" : "-38px"},
+              0
+            );
             z-index: 3;
             text-transform: uppercase;
+          }
+          .content {
+            transition: opacity 1s;
+            opacity: ${children && isVisible ? 1 : 0};
+            pointer-events: none;
           }
         `}
       </style>
