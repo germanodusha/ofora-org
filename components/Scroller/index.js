@@ -51,6 +51,7 @@ const Scroller = ({ children }) => {
             transition: opacity 1s;
             opacity: ${children && isVisible ? 1 : 0};
             pointer-events: none;
+            min-height: 1.5rem;
           }
         `}
       </style>
