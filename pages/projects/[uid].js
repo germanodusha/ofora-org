@@ -1,11 +1,11 @@
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
-import { Logo } from "../../components/Logo";
 import Modal from "../../components/Modal";
 import { useState } from "react";
 
 import { Limiter } from "../../components/Limiter";
+import ProjectTitle from "./components/projectTitle";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -36,6 +36,7 @@ const Project = ({ project }) => {
           )}
         </div>
       </div>
+      <ProjectTitle title={project.data.title}/>
       <Limiter>
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
@@ -85,13 +86,6 @@ const Project = ({ project }) => {
         </div>
       </Limiter>
       <style jsx>{`
-        // cover
-        .banner {
-        }
-        .title {
-
-        }
-
         // gallery
         .item {
           cursor: pointer;
