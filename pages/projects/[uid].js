@@ -4,6 +4,7 @@ import { createClient } from "../../prismicio";
 import { Logo } from "../../components/Logo";
 import Modal from "../../components/Modal";
 import { useState } from "react";
+
 import { Limiter } from "../../components/Limiter";
 
 const Project = ({ project }) => {
@@ -13,34 +14,31 @@ const Project = ({ project }) => {
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <Limiter>
-        <div className="background" />
-        <div className="flex h-screen grow items-center justify-center">
-          <div className="banner">
-            {image.url && (
-              <Image
-                src={image.url}
-                width={image.dimensions.width}
-                height={image.dimensions.height}
-                alt={image.alt}
-                layout="fill"
-                objectFit="contain"
-              />
-            )}
-          </div>
-          <div className="title text-center uppercase">
-            <h1 className="text-8xl">{project.data.title}</h1>
-            <h2 className="text-8xl">
-              {project.data.year}
-              <br />
-            </h2>
-            <div className="pt-5 text-xl">{project.data.category}</div>
-          </div>
-          <div className="logo">
-            <Logo />
-          </div>
+
+      <div className="flex h-screen grow">
+        <div className="title w-1/2 pt-16 text-center uppercase">
+          <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
+          <h2 className="text-3xl md:text-5xl">
+            {project.data.year}
+            <br />
+          </h2>
+          <div className="pt-1/2 pt-5 text-xl">{project.data.category}</div>
         </div>
-        <div className="intro p-20 text-center text-3xl">
+        <div className="banner w-1/2">
+          {image.url && (
+            <Image
+              src={image.url}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+              alt={image.alt}
+              layout="fill"
+              objectFit="contain"
+            />
+          )}
+        </div>
+      </div>
+      <Limiter>
+        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
         </div>
         <div className="gallery p-20">
@@ -82,7 +80,6 @@ const Project = ({ project }) => {
       <style jsx>{`
         // cover
         .banner {
-          position: relative;
         }
         .title {
 
@@ -90,12 +87,11 @@ const Project = ({ project }) => {
 
         // gallery
         .item {
-          margin-top: 10px;
           cursor: pointer;
           position: relative;
           text-align: center;
           color: transparent;
-          margin: 10px;
+          margin: 15px 10px;
           transition: .4s box-shadow;
           line-height: 0px;
         }
@@ -122,11 +118,16 @@ const Project = ({ project }) => {
           opacity: 0.4;
         }
         @media only screen and (min-width: 780px) {
-          .title > div{
+          .title > div {
             margin-top: calc(50vh - 200px);
           }
           .banner {
-
+            position: relative;
+            margin: 4rem 1rem;
+            margin-left: 0;
+          }
+          .banner :global(img) {
+            object-position: 100% 50%;
           }
           .gallery {
             display: flex;
