@@ -1,13 +1,20 @@
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
+import { Logo } from "../../components/Logo";
+import Modal from "../../components/Modal";
+import { useState } from "react";
+
 import { Limiter } from "../../components/Limiter";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
+  const [selected, onSelect] = useState();
+
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
+
       <div className="flex h-screen grow">
         <div className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
@@ -34,27 +41,39 @@ const Project = ({ project }) => {
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
         </div>
-        <div className="gallery p-10 sm:p-20">
-          {project.data.gallery.map((item) => (
-            <div className="item" key={item.url}>
-              {item.thumb.kind === "image" ? (
-                <Image
-                  key={item.thumb.url}
-                  src={item.thumb.url}
-                  width={(item.thumb.width / item.thumb.height) * 320}
-                  height={320}
-                  alt={item.thumb.alt}
-                />
-              ) : (
-                <video autoPlay playsInline muted>
-                  <source src={item.thumb.url} type="video/mp4" />
-                </video>
-              )}
-              <span>{item.title}</span>
-            </div>
+        <div className="gallery p-20">
+          {project.data.gallery.map((item, index) => (
+            <>
+              <Modal
+                media={item.media}
+                title={item.title}
+                visible={selected === index}
+                onClose={onSelect}
+                key={index}
+              />
+              <div className="item" key={item.url}>
+                {item.thumb.kind === "image" ? (
+                  <Image
+                    key={item.thumb.url}
+                    src={item.thumb.url}
+                    width={(item.thumb.width / item.thumb.height) * 250}
+                    height={250}
+                    alt={item.thumb.alt}
+                    onClick={() => {
+                      onSelect(index);
+                    }}
+                  />
+                ) : (
+                  <video autoPlay playsInline muted>
+                    <source src={item.thumb.url} type="video/mp4" />
+                  </video>
+                )}
+                <span>{item.title}</span>
+              </div>
+            </>
           ))}
         </div>
-        <div className="content p-10 md:columns-2 md:p-20">
+        <div className="content columns-2 p-20">
           <PrismicRichText field={project.data.content} />
         </div>
       </Limiter>
