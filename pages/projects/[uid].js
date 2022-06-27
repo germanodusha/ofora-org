@@ -37,7 +37,7 @@ const Project = ({ project }) => {
         </div>
       </div>
       <Scroller>
-        {project.data.title} {project.data.year}
+        {project.data.title}<span className="spacer" />{project.data.year}
       </Scroller>
       <Limiter>
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
@@ -89,6 +89,9 @@ const Project = ({ project }) => {
       </Limiter>
       <style jsx>{`
         // gallery
+        .spacer {
+          padding-left: 3rem;
+        }
         .item {
           cursor: pointer;
           position: relative;
