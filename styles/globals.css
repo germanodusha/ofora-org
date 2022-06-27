@@ -9,7 +9,7 @@
 }
 body, html, .__next {
   height: 100%;
-  cursor: url("/Fora_Cursor1.png"), auto;
+ 
 }
 body::-webkit-scrollbar {
   display: none;
