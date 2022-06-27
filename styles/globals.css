@@ -8,11 +8,10 @@
   --yellow:#E8FF00
 }
 *{
-  cursor: url("/Fora_Cursor1.png") 15 -30, auto;
+  cursor: url("/cursor.cur") -1 21, auto;
 }
 body, html, .__next {
   height: 100%;
-  cursor: url("/Fora_Cursor1.png"), auto;
 }
 body::-webkit-scrollbar {
   display: none;
