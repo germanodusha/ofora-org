@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Context } from "../pages/_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
+import Scroller from "../components/Scroller";
 
 const About = ({ page }) => {
   const context = useContext(Context);
@@ -12,6 +13,7 @@ const About = ({ page }) => {
 
   return (
     <>
+    <Scroller />
       <div className="video">
         <video autoPlay loop muted playsInline>
           <source src={page.data.video.url} type="video/mp4" />
