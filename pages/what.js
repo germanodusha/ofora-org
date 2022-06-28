@@ -11,7 +11,6 @@ const About = ({ page }) => {
   useEffect(() => {
     context.setPage(page);
   }, []);
-  console.log(page.data.infoLeft);
   return (
     <>
     <Scroller />
@@ -30,10 +29,10 @@ const About = ({ page }) => {
       </div>
       <div className="mx-auto p-20 text-center flex w-full justify-around">
         <div className="imageContainer">
-          <Image layout="fill" src="/fora_logo.svg"/>
+          <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora"/>
         </div>
         <div className="imageContainer">
-          <Image layout="fill" src="/G1.png"/>
+          <Image layout="fill" src="/G1.png" alt="G1 Logo"/>
         </div>
       </div>
       <style jsx>{`
