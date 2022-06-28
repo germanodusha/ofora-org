@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Context } from "../pages/_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
+import Image from "next/image";
 
 const About = ({ page }) => {
   const context = useContext(Context);
@@ -24,6 +25,14 @@ const About = ({ page }) => {
       <div className="mx-auto p-20 text-center infoContainer">
         <PrismicRichText field={page.data.infoLeft} />
         <PrismicRichText field={page.data.infoRight} />
+      </div>
+      <div className="mx-auto p-20 text-center flex w-full justify-around">
+        <div className="imageContainer">
+          <Image layout="fill" src="/android-chrome-512x512.png"/>
+        </div>
+        <div className="imageContainer">
+          <Image layout="fill" src="/android-chrome-512x512.png"/>
+        </div>
       </div>
       <style jsx>{`
         * {
@@ -53,6 +62,14 @@ const About = ({ page }) => {
           box-sizing:border-box;
           background: linear-gradient(180deg, var(--yellow) 50%, #FFFFFF 50%);
           padding:0px 5px; 
+        }
+        .imageContainer{
+          position: relative;
+          width: 25vw;
+          height: 25vw;
+          max-width: 512px;
+          max-height: 512px;
+          flex-shrink:0;
         }
       `}</style>
     </>
