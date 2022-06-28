@@ -3,6 +3,7 @@ import { PrismicLink } from "@prismicio/react";
 import { linkResolver } from "../prismicio";
 import { useContext } from "react";
 import { Context } from "../pages/_app";
+import Highlighted from "./Highlighted";
 
 export const Footer = () => {
   const { page, navigation } = useContext(Context);
@@ -11,7 +12,9 @@ export const Footer = () => {
   return (
     <footer className="flex py-3 pt-14 font-bold uppercase">
       <div className="flex w-1/2 justify-center whatIsButton">
-        <section><Link href={"/what"}>{navigation.data.what}</Link></section>
+        <Link href={"/what"} passHref>
+          <Highlighted>{navigation.data.what}</Highlighted>
+        </Link>
         <div className="backdrop"/>
       </div>
       <nav className="flex w-1/2 justify-center">
@@ -58,6 +61,22 @@ export const Footer = () => {
           z-index:2;
           padding: 0px 10px;
         }
+        .whatIsButton>section {
+  position: relative;
+  font-weight: normal;
+}
+.whatIsButton>section::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  right: 3px;
+  bottom: 2px;
+  background: red;
+  border-radius: 2px;
+  filter: blur(3px);
+  z-index: -1;
+}
         .whatIsButton:hover>div{
           background-color: black;
           opacity: 0.5;
