@@ -72,6 +72,7 @@ const About = ({ page }) => {
           max-width: 512px;
           max-height: 512px;
           flex-shrink:0;
+          z-index:0;
         }
       `}</style>
     </>
