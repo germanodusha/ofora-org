@@ -33,7 +33,7 @@ const About = ({ page }) => {
           <Image layout="fill" src="/fora_logo.svg"/>
         </div>
         <div className="imageContainer">
-          <Image layout="fill" src="/g1.png"/>
+          <Image layout="fill" src="/G1.png"/>
         </div>
       </div>
       <style jsx>{`
