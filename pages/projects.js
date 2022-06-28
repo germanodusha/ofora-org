@@ -2,6 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import { Context } from "./_app.js";
 import { createClient } from "../prismicio";
 import Link from "next/link";
+import Image from "next/image.js";
 
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
@@ -14,7 +15,7 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div>
-        <ul className="text-center text-4xl xl:text-5xl font-semibold capitalize">
+        <ul className="text-center text-4xl xl:text-5xl font-semibold">
           {projects.map((project) => (
             <li
               key={project.uid}
@@ -28,13 +29,21 @@ const Projects = ({ projects, page }) => {
           ))}
         </ul>
       </div>
-      <div>
-        {selected?.data?.cover && <img src={selected?.data?.cover?.url} />}
+      <div className="w-full imageContainer">
+        {selected?.data?.cover && <Image layout='fill' objectFit='cover' alt='' src={selected?.data?.cover?.url} />}
       </div>
       <style jsx>{`
+            .projects-page{
+              height: 100vh;
+            }
+        .imageContainer{
+          width: 100%;
+          height: 80vh;
+        }
         .projects-page > div {
-          width: 50%;
+          width: 100%;
           position: relative;
+
         }
         .projects-page > div:first-child {
           background-color: rgba(152, 152, 152, 1);
@@ -60,6 +69,12 @@ const Projects = ({ projects, page }) => {
           height: 100%;
           width: 100%;
           object-fit: cover;
+        }
+        @media (max-width: 768px) {
+          .projects-page{
+            display: flex;
+            flex-direction: column;
+          }
         }
       `}</style>
     </div>
