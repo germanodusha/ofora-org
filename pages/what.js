@@ -30,10 +30,10 @@ const About = ({ page }) => {
       </div>
       <div className="mx-auto p-20 text-center flex w-full justify-around">
         <div className="imageContainer">
-          <Image layout="fill" src="/android-chrome-512x512.png"/>
+          <Image layout="fill" src="/fora_logo.svg"/>
         </div>
         <div className="imageContainer">
-          <Image layout="fill" src="/android-chrome-512x512.png"/>
+          <Image layout="fill" src="/g1.png"/>
         </div>
       </div>
       <style jsx>{`

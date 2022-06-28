@@ -12,10 +12,6 @@
 }
 body, html, .__next {
   height: 100%;
-<<<<<<< HEAD
- 
-=======
->>>>>>> main
 }
 body::-webkit-scrollbar {
   display: none;
