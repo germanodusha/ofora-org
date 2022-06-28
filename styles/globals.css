@@ -8,7 +8,7 @@
   --yellow:#E8FF00
 }
 *{
-  cursor: url("/Fora_Cursor1.png") -1 21, auto;
+  cursor: url("/cursor.cur"), auto;
 }
 body, html, .__next {
   height: 100%;
