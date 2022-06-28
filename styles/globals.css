@@ -10,7 +10,7 @@
 *{
   cursor: url("/cursor.cur"), auto;
 }
-body, html, .__next {
+body, html, #__next {
   height: 100%;
 }
 body::-webkit-scrollbar {
