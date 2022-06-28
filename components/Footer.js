@@ -40,10 +40,6 @@ export const Footer = () => {
         li:hover :global(a) {
           color: #e8ff00;
         }
-        .whatIsButton{
-          border: 1px transparent solid;
-          opacity: 1.5;
-        }
         .backdrop{
           position: fixed;
           height: 100vh;
@@ -55,28 +51,6 @@ export const Footer = () => {
           pointer-events:none;
           z-index:0;
         }
-        .whatIsButton:hover>section{
-          background: linear-gradient(180deg, transparent 50%, white 50%);
-          opacity: 1;
-          z-index:2;
-          padding: 0px 10px;
-        }
-        .whatIsButton>section {
-  position: relative;
-  font-weight: normal;
-}
-.whatIsButton>section::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 3px;
-  right: 3px;
-  bottom: 2px;
-  background: red;
-  border-radius: 2px;
-  filter: blur(3px);
-  z-index: -1;
-}
         .whatIsButton:hover>div{
           background-color: black;
           opacity: 0.5;
