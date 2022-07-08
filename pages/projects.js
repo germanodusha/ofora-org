@@ -21,10 +21,13 @@ const Projects = ({ projects, page }) => {
               key={project.uid}
               className={selected === project ? "selected" : ""}
               onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
             >
-              <Link href={`/projects/${project.uid}`}>
-                {project.data.title}
-              </Link>
+              <div style={{pointerEvents:project===selected?'all':'none'}}>
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
             </li>
           ))}
         </ul>
