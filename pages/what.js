@@ -66,8 +66,8 @@ const About = ({ page }) => {
         }
         .imageContainer{
           position: relative;
-          width: 25vw;
-          height: 25vw;
+          width: 330px;
+          height: 330px;
           max-width: 512px;
           max-height: 512px;
           flex-shrink:0;

@@ -3,11 +3,15 @@ import { PrismicLink } from "@prismicio/react";
 import { linkResolver } from "../prismicio";
 import { useContext } from "react";
 import { Context } from "../pages/_app";
+import { useRouter } from "next/router";
 
 export const Footer = () => {
   const { page, navigation } = useContext(Context);
   const languages = page ? [page.lang, ...page.alternate_languages] : [];
-
+  const {asPath} = useRouter();
+  if(asPath === '/what'){
+    return(<div></div>)
+  }
   return (
     <footer className="flex py-3 pt-14 font-bold uppercase">
       <div className="flex w-1/2 justify-center">
