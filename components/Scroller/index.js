@@ -30,7 +30,7 @@ const Scroller = ({ children }) => {
           .root {
             position: relative;
             width: 100%;
-            background: var(--yellow);
+            background: ${scrollPosition>0?"#e8ff00":"transparent"};
             display: flex;
             justify-content: center;
             position: fixed;
@@ -38,7 +38,7 @@ const Scroller = ({ children }) => {
             padding-bottom: 16px;
             top: 0px;
             font-weight: bold;
-            transition: transform 0.9s;
+            transition: all 0.9s;
             transform: translate3d(
               0,
               ${children && isVisible ? "0px" : "-38px"},
