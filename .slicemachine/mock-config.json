@@ -37,7 +37,9 @@
         }
       }
     },
-    "projects": {},
+    "projects": {
+      "projects": {}
+    },
     "project": {},
     "what": {
       "content": {

@@ -1,16 +1,27 @@
 {
-  "id": "836b3a1a-c738-425f-aa74-eb3e15571e21",
-  "uid": "quos-odit-ut",
+  "id": "9b7158e7-1a13-4c06-8bfa-c2aa62e34568",
+  "uid": "doloribus-odio-rerum",
   "type": "projects",
   "data": {
-    "cover": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
+    "projects": [
+      {
+        "project": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
-    }
+      {
+        "project": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      },
+      {
+        "project": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ]
   }
 }

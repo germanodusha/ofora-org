@@ -15,7 +15,7 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div>
-        <ul className="text-center text-4xl xl:text-5xl font-semibold">
+        <ul className="text-center text-4xl font-semibold capitalize xl:text-5xl">
           {projects.map((project) => (
             <li
               key={project.uid}
@@ -89,14 +89,19 @@ export default Projects;
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "projects", { lang: locale });
-  const projects = await client.getByType("project", { lang: locale });
+  const page = await client.getSingle("projects", { lang: locale });
+
+  const ids = page.data.projects.map(p => p.project.id)
+
+  console.log(ids)
+
+  const projects = await client.getAllByIDs(ids, {lang: locale})
 
   return {
     props: {
       page,
-      projects: projects.results,
+      projects: projects,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
