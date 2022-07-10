@@ -67,12 +67,17 @@ const Project = ({ project }) => {
                   />
                 ) : (
                   <video
-                    autoPlay
                     playsInline
                     muted
                     loop
                     onClick={() => {
                       onSelect(index);
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.play();
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
                     }}
                   >
                     <source src={item.thumb.url} type="video/mp4" />
@@ -121,7 +126,7 @@ const Project = ({ project }) => {
         }
         .item :global(img):hover,
         .item :global(video):hover {
-          opacity: 0.4;
+          opacity: 0.2;
         }
         @media only screen and (min-width: 780px) {
           .title > div {
