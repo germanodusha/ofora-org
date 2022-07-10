@@ -12,9 +12,11 @@ export const Footer = () => {
   return (
     <footer className="flex py-3 pt-14 font-bold uppercase">
       <div className="flex w-1/2 justify-center whatIsButton">
-        <Link href={"/what"} passHref>
-          <Highlighted>{navigation.data.what}</Highlighted>
-        </Link>
+          <Highlighted>
+            <Link href={"/what"} passHref>
+              {navigation.data.what}
+            </Link>
+          </Highlighted>
         <div className="backdrop"/>
       </div>
       <nav className="flex w-1/2 justify-center">
