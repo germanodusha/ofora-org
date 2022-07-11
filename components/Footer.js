@@ -21,47 +21,28 @@ export const Footer = () => {
               {navigation.data.what}
             </Link>
           </Highlighted>
-        <div className="backdrop"/>
       </div>
       <nav className="flex w-1/2 justify-center">
         <ul className="flex flex-wrap gap-6 md:gap-10">
           {languages.map((lang) => {
             return lang.lang ? (
               <li key={lang.lang}>
-                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                  <span className="sr-only">{lang.lang}</span>
-                  {lang.lang.split("-")[0]}
-                </PrismicLink>
+                <Highlighted>
+                  <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                    <span className="sr-only">{lang.lang}</span>
+                    {lang.lang.split("-")[0]}
+                  </PrismicLink>
+                </Highlighted>
               </li>
             ) : (
-              <li key={lang}>
-                <span className="sr-only">{lang.lang}</span>
-                {lang.split("-")[0]}
+              <li key={lang} style={{fontWeight:'normal'}}>
+                  <span className="sr-only">{lang.lang}</span>
+                  {lang.split("-")[0]}
               </li>
             );
           })}
         </ul>
       </nav>
-      <style jsx>{`
-        li:hover :global(a) {
-          color: #e8ff00;
-        }
-        .backdrop{
-          position: fixed;
-          height: 100vh;
-          width: 100vw;
-          top: 0;
-          right: 0;
-          background: black;
-          opacity: 0;
-          pointer-events:none;
-          z-index:0;
-        }
-        .whatIsButton:hover>div{
-          background-color: black;
-          opacity: 0.5;
-        }
-      `}</style>
     </footer>
   );
 };
