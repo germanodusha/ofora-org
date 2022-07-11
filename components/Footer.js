@@ -28,15 +28,19 @@ export const Footer = () => {
           {languages.map((lang) => {
             return lang.lang ? (
               <li key={lang.lang}>
-                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                  <span className="sr-only">{lang.lang}</span>
-                  {lang.lang.split("-")[0]}
-                </PrismicLink>
+                <Highlighted>
+                  <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                    <span className="sr-only">{lang.lang}</span>
+                    {lang.lang.split("-")[0]}
+                  </PrismicLink>
+                </Highlighted>
               </li>
             ) : (
               <li key={lang}>
-                <span className="sr-only">{lang.lang}</span>
-                {lang.split("-")[0]}
+                <Highlighted>
+                  <span className="sr-only">{lang.lang}</span>
+                </Highlighted>
+                  {lang.split("-")[0]}
               </li>
             );
           })}
