@@ -1,36 +1,12 @@
 const Highlighted = ({color="white", children})=>{
     return(
-        <div className="main">
-            <div className="backdrop"/>
-            <div>
-                {children}
-            </div>
+        <span className="highlighted">
+            {children}
             <style jsx>{`
-                .main{
-                    z-index:1;
-                }
-                * {
+                .highlighted {
                     position: relative;
-                    font-weight: normal;
                 }
-                .backdrop{
-                    position: fixed;
-                    height: 100vh;
-                    width: 100vw;
-                    top: 0;
-                    right: 0;
-                    background: black;
-                    opacity: 0;
-                    pointer-events:none;
-                    z-index:-1;
-                }
-                .main:hover>.backdrop{
-                    opacity: 0.5;
-                }
-                .main:last-child{
-                    z-index:1000000;
-                }
-                *::before {
+                .highlighted::before {
                     content: "";
                     position: absolute;
                     top: 10px;
@@ -41,19 +17,15 @@ const Highlighted = ({color="white", children})=>{
                     border-radius: 2px;
                     z-index: -1;
                     opacity: 3;
-                    filter: blur(3px);
                     transition: 0.5s all;
                 }
-                *:hover::before {
+                .highlighted:hover::before {
                     right: 1%;
                     opacity: 1;
                 }
-                .cotainer{
-                    z-index:1000000;
-                }
             `}
             </style>
-        </div>
+        </span>
     )
 }
 export default Highlighted

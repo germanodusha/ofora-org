@@ -66,7 +66,7 @@ const About = ({ page }) => {
           padding:0px 5px; 
         }
         .infoContainer > :global(*:first-child) {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
         .imageContainer{
           position: relative;
