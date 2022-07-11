@@ -1,7 +1,10 @@
 const Highlighted = ({color="white", children})=>{
     return(
         <div className="main">
+            <div className="backdrop"/>
+            <div className="teste">
             {children}
+            </div>
             <style jsx>{`
                 .main{
                     z-index:1000000;
@@ -9,6 +12,20 @@ const Highlighted = ({color="white", children})=>{
                 * {
                     position: relative;
                     font-weight: normal;
+                }
+                .backdrop{
+                    position: fixed;
+                    height: 100vh;
+                    width: 100vw;
+                    top: 0;
+                    right: 0;
+                    background: black;
+                    opacity: 0;
+                    pointer-events:none;
+                    z-index:0;
+                }
+                .main:hover>.backdrop{
+                    opacity: 0.5;
                 }
                 *::before {
                     content: "";
@@ -27,7 +44,10 @@ const Highlighted = ({color="white", children})=>{
                 *:hover::before {
                     right: 1%;
                     opacity: 1;
-                }   
+                }
+                .teste{
+                    z-index:1000000;
+                }
             `}
             </style>
         </div>
