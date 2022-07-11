@@ -27,7 +27,7 @@ const About = ({ page }) => {
         <PrismicRichText field={page.data.infoLeft} />
         <PrismicRichText field={page.data.infoRight} />
       </div>
-      <div className="mx-auto p-20 text-center flex w-full justify-around">
+      <div className="mx-auto px-20 py-10 text-center flex w-full justify-around">
         <div className="imageContainer">
           <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora"/>
         </div>
@@ -57,6 +57,7 @@ const About = ({ page }) => {
           width: 100%;
           display: grid;
           grid-template-columns: 1fr 1fr;
+          padding-bottom: 5px;
         }
         .infoContainer strong{
           all:unset;
@@ -64,14 +65,13 @@ const About = ({ page }) => {
           background: linear-gradient(180deg, var(--yellow) 50%, #FFFFFF 50%);
           padding:0px 5px; 
         }
+        .infoContainer > :global(*:first-child) {
+          font-size: 2rem;
+        }
         .imageContainer{
           position: relative;
-          width: 330px;
-          height: 330px;
-          max-width: 512px;
-          max-height: 512px;
-          flex-shrink:0;
-          z-index:0;
+          width: 230px;
+          height: 230px;
         }
       `}</style>
     </>
