@@ -35,10 +35,8 @@ export const Footer = () => {
                 </Highlighted>
               </li>
             ) : (
-              <li key={lang}>
-                <Highlighted>
+              <li key={lang} style={{fontWeight:'normal'}}>
                   <span className="sr-only">{lang.lang}</span>
-                </Highlighted>
                   {lang.split("-")[0]}
               </li>
             );
