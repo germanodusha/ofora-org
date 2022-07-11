@@ -15,7 +15,7 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div>
-        <ul className="text-center text-4xl font-semibold capitalize xl:text-5xl">
+        <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
             <li
               key={project.uid}
@@ -23,7 +23,9 @@ const Projects = ({ projects, page }) => {
               onMouseEnter={() => setSelected(project)}
               onClick={() => setSelected(project)}
             >
-              <div style={{pointerEvents:project===selected?'all':'none'}}>
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
                 <Link href={`/projects/${project.uid}`}>
                   {project.data.title}
                 </Link>
@@ -32,21 +34,26 @@ const Projects = ({ projects, page }) => {
           ))}
         </ul>
       </div>
-      <div className="w-full imageContainer">
-        {selected?.data?.cover && <Image layout='fill' objectFit='cover' alt='' src={selected?.data?.cover?.url} />}
+      <div className="imageContainer w-full">
+        {selected?.data?.cover && (
+          <Image
+            layout="fill"
+            objectFit="cover"
+            alt=""
+            src={selected?.data?.cover?.url}
+          />
+        )}
       </div>
       <style jsx>{`
-            .projects-page{
-              height: 100vh;
-            }
-        .imageContainer{
+        .projects-page {
+          height: 100vh;
+        }
+        .imageContainer {
           width: 100%;
-          height: 80vh;
         }
         .projects-page > div {
           width: 100%;
           position: relative;
-
         }
         .projects-page > div:first-child {
           background-color: rgba(152, 152, 152, 1);
@@ -65,19 +72,19 @@ const Projects = ({ projects, page }) => {
             rgba(232, 255, 0, 0) 100%
           );
         }
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
         @media (max-width: 768px) {
-          .projects-page{
+          .projects-page {
             display: flex;
             flex-direction: column;
           }
+          .projects-page > div:first-child {
+            height: 50vh;
+            overflow-y: scroll;
+          }
+          .imageContainer {
+            height: 70vh;
+          }
+          
         }
       `}</style>
     </div>
@@ -91,11 +98,11 @@ export async function getStaticProps({ locale, previewData }) {
 
   const page = await client.getSingle("projects", { lang: locale });
 
-  const ids = page.data.projects.map(p => p.project.id)
+  const ids = page.data.projects.map((p) => p.project.id);
 
-  console.log(ids)
+  console.log(ids);
 
-  const projects = await client.getAllByIDs(ids, {lang: locale})
+  const projects = await client.getAllByIDs(ids, { lang: locale });
 
   return {
     props: {
