@@ -26,11 +26,6 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <style jsx>{`
-        .header-root :global(a):hover {
-          color: #E8FF00;
-        }
-      `}</style>
     </header>
   );
 };

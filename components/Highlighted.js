@@ -2,12 +2,15 @@ const Highlighted = ({color="white", children})=>{
     return(
         <div className="main">
             <div className="backdrop"/>
-            <div className="teste">
-            {children}
+            <div>
+                {children}
             </div>
             <style jsx>{`
                 .main{
-                    z-index:1000000;
+                    z-index:1;
+                }
+                .main:hover{
+                    color: var(--yellow);
                 }
                 * {
                     position: relative;
@@ -27,6 +30,9 @@ const Highlighted = ({color="white", children})=>{
                 .main:hover>.backdrop{
                     opacity: 0.5;
                 }
+                .main:last-child{
+                    z-index:1000000;
+                }
                 *::before {
                     content: "";
                     position: absolute;
@@ -40,12 +46,13 @@ const Highlighted = ({color="white", children})=>{
                     opacity: 1;
                     filter: blur(3px);
                     transition: 0.5s all;
+                    z-index:1;
                 }
                 *:hover::before {
                     right: 1%;
                     opacity: 1;
                 }
-                .teste{
+                .cotainer{
                     z-index:1000000;
                 }
             `}

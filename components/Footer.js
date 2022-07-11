@@ -45,11 +45,6 @@ export const Footer = () => {
           })}
         </ul>
       </nav>
-      <style jsx>{`
-        li:hover :global(a) {
-          color: #e8ff00;
-        }
-      `}</style>
     </footer>
   );
 };
