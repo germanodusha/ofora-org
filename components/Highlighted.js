@@ -10,17 +10,18 @@ const Highlighted = ({color="white", children})=>{
                     content: "";
                     position: absolute;
                     top: 10px;
-                    left: 3px;
+                    left: 0px;
                     right: 100%;
                     bottom: 2px;
                     background: ${color};
                     border-radius: 2px;
                     z-index: -1;
-                    opacity: 3;
                     transition: 0.5s all;
+                    box-shadow: 0px 0px 5px 3px ${color};
+                    opacity: 0;
                 }
                 .highlighted:hover::before {
-                    right: 1%;
+                    right: 0%;
                     opacity: 1;
                 }
             `}
