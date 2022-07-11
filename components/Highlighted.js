@@ -9,9 +9,6 @@ const Highlighted = ({color="white", children})=>{
                 .main{
                     z-index:1;
                 }
-                .main:hover{
-                    color: var(--yellow);
-                }
                 * {
                     position: relative;
                     font-weight: normal;
@@ -25,7 +22,7 @@ const Highlighted = ({color="white", children})=>{
                     background: black;
                     opacity: 0;
                     pointer-events:none;
-                    z-index:0;
+                    z-index:-1;
                 }
                 .main:hover>.backdrop{
                     opacity: 0.5;
@@ -43,10 +40,9 @@ const Highlighted = ({color="white", children})=>{
                     background: ${color};
                     border-radius: 2px;
                     z-index: -1;
-                    opacity: 1;
+                    opacity: 3;
                     filter: blur(3px);
                     transition: 0.5s all;
-                    z-index:1;
                 }
                 *:hover::before {
                     right: 1%;
