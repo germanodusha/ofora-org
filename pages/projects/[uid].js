@@ -107,7 +107,7 @@ const Project = ({ project }) => {
           line-height: 0px;
         }
         .item:hover {
-          box-shadow: 0px 0px 50px 6px #e8ff00;
+          box-shadow: 0px 0px 55px 20px #e8ff00;
           background: #e8ff00;
           color: black;
         }
