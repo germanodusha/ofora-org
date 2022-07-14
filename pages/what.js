@@ -4,35 +4,37 @@ import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import Scroller from "../components/Scroller";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 const About = ({ page }) => {
   const context = useContext(Context);
+  const scrollPosition = useScrollPosition();
 
   useEffect(() => {
     context.setPage(page);
   }, []);
   return (
     <>
-    <Scroller />
+      <Scroller />
       <div className="video">
         <video autoPlay loop muted playsInline>
           <source src={page.data.video.url} type="video/mp4" />
         </video>
       </div>
       <h1>{page.data.title}</h1>
-      <div className="mx-auto p-20 text-center text-3xl">
+      <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-3xl">
         <PrismicRichText field={page.data.content} />
       </div>
-      <div className="mx-auto p-20 text-center infoContainer">
+      <div className="infoContainer mx-auto p-20 text-center">
         <PrismicRichText field={page.data.infoLeft} />
         <PrismicRichText field={page.data.infoRight} />
       </div>
-      <div className="mx-auto px-20 py-10 text-center flex w-full justify-around">
+      <div className="mx-auto flex w-full justify-around px-20 py-10 text-center">
         <div className="imageContainer">
-          <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora"/>
+          <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
         </div>
         <div className="imageContainer">
-          <Image layout="fill" src="/G1.png" alt="G1 Logo"/>
+          <Image layout="fill" src="/G1.png" alt="G1 Logo" />
         </div>
       </div>
       <style jsx>{`
@@ -46,32 +48,39 @@ const About = ({ page }) => {
         }
         h1 {
           position: absolute;
-          top: 50%;
+          top: ${50 + scrollPosition / 30}%;
           left: 50%;
           transform: translate(-50%, -50%);
           color: #e8ff00;
-          font-size: 8rem;
+          font-size: 5rem;
           background: transparent;
+          text-align: center;
+          width: 80vw
         }
-        .infoContainer{
+        .infoContainer {
           width: 100%;
           display: grid;
           grid-template-columns: 1fr 1fr;
           padding-bottom: 5px;
         }
-        .infoContainer strong{
-          all:unset;
-          box-sizing:border-box;
-          background: linear-gradient(180deg, var(--yellow) 50%, #FFFFFF 50%);
-          padding:0px 5px; 
+        .infoContainer strong {
+          all: unset;
+          box-sizing: border-box;
+          background: linear-gradient(180deg, var(--yellow) 50%, #ffffff 50%);
+          padding: 0px 5px;
         }
         .infoContainer > :global(*:first-child) {
           font-size: 1.5rem;
         }
-        .imageContainer{
+        .imageContainer {
           position: relative;
           width: 230px;
           height: 230px;
+        }
+        @media (min-width: 768px) {
+          h1 {
+            font-size: 8rem;
+          }
         }
       `}</style>
     </>
