@@ -37,7 +37,9 @@ const Project = ({ project }) => {
         </div>
       </div>
       <Scroller>
-        {project.data.title}<span className="spacer" />{project.data.year}
+        {project.data.title}
+        <span className="spacer" />
+        {project.data.year}
       </Scroller>
       <Limiter>
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
@@ -70,15 +72,12 @@ const Project = ({ project }) => {
                     playsInline
                     muted
                     loop
+                    autoPlay
                     onClick={() => {
                       onSelect(index);
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.play();
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.pause();
-                    }}
+                    onMouseEnter={(e) => e}
+                    onMouseLeave={(e) => e}
                   >
                     <source src={item.thumb.url} type="video/mp4" />
                   </video>
