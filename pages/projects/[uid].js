@@ -1,4 +1,4 @@
-import { PrismicRichText } from "@prismicio/react";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import Modal from "../../components/Modal";
@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
+import Highlighted from "../../components/Highlighted";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -76,8 +77,6 @@ const Project = ({ project }) => {
                     onClick={() => {
                       onSelect(index);
                     }}
-                    onMouseEnter={(e) => e}
-                    onMouseLeave={(e) => e}
                   >
                     <source src={item.thumb.url} type="video/mp4" />
                   </video>
@@ -87,8 +86,15 @@ const Project = ({ project }) => {
             </>
           ))}
         </div>
-        <div className="content columns-2 p-20">
-          <PrismicRichText field={project.data.content} />
+        <div className="content p-20 md:columns-2">
+          <PrismicRichText
+            field={project.data.content}
+            components={{
+              hyperlink: ({ children, node }) => (
+                  <Highlighted color="yellow"><span>{children}</span></Highlighted>
+              ),
+            }}
+          />
         </div>
       </Limiter>
       <style jsx>{`
