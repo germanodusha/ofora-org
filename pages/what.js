@@ -49,7 +49,7 @@ const About = ({ page }) => {
           width: 100%;
           position: fixed;
           z-index: -1;
-          top:-${scrollPosition/7.8}%;
+          top:-${scrollPosition/7.5}%;
           background: var(--yellow);
           padding-bottom:10000px;
         }
