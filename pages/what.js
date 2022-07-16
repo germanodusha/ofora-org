@@ -49,9 +49,7 @@ const About = ({ page }) => {
           width: 100%;
           position: fixed;
           z-index: -1;
-          top:-${scrollPosition/7.5}%;
           background: var(--yellow);
-          padding-bottom:10000px;
         }
         h1 {
           position: fixed;
@@ -70,6 +68,8 @@ const About = ({ page }) => {
           position: absolute;
           top: 100%;
           transition: all 0.5s ease-in-out;
+          padding-bottom: 139px;
+          background: var(--yellow);
         }
         .infoContainer {
           width: 100%;
