@@ -5,6 +5,7 @@ const Highlighted = ({color="white", children})=>{
             <style jsx>{`
                 .highlighted {
                     position: relative;
+                    font-weight: normal;
                 }
                 .highlighted::before {
                     content: "";
