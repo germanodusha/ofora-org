@@ -110,6 +110,9 @@ const About = ({ page }) => {
             grid-template-columns: 1fr 1fr;
             grid-auto-flow: row;
           }
+          .reorder {
+          order:0;
+        }
         }
       `}</style>
     </div>
