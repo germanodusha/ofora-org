@@ -95,12 +95,6 @@ const About = ({ page }) => {
         .container:global(strong) {
           position: relative;
           background-image: linear-gradient(180deg, var(--yellow) 40%, #ffffff 70%,  #fff 80%, var(--yellow) 100%);
-          backdrop-filter: blur(1000000px);
-        }
-        .container:global(strong)::after{
-          backdrop-filter: blur(8px); // This be the blur
-          height: 100vh;
-          width: 50%;
         }
         @media (min-width: 768px) {
           h1 {
