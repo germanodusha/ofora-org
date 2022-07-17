@@ -94,7 +94,7 @@ const About = ({ page }) => {
         }
         .container:global(strong) {
           position: relative;
-          background-image: linear-gradient(180deg, var(--yellow) 40%, #ffffff 60%,  #fff 80%, var(--yellow) 100%);
+          background-image: linear-gradient(180deg, var(--yellow) 40%, #ffffff 70%,  #fff 80%, var(--yellow) 100%);
           backdrop-filter: blur(1000000px);
         }
         .container:global(strong)::after{
