@@ -71,12 +71,6 @@ const About = ({ page }) => {
           gap:5rem;
           padding-bottom: 5px;
         }
-        .infoContainer strong {
-          all: unset;
-          box-sizing: border-box;
-          background: linear-gradient(180deg, var(--yellow) 50%, #ffffff 50%);
-          padding: 0px 5px;
-        }
         .infoContainer > :global(*:first-child) {
           font-size: 1.5rem;
         }
@@ -95,9 +89,12 @@ const About = ({ page }) => {
         .container:global(strong) {
           position: relative;
           z-index:1;
-          background: white;
-          -webkit-box-shadow: inset -0.1em 0.3em 0.4em 0.2em var(--yellow); 
-          box-shadow: inset -0.05em 0.3em 0.4em 0.2em var(--yellow);
+          background: white; 
+          box-shadow: inset 0px 5px -10px -10000px red;
+          -webkit-box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
+           inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);; 
+          box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
+           inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);
         }
         @media (min-width: 768px) {
           h1 {
