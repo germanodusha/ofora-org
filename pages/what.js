@@ -95,6 +95,7 @@ const About = ({ page }) => {
            inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);; 
           box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
            inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);
+           border-radius: 0.5em;
         }
         @media (min-width: 768px) {
           h1 {
