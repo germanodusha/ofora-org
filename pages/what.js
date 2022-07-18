@@ -94,7 +94,10 @@ const About = ({ page }) => {
         }
         .container:global(strong) {
           position: relative;
-          background-image: linear-gradient(180deg, var(--yellow) 40%, #ffffff 70%,  #fff 80%, var(--yellow) 100%);
+          z-index:1;
+          background: white;
+          -webkit-box-shadow: inset -0.1em 0.3em 0.4em 0.2em var(--yellow); 
+          box-shadow: inset -0.05em 0.3em 0.4em 0.2em var(--yellow);
         }
         @media (min-width: 768px) {
           h1 {
