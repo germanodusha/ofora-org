@@ -14,7 +14,7 @@ const About = ({ page }) => {
     context.setPage(page);
   }, []);
   return (
-    <>
+    <div className="container">
       <Scroller />
       <div className="video">
         <video autoPlay loop muted playsInline>
@@ -25,17 +25,23 @@ const About = ({ page }) => {
       <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-3xl">
         <PrismicRichText field={page.data.content} />
       </div>
+      <div>
       <div className="infoContainer mx-auto p-20 text-center">
-        <PrismicRichText field={page.data.infoLeft} />
-        <PrismicRichText field={page.data.infoRight} />
-      </div>
-      <div className="mx-auto flex w-full justify-around px-20 py-10 text-center">
-        <div className="imageContainer">
+        <div className="flex flex-col justify-center items-center" >
+          <PrismicRichText field={page.data.infoLeft} />
+        </div>
+        <div className="flex flex-col justify-center items-center reorder">
+          <PrismicRichText field={page.data.infoRight} />
+        </div>
+        <div className="imageContainer ">
           <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
         </div>
-        <div className="imageContainer">
+        <div className="imageContainer reorder">
           <Image layout="fill" src="/G1.png" alt="G1 Logo" />
         </div>
+      </div>
+      <div className="mx-auto flex w-full justify-around px-20 py-10 text-center">
+      </div>
       </div>
       <style jsx>{`
         * {
@@ -60,14 +66,10 @@ const About = ({ page }) => {
         .infoContainer {
           width: 100%;
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
+          padding-top: 0px;
+          gap:5rem;
           padding-bottom: 5px;
-        }
-        .infoContainer strong {
-          all: unset;
-          box-sizing: border-box;
-          background: linear-gradient(180deg, var(--yellow) 50%, #ffffff 50%);
-          padding: 0px 5px;
         }
         .infoContainer > :global(*:first-child) {
           font-size: 1.5rem;
@@ -75,15 +77,40 @@ const About = ({ page }) => {
         .imageContainer {
           position: relative;
           width: 230px;
-          height: 230px;
+          height: 230px;  
+          margin: 0 auto;
+        } 
+        .container {
+          all: unset;
+        }
+        .reorder {
+          order:1;
+        }
+        .container:global(strong) {
+          position: relative;
+          z-index:1;
+          background: white; 
+          box-shadow: inset 0px 5px -10px -10000px red;
+          -webkit-box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
+           inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);; 
+          box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
+           inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);
+           border-radius: 0.5em;
         }
         @media (min-width: 768px) {
           h1 {
             font-size: 8rem;
           }
+          .infoContainer {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: row;
+          }
+          .reorder {
+          order:0;
+        }
         }
       `}</style>
-    </>
+    </div>
   );
 };
 
