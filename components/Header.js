@@ -16,7 +16,7 @@ export const Header = () => {
             <Highlighted>
               <Link href={"/"}>
                 {navigation.data.home}
-                </Link>
+              </Link>
             </Highlighted>
           </li>
           <li className="">

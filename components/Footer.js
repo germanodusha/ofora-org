@@ -29,8 +29,8 @@ export const Footer = () => {
               <li key={lang.lang}>
                 <Highlighted>
                   <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                    <span className="sr-only">{lang.lang}</span>
-                    {lang.lang.split("-")[0]}
+                    <span className="sr-only" style={{fontWeight:'normal'}}>{lang.lang}</span>
+                    <a style={{fontWeight:'normal'}}>{lang.lang.split("-")[0]}</a>
                   </PrismicLink>
                 </Highlighted>
               </li>
