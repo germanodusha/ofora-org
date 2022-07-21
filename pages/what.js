@@ -22,7 +22,7 @@ const About = ({ page }) => {
         </video>
       </div>
       <h1>{page.data.title}</h1>
-      <div className="container">
+      <div className="container-descript">
         <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-3xl">
           <PrismicRichText field={page.data.content} />
         </div>
@@ -63,7 +63,7 @@ const About = ({ page }) => {
           text-align: center;
           width: 80vw
         }
-        .container {
+        .container-descript {
           all: unset;
           position: absolute;
           top: 100%;
@@ -74,14 +74,10 @@ const About = ({ page }) => {
         .infoContainer {
           width: 100%;
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
+          padding-top: 0px;
+          gap:5rem;
           padding-bottom: 5px;
-        }
-        .infoContainer strong {
-          all: unset;
-          box-sizing: border-box;
-          background: linear-gradient(180deg, var(--yellow) 50%, #ffffff 50%);
-          padding: 0px 5px;
         }
         .infoContainer > :global(*:first-child) {
           font-size: 1.5rem;
@@ -89,12 +85,26 @@ const About = ({ page }) => {
         .imageContainer {
           position: relative;
           width: 230px;
-          height: 230px;
+          height: 230px;  
+          margin: 0 auto;
+        } 
+        .container {
+          all: unset;
+        }
+        .reorder {
+          order:1;
         }
         @media (min-width: 768px) {
           h1 {
             font-size: 8rem;
           }
+          .infoContainer {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-flow: row;
+          }
+          .reorder {
+          order:0;
+        }
         }
       `}</style>
     </div>
