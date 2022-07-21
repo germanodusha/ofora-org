@@ -27,11 +27,13 @@ const About = ({ page }) => {
           <PrismicRichText field={page.data.content} />
         </div>
         <div className="infoContainer mx-auto p-20 text-center">
-          <PrismicRichText field={page.data.infoLeft} />
-          <PrismicRichText field={page.data.infoRight} />
-        </div>
-        <div className="mx-auto flex w-full justify-around px-20 py-10 text-center">
-          <div className="imageContainer">
+          <div className="reorder">
+            <PrismicRichText field={page.data.infoLeft} />
+          </div>
+          <div>
+            <PrismicRichText field={page.data.infoRight} />
+          </div>
+          <div className="imageContainer reorder">
             <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
           </div>
           <div className="imageContainer">
@@ -53,7 +55,6 @@ const About = ({ page }) => {
         }
         h1 {
           position: fixed;
-          /*top: ${50 + scrollPosition / 30}%;*/
           top:50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -92,7 +93,7 @@ const About = ({ page }) => {
           all: unset;
         }
         .reorder {
-          order:1;
+          order:-1;
         }
         @media (min-width: 768px) {
           h1 {
