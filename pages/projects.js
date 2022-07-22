@@ -15,6 +15,7 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div className="project-title-container">
+      <div className="footer-gradient"/>
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
             <li
@@ -162,6 +163,15 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
+        .footer-gradient {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          height: 150px;
+          background: linear-gradient(180deg, transparent, rgba(152, 152, 152, 1));
+          z-index: 10;
+        }
         .project-title-container {
           top: 0;
           left:0;
@@ -171,25 +181,7 @@ const Projects = ({ projects, page }) => {
           scrollbar-color: var(--yellow)  transparent;   
         }
         .project-title-container::-webkit-scrollbar {
-          width: 10px;
-        }
-        .project-title-container::-webkit-scrollbar-thumb {
-          border-radius: 10px;
-          background: var(--yellow);
-          color: blue;
-        }
-        .project-title-container::-webkit-scrollbar-track{
-          border-radius:4px;
-          background: transparent;
-          color: blue;
-        }  
-        .project-title-container::after {
-          position: fixed;
-          background: red;
-          top:0;
-          left: 0;
-          width: 1000px;
-          height: 1000px;
+          width: 0px;
         }
         .projects-page {
           height: 100vh;
