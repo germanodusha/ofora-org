@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../pages/_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
@@ -8,11 +8,24 @@ import useScrollPosition from "../hooks/useScrollPosition";
 
 const About = ({ page }) => {
   const context = useContext(Context);
-  const scrollPosition = useScrollPosition();
+  const scroll = useScrollPosition();
+  const [higherScroll, setHigherScroll] = useState(0);
+  const firstImageRef = useRef(0)
+  const secondImageRef = useRef(0)
+
+  useEffect(() => {
+    scroll>=higherScroll?setHigherScroll(scroll):null;
+  }, [scroll, higherScroll]);
+  
+  function imageStart(ref) {
+    const realTopPos = ref.current.offsetTop
+    return higherScroll >= realTopPos
+  }
 
   useEffect(() => {
     context.setPage(page);
   }, []);
+
   return (
     <div>
       <Scroller />
@@ -33,10 +46,10 @@ const About = ({ page }) => {
           <div>
             <PrismicRichText field={page.data.infoRight} />
           </div>
-          <div className="imageContainer reorder">
+          <div ref={firstImageRef} className={`imageContainer reorder ${imageStart(firstImageRef)? 'appear':''}`}>
             <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
           </div>
-          <div className="imageContainer">
+          <div ref={secondImageRef} className={`imageContainer ${imageStart(secondImageRef)? 'appear':''}`}>
             <Image layout="fill" src="/G1.png" alt="G1 Logo" />
           </div>
         </div>
@@ -88,12 +101,17 @@ const About = ({ page }) => {
           width: 230px;
           height: 230px;  
           margin: 0 auto;
+          transition: all 0.8s ease-in-out;
+          opacity: 0;
         } 
         .container {
           all: unset;
         }
         .reorder {
           order:-1;
+        }
+        .appear {
+          opacity: 1;
         }
         @media (min-width: 768px) {
           h1 {

@@ -14,9 +14,57 @@ const Projects = ({ projects, page }) => {
 
   return (
     <div className="projects-page flex grow items-stretch">
-      <div>
+      <div className="project-title-container">
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
             <li
               key={project.uid}
               className={selected === project ? "selected" : ""}
@@ -45,6 +93,35 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
+        .project-title-container {
+          top: 0;
+          left:0;
+          background-color: rgba(152, 152, 152, 1);
+          padding-top: 100px;
+          overflow: auto;
+          scrollbar-color: var(--yellow)  transparent;   
+        }
+        .project-title-container::-webkit-scrollbar {
+          width: 10px;
+        }
+        .project-title-container::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: var(--yellow);
+          color: blue;
+        }
+        .project-title-container::-webkit-scrollbar-track{
+          border-radius:4px;
+          background: transparent;
+          color: blue;
+        }  
+        .project-title-container::after {
+          position: fixed;
+          background: red;
+          top:0;
+          left: 0;
+          width: 1000px;
+          height: 1000px;
+        }
         .projects-page {
           height: 100vh;
         }
@@ -54,10 +131,6 @@ const Projects = ({ projects, page }) => {
         .projects-page > div {
           width: 100%;
           position: relative;
-        }
-        .projects-page > div:first-child {
-          background-color: rgba(152, 152, 152, 1);
-          padding-top: 100px;
         }
         li {
           padding: 5px;
@@ -85,6 +158,9 @@ const Projects = ({ projects, page }) => {
             height: 70vh;
           }
           
+        }
+                .teste {
+          background: red;
         }
       `}</style>
     </div>
