@@ -25,7 +25,7 @@ const Project = ({ project }) => {
           :null
         }
         return setCounter(counter+1)
-      },4
+      },8
     )
   },[counter])
   const image = banner.url ? banner : cover;
