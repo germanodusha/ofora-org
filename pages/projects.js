@@ -7,6 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
+  const rgb ="152, 152, 152";
 
   useEffect(() => {
     context.setPage(page);
@@ -175,7 +176,11 @@ const Projects = ({ projects, page }) => {
         .project-title-container {
           top: 0;
           left:0;
-          background-color: rgba(152, 152, 152, 1);
+          background: linear-gradient(
+            180deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
+          );
           padding-top: 100px;
           overflow: auto;
           scrollbar-color: var(--yellow)  transparent;   
