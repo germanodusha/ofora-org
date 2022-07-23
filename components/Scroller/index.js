@@ -53,6 +53,7 @@ const Scroller = ({ children }) => {
             pointer-events: none;
             min-height: 1.5rem;
             font-weight:normal;
+            transform:translateY(-0.3rem)
           }
         `}
       </style>

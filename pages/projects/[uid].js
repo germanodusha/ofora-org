@@ -96,9 +96,27 @@ const Project = ({ project }) => {
             }}
           />
         </div>
+      <div className="footer-gradient"/>
       </Limiter>
       <style jsx>{`
         // gallery
+        .page-root:global(strong) {
+          box-shadow: inset 0.5em 0.25em 0.25em -0.4em red, inset -0.5em -0.25em 0.25em -0.4em red,
+          inset -0.5em 1em 0.25em -0.4em red, inset -0.5em -0.3em 0.25em -0.4em red;
+          border-radius: 0.5em !important;
+        }
+        .footer-gradient{
+          position:fixed;
+          bottom:0;
+          left:0;
+          width:100%;
+          height:100px;
+          background:linear-gradient(
+            0deg,
+            white 40%,
+            transparent 100%
+          );
+        }
         .spacer {
           padding-left: 3rem;
         }

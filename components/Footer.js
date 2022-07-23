@@ -13,10 +13,12 @@ export const Footer = () => {
   if(asPath === '/what'){
     return(<div></div>)
   }
+  const highlightedColor = asPath.includes('/projects/')? 'yellow' : 'white'
+  console.log(highlightedColor)
   return (
     <footer className="flex py-3 pt-14 font-bold uppercase">
       <div className="flex w-1/2 justify-center whatIsButton">
-          <Highlighted>
+          <Highlighted color={highlightedColor}>
             <Link href={"/what"} passHref>
               {navigation.data.what}
             </Link>
@@ -27,7 +29,7 @@ export const Footer = () => {
           {languages.map((lang) => {
             return lang.lang ? (
               <li key={lang.lang}>
-                <Highlighted>
+                <Highlighted color={highlightedColor}>
                   <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
                     <span className="sr-only" style={{fontWeight:'normal'}}>{lang.lang}</span>
                     <a style={{fontWeight:'normal'}}>{lang.lang.split("-")[0]}</a>

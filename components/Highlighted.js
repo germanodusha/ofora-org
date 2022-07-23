@@ -1,11 +1,10 @@
 const Highlighted = ({color="white", children})=>{
     return(
-        <span className="highlighted">
+        <span className="highlighted" >
             {children}
             <style jsx>{`
                 .highlighted {
                     position: relative;
-                    font-weight: normal;
                 }
                 .highlighted::before {
                     content: "";

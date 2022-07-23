@@ -1,27 +1,38 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useContext } from "react";
+import useScrollPosition from "../hooks/useScrollPosition";
 import { Context } from "../pages/_app";
 import Highlighted from "./Highlighted";
 
 export const Header = () => {
-  const { page, navigation } = useContext(Context);
-
+  const scroll = useScrollPosition()
+  const { navigation } = useContext(Context);
+  const {asPath} = useRouter()
+  console.log(scroll)
+  const highlightedColor = !asPath.includes('/projects/')? 'white' : 'yellow'
   return (
     <header className="header-root flex flex-wrap py-3 pb-14">
       <nav className="w-full">
-        <ul className="flex flex-wrap font-semibold uppercase w-full justify-around text-center">
+        <ul className="flex flex-wrap font-semibold uppercase w-full justify-around text-center header-content">
           <li className="">
-            <Highlighted>
-              <Link href={"/"}>
-                {navigation.data.home}
+            <Highlighted color={highlightedColor}>
+              <Link href={"/"} passHref>
+                <a>
+                  {navigation.data.home}
+                </a>
               </Link>
             </Highlighted>
           </li>
           <li className="">
-            <Highlighted>
-              <Link href={"/projects"}>{navigation.data.archive}</Link>
+            <Highlighted color={highlightedColor}>
+              <Link href={"/projects"}>
+                  <a>
+                    {navigation.data.archive}
+                  </a>
+              </Link>
             </Highlighted>
           </li>
         </ul>
