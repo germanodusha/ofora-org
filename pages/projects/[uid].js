@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
+import Link from "next/link";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -91,7 +92,11 @@ const Project = ({ project }) => {
             field={project.data.content}
             components={{
               hyperlink: ({ children, node }) => (
-                  <Highlighted color="yellow"><span>{children}</span></Highlighted>
+                <Link href={node.text} passHref>
+                  <a>
+                    <Highlighted color="yellow">{children}</Highlighted>
+                  </a>
+                </Link>
               ),
             }}
           />
