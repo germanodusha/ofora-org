@@ -7,6 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
+  const rgb ="152, 152, 152";
 
   useEffect(() => {
     context.setPage(page);
@@ -14,7 +15,9 @@ const Projects = ({ projects, page }) => {
 
   return (
     <div className="projects-page flex grow items-stretch">
-      <div>
+      <div className="project-title-container">
+      <div className="header-gradient"/>
+      <div className="footer-gradient"/>
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
             <li
@@ -32,6 +35,168 @@ const Projects = ({ projects, page }) => {
               </div>
             </li>
           ))}
+          <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
         </ul>
       </div>
       <div className="imageContainer w-full">
@@ -45,6 +210,44 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
+        .footer-gradient {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+          background:${rgb};
+          background-image: linear-gradient(
+            180deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
+          );
+          z-index: 10;
+        }
+        .header-gradient {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+          background:${rgb};
+          background-image: linear-gradient(
+            0deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 60%
+          );
+          z-index: 10;
+        }
+        .project-title-container {
+          top: 0;
+          left:0;
+          padding-top: 100px;
+          overflow: auto;
+          background-color: rgba(152, 152, 152, 1);
+        }
+        .project-title-container::-webkit-scrollbar {
+          width: 0px;
+        }
         .projects-page {
           height: 100vh;
         }
@@ -54,10 +257,6 @@ const Projects = ({ projects, page }) => {
         .projects-page > div {
           width: 100%;
           position: relative;
-        }
-        .projects-page > div:first-child {
-          background-color: rgba(152, 152, 152, 1);
-          padding-top: 100px;
         }
         li {
           padding: 5px;
@@ -85,6 +284,9 @@ const Projects = ({ projects, page }) => {
             height: 70vh;
           }
           
+        }
+                .teste {
+          background: red;
         }
       `}</style>
     </div>

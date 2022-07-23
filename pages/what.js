@@ -8,29 +8,34 @@ import useScrollPosition from "../hooks/useScrollPosition";
 
 const About = ({ page }) => {
   const context = useContext(Context);
-  const scrollPosition = useScrollPosition();
+  const scroll = useScrollPosition();
+  const [higherScroll, setHigherScroll] = useState(0);
 
+  const firstImageRef = useRef(0)
+  const secondImageRef = useRef(0)
   const firstTextRef = useRef(0);
   const secondTextRef = useRef(0);
   const thirdTextRef = useRef(0);
 
-  const firstImageRef = useRef(0);
-  const secondImageRef = useRef(0);
+  function imageStart(ref) {
+    const realTopPos = ref.current.offsetTop
+    return higherScroll >= realTopPos
+  }
 
   const [higherScrollPosition, setHigherScrollPosition] = useState(0);
   useEffect(()=>{
-    if(scrollPosition > higherScrollPosition){
-      setHigherScrollPosition(scrollPosition);
+    if(scroll > higherScrollPosition){
+      setHigherScrollPosition(scroll);
     }
-  },[scrollPosition,higherScrollPosition]);
+  },[ scroll,higherScrollPosition]);
+
   useEffect(() => {
     context.setPage(page);
   }, []);
 
   function isVisible(ref){
     if(ref?.current){
-      console.log(ref.current.offsetTop, ref.current.offsetHeight*0.3, higherScrollPosition);
-      return ref.current.offsetTop + ref.current.offsetHeight*0.3 < higherScrollPosition;
+      return ref.current.offsetTop + ref.current.offsetHeight*0.4 < higherScrollPosition;
     }
     return false;
   }
@@ -90,7 +95,7 @@ const About = ({ page }) => {
           all: unset;
           position: absolute;
           top: 100%;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.8s ease-in-out;
           padding-bottom: 139px;
           background: var(--yellow);
 
@@ -111,6 +116,7 @@ const About = ({ page }) => {
           width: 230px;
           height: 230px;  
           margin: 0 auto;
+          transition: all 0.8s ease-in-out;
         } 
         .container {
           all: unset;
@@ -120,9 +126,11 @@ const About = ({ page }) => {
         }
         .is-not-visible {
           opacity: 0;
+          transform: translateY(20%)
         }
         .is-visible {
-          transition: all 0.5s ease-in-out;
+          transition: all 0.8s ease-in-out;
+          transform: translateY(0%)
           opacity: 1;
         }
         @media (min-width: 768px) {

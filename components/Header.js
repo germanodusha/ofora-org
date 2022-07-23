@@ -8,17 +8,16 @@ import { Context } from "../pages/_app";
 import Highlighted from "./Highlighted";
 
 export const Header = () => {
-  const scroll = useScrollPosition()
+
   const { navigation } = useContext(Context);
-  const {asPath} = useRouter()
-  console.log(scroll)
-  const highlightedColor = !asPath.includes('/projects/')? 'white' : 'yellow'
+
+
   return (
     <header className="header-root flex flex-wrap py-3 pb-14">
       <nav className="w-full">
         <ul className="flex flex-wrap font-semibold uppercase w-full justify-around text-center header-content">
           <li className="">
-            <Highlighted color={highlightedColor}>
+            <Highlighted>
               <Link href={"/"} passHref>
                 <a>
                   {navigation.data.home}
@@ -27,7 +26,7 @@ export const Header = () => {
             </Highlighted>
           </li>
           <li className="">
-            <Highlighted color={highlightedColor}>
+            <Highlighted>
               <Link href={"/projects"}>
                   <a>
                     {navigation.data.archive}

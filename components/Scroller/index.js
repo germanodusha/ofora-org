@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
 
 const Scroller = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
+  const {asPath} = useRouter()
 
   const handleScroll = () => {
     setScrollPosition(window.pageYOffset);
@@ -30,7 +32,7 @@ const Scroller = ({ children }) => {
           .root {
             position: relative;
             width: 100%;
-            background: ${scrollPosition>0?"#e8ff00":"transparent"};
+            background: ${scrollPosition>0 || asPath.includes('/projects/')?"#e8ff00":"transparent"};
             display: flex;
             justify-content: center;
             position: fixed;
