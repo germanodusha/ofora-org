@@ -151,6 +151,51 @@ const Projects = ({ projects, page }) => {
                 </Link>
               </div>
             </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
+            <li
+            >
+              <div
+              >
+                <Link href={`/projects/`}>
+                  exemplo
+                </Link>
+              </div>
+            </li>
         </ul>
       </div>
       <div className="imageContainer w-full">
@@ -169,21 +214,21 @@ const Projects = ({ projects, page }) => {
           bottom: 0;
           left: 0;
           width: 50%;
-          height: 150px;
-          background: linear-gradient(180deg, transparent, rgba(152, 152, 152, 1));
-          z-index: 10;
-        }
-        .project-title-container {
-          top: 0;
-          left:0;
+          height: 100px;
           background: linear-gradient(
             180deg,
             rgba(${rgb}, 0) 0%,
             rgba(${rgb}, 1) 70%
           );
+          z-index: 10;
+        }
+        .project-title-container {
+          top: 0;
+          left:0;
           padding-top: 100px;
           overflow: auto;
           scrollbar-color: var(--yellow)  transparent;   
+          background-color: rgba(152, 152, 152, 1);
         }
         .project-title-container::-webkit-scrollbar {
           width: 0px;
