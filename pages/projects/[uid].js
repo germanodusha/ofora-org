@@ -2,7 +2,7 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import Modal from "../../components/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
@@ -12,7 +12,22 @@ import Link from "next/link";
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const [selected, onSelect] = useState();
-
+  const [text, setText] = useState('')
+  const [counter, setCounter] = useState(-1);
+  //setText(text+=char)
+  //project.data.intro[0].text
+  useEffect(()=>{
+    setTimeout(
+      ()=>{
+        if(counter<project.data.intro[0].text.length){
+          project.data.intro[0].text[counter]?
+          setText(text+=project.data.intro[0].text[counter])
+          :null
+        }
+        return setCounter(counter+1)
+      },4
+    )
+  },[counter])
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
@@ -45,7 +60,8 @@ const Project = ({ project }) => {
       </Scroller>
       <Limiter>
         <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
-          <PrismicRichText field={project.data.intro} />
+          {text}
+
         </div>
         <div className="gallery p-20">
           {project.data.gallery.map((item, index) => (
