@@ -43,7 +43,7 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
+        <div className="text-center text-lg lg:text-3xl">
           <PrismicRichText field={project.data.intro} />
         </div>
         <div className="gallery p-20">

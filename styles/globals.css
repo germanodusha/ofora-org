@@ -9,6 +9,7 @@
 }
 *{
   cursor: url("/cursor.cur"), auto;
+  font-weight: 100 !important;
 }
 body, html, #__next {
   height: 100%;
@@ -20,13 +21,16 @@ strong {
   position: relative;
   z-index:1;
   background: white; 
-  box-shadow: inset 0px 5px -10px -10000px red;
-  -webkit-box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
-   inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);; 
   box-shadow: inset 0.5em 0.25em 0.25em -0.4em var(--yellow), inset -0.5em -0.25em 0.25em -0.4em var(--yellow),
    inset -0.5em 1em 0.25em -0.4em var(--yellow), inset -0.5em -0.3em 0.25em -0.4em var(--yellow);
    border-radius: 0.5em;
 }
+strong {
+  font-weight: normal;
+}
+a:link { 
+  text-decoration: none; 
+  font-weight: bold !important;}
 [data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white,
 [data-collapsible="true"].bg-slate-100
   + [data-collapsible="true"].bg-slate-100 {
