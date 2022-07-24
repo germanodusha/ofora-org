@@ -16,7 +16,7 @@ const Project = ({ project }) => {
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <div className="flex h-screen grow">
+      <div className="flex h-screen grow cover-and-title">
         <div className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl title-container">{project.data.title}</h1>
           <h2 className="text-3xl md:text-5xl">
@@ -187,6 +187,46 @@ const Project = ({ project }) => {
             transform:translateX(0%);
           }
         }
+        @media only screen and (max-width: 768px) {
+          .cover-and-title {
+            display:flex;
+            flex-direction:column;
+          }
+          .title {
+            width:100%;
+            display:grid;
+          }
+          .title{
+            display:grid;
+            gap:1rem;
+          }
+          .banner {
+            margin-top:1rem;
+            width:100%;
+            height:100%;
+          }
+        }
+        @keyframes appear-left{
+          0% {
+            opacity:0;
+            transform:translateY(20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateY(0%);
+          }
+        }
+        @keyframes appear-right{
+          0% {
+            opacity:0;
+            transform:translateY(-20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateY(0%);
+          }
+        }
+
         @media only screen and (min-width: 780px) {
           .title{
             padding-left:1em;
@@ -225,6 +265,7 @@ const Project = ({ project }) => {
             max-height: 180px;
           }
         }
+
       `}</style>
     </div>
   );
