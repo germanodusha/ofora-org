@@ -156,7 +156,37 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.2;
         }
-
+        .page-root {
+          overflow-x:hidden;
+        }
+        .title {
+          position:relative;
+          animation: appear-right 1.2s ease-in-out;
+        }
+        .banner {
+          position:relative;
+          animation:appear-left 1.2s ease-in-out;
+        }
+        @keyframes appear-left{
+          0% {
+            opacity:0;
+            transform:translateX(20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateX(0%);
+          }
+        }
+        @keyframes appear-right{
+          0% {
+            opacity:0;
+            transform:translateX(-20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateX(0%);
+          }
+        }
         @media only screen and (min-width: 780px) {
           .title{
             padding-left:1em;
