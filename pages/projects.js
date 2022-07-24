@@ -18,7 +18,7 @@ const Projects = ({ projects, page }) => {
       <div className="project-title-container">
       <div className="header-gradient"/>
       <div className="footer-gradient"/>
-        <ul className="paragraph-container">
+        <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
             <li
               key={project.uid}
@@ -100,6 +100,7 @@ const Projects = ({ projects, page }) => {
           padding: 5px;
         }
         li.selected {
+          width:100%;
           background: rgb(232, 255, 0);
           background: linear-gradient(
             180deg,

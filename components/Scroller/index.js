@@ -5,7 +5,6 @@ const Scroller = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [height, setHeight] = useState(0);
   const {asPath} = useRouter()
-
   const handleScroll = () => {
     setScrollPosition(window.pageYOffset);
   };
@@ -23,7 +22,6 @@ const Scroller = ({ children }) => {
   }, []);
 
   const isVisible = scrollPosition > 220;
-
   return (
     <div className="root">
       <div className="content">{children}</div>

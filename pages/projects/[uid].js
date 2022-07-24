@@ -2,21 +2,48 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import Modal from "../../components/Modal";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
 import Link from "next/link";
+import useScrollPosition from "../../hooks/useScrollPosition";
+
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const [selected, onSelect] = useState();
+  const [text, setText] = useState('')
+  const [isTypeVisible, setTypeVisibility] = useState(false)
+  const scroll = useScrollPosition();
+  const introRef = useRef(0);
+  const titleRef = useRef(0);
+  //setText(text+=char)
+  //project.data.intro[0].text
 
+  useEffect(()=>{
+    if(scroll> introRef.current.offsetTop - titleRef.current.offsetHeight){
+      setTypeVisibility(true)
+      isTypeVisible?null:start();
+    }
+  },[scroll])
+  function start(counte=-1){
+    setTimeout(
+      ()=>{
+        if(counte<project.data.intro[0].text.length){
+          project.data.intro[0].text[counte]?
+          setText(text+=project.data.intro[0].text[counte])
+          :null
+        }
+        return start(counte+1)
+      },8
+    )
+  }
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <div className="flex h-screen grow cover-and-title">
+      <div ref={titleRef} className="flex h-screen grow cover-and-title">
         <div className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl title-container">{project.data.title}</h1>
           <h2 className="text-3xl md:text-5xl">
@@ -44,8 +71,8 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-4xl">
-          <PrismicRichText field={project.data.intro} />
+        <div ref={introRef} className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-4xl">
+          {text}
         </div>
         <div className="gallery p-20">
           {project.data.gallery.map((item, index) => (

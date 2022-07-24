@@ -11,6 +11,13 @@
   cursor: url("/cursor.cur"), auto;
   font-weight: 200 !important;
 }
+::selection {
+  text-shadow: 0px -1px 2px white, 0px 1px 2px white,
+   -1px 0px 2px white, 1px 0px 2px white,
+    2px 0px 0px white, -2px 0px 0px white,
+     0px -2px 0px white, 0px 2px 0px white;
+  background: transparent;
+}
 body, html, #__next {
   height: 100%;
 }
