@@ -156,9 +156,7 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.2;
         }
-        .page-root {
-          overflow-x:hidden;
-        }
+
         .title {
           position:relative;
           animation: appear-right 1.2s ease-in-out;
@@ -205,7 +203,6 @@ const Project = ({ project }) => {
             width:100%;
             height:100%;
           }
-        }
         @keyframes appear-left{
           0% {
             opacity:0;
@@ -225,6 +222,7 @@ const Project = ({ project }) => {
             opacity:1;
             transform:translateY(0%);
           }
+        }
         }
 
         @media only screen and (min-width: 780px) {
