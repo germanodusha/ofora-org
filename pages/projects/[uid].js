@@ -12,20 +12,30 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
+
   const [selected, onSelect] = useState();
   const [text, setText] = useState("");
+
+  const [higherScroll, setHigherScroll] = useState(0)
   const [isTypeVisible, setTypeVisibility] = useState(false);
+
   const scroll = useScrollPosition();
   const introRef = useRef(0);
   const titleRef = useRef(0);
+  const leftColumnRef = useRef(0);
+  const rightColumnRef = useRef(0);
   //setText(text+=char)
   //project.data.intro[0].text
-  console.log(project.data);
+  function isVisible(ref){
+    console.log(higherScroll, ref.current.offsetTop - ref.current.offsetHeight*2)
+    return higherScroll > ref.current.offsetTop - ref.current.offsetHeight*2;
+  }
   useEffect(() => {
     if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
       setTypeVisibility(true);
       isTypeVisible ? null : start();
     }
+    scroll>higherScroll?setHigherScroll(scroll):null
   }, [scroll]);
   function start(counte = -1) {
     setTimeout(() => {
@@ -35,7 +45,7 @@ const Project = ({ project }) => {
           : null;
       }
       return start(counte + 1);
-    }, 8);
+    }, 53);
   }
   const image = banner.url ? banner : cover;
   return (
@@ -117,7 +127,7 @@ const Project = ({ project }) => {
           ))}
         </div>
         <div className="content-container">
-          <div>
+          <div className={`left-colunm ${isVisible(leftColumnRef)?'is-visible':'is-not-visible'}`} ref={leftColumnRef}>
             <PrismicRichText
               field={project.data.leftColumn}
               components={{
@@ -131,7 +141,7 @@ const Project = ({ project }) => {
               }}
             />
           </div>
-          <div>
+          <div className={`right-colunm ${isVisible(rightColumnRef)?'is-visible':'is-not-visible'}`} ref={rightColumnRef}>
             <PrismicRichText
               field={project.data.rightColumn}
               components={{
@@ -216,6 +226,22 @@ const Project = ({ project }) => {
           position:relative;
           animation:appear-left 1.2s ease-in-out;
         }
+        .is-not-visible  {
+          opacity:0;
+        }
+        .left-colunm {
+          position:relative;
+          left:-20%;
+        }
+        .right-colunm{
+          position:relative;
+          left:20%;
+        }
+        .is-visible {
+          transition:all 2s ease-in-out;
+          opacity:1;
+          left:0;
+        }
         @keyframes appear-left{
           0% {
             opacity:0;
@@ -237,6 +263,10 @@ const Project = ({ project }) => {
           }
         }
         @media only screen and (max-width: 768px) {
+          .content-container {
+            grid-template-columns: 1fr;
+            gap:5rem;
+          }
           .cover-and-title {
             display:flex;
             flex-direction:column;
