@@ -11,31 +11,34 @@ const About = ({ page }) => {
   const scroll = useScrollPosition();
   const [higherScroll, setHigherScroll] = useState(0);
 
-  const firstImageRef = useRef(0)
-  const secondImageRef = useRef(0)
+  const firstImageRef = useRef(0);
+  const secondImageRef = useRef(0);
   const firstTextRef = useRef(0);
   const secondTextRef = useRef(0);
   const thirdTextRef = useRef(0);
 
   function imageStart(ref) {
-    const realTopPos = ref.current.offsetTop
-    return higherScroll >= realTopPos
+    const realTopPos = ref.current.offsetTop;
+    return higherScroll >= realTopPos;
   }
 
   const [higherScrollPosition, setHigherScrollPosition] = useState(0);
-  useEffect(()=>{
-    if(scroll > higherScrollPosition){
+  useEffect(() => {
+    if (scroll > higherScrollPosition) {
       setHigherScrollPosition(scroll);
     }
-  },[ scroll,higherScrollPosition]);
+  }, [scroll, higherScrollPosition]);
 
   useEffect(() => {
     context.setPage(page);
   }, []);
 
-  function isVisible(ref){
-    if(ref?.current){
-      return ref.current.offsetTop + ref.current.offsetHeight*0.4 < higherScrollPosition;
+  function isVisible(ref) {
+    if (ref?.current) {
+      return (
+        ref.current.offsetTop + ref.current.offsetHeight * 0.4 <
+        higherScrollPosition
+      );
     }
     return false;
   }
@@ -50,20 +53,45 @@ const About = ({ page }) => {
       </div>
       <h1>{page.data.title}</h1>
       <div className="container-descript">
-        <div ref={firstTextRef} className={`paragraph-container ${isVisible(firstTextRef)?"is-visible":"is-not-visible"}`}>
+        <div
+          ref={firstTextRef}
+          className={`paragraph-container ${
+            isVisible(firstTextRef) ? "is-visible" : "is-not-visible"
+          }`}
+        >
           <PrismicRichText field={page.data.content} />
         </div>
         <div className="infoContainer mx-auto p-20 text-center">
-          <div ref={secondTextRef} className={`reorder ${isVisible(secondTextRef)?"is-visible":"is-not-visible"}`}>
+          <div
+            ref={secondTextRef}
+            className={`reorder ${
+              isVisible(secondTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <PrismicRichText field={page.data.infoLeft} />
           </div>
-          <div ref={thirdTextRef} className={`${isVisible(thirdTextRef)?"is-visible":"is-not-visible"}`}>
+          <div
+            ref={thirdTextRef}
+            className={`${
+              isVisible(thirdTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <PrismicRichText field={page.data.infoRight} />
           </div>
-          <div ref={firstImageRef} className={`imageContainer reorder ${isVisible(firstImageRef)?"is-visible":"is-not-visible"}`}>
+          <div
+            ref={firstImageRef}
+            className={`imageContainer reorder ${
+              isVisible(firstImageRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
           </div>
-          <div ref={secondImageRef} className={`imageContainer ${isVisible(secondImageRef)?"is-visible":"is-not-visible"}`}>
+          <div
+            ref={secondImageRef}
+            className={`imageContainer ${
+              isVisible(secondImageRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <Image layout="fill" src="/G1.png" alt="G1 Logo" />
           </div>
         </div>

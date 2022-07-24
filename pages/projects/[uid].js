@@ -10,42 +10,41 @@ import Highlighted from "../../components/Highlighted";
 import Link from "next/link";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
-
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const [selected, onSelect] = useState();
-  const [text, setText] = useState('')
-  const [isTypeVisible, setTypeVisibility] = useState(false)
+  const [text, setText] = useState("");
+  const [isTypeVisible, setTypeVisibility] = useState(false);
   const scroll = useScrollPosition();
   const introRef = useRef(0);
   const titleRef = useRef(0);
   //setText(text+=char)
   //project.data.intro[0].text
-
-  useEffect(()=>{
-    if(scroll> introRef.current.offsetTop - titleRef.current.offsetHeight){
-      setTypeVisibility(true)
-      isTypeVisible?null:start();
+  console.log(project.data.content);
+  useEffect(() => {
+    if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
+      setTypeVisibility(true);
+      isTypeVisible ? null : start();
     }
-  },[scroll])
-  function start(counte=-1){
-    setTimeout(
-      ()=>{
-        if(counte<project.data.intro[0].text.length){
-          project.data.intro[0].text[counte]?
-          setText(text+=project.data.intro[0].text[counte])
-          :null
-        }
-        return start(counte+1)
-      },8
-    )
+  }, [scroll]);
+  function start(counte = -1) {
+    setTimeout(() => {
+      if (counte < project.data.intro[0].text.length) {
+        project.data.intro[0].text[counte]
+          ? setText((text += project.data.intro[0].text[counte]))
+          : null;
+      }
+      return start(counte + 1);
+    }, 8);
   }
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <div ref={titleRef} className="flex h-screen grow cover-and-title">
+      <div ref={titleRef} className="cover-and-title flex h-screen grow">
         <div className="title w-1/2 pt-16 text-center uppercase">
-          <h1 className="text-3xl md:text-5xl title-container">{project.data.title}</h1>
+          <h1 className="title-container text-3xl md:text-5xl">
+            {project.data.title}
+          </h1>
           <h2 className="text-3xl md:text-5xl">
             {project.data.year}
             <br />
@@ -71,7 +70,10 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div ref={introRef} className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-4xl">
+        <div
+          ref={introRef}
+          className="mx-auto p-10 text-center text-2xl lg:p-20 lg:text-4xl"
+        >
           {text}
         </div>
         <div className="gallery p-20">
@@ -114,7 +116,7 @@ const Project = ({ project }) => {
             </>
           ))}
         </div>
-        <div className="content p-20 md:columns-2 teste">
+        <div className="content content-container p-20 md:columns-2">
           <PrismicRichText
             field={project.data.content}
             components={{
@@ -128,10 +130,13 @@ const Project = ({ project }) => {
             }}
           />
         </div>
-      <div className="footer-gradient"/>
+        <div className="footer-gradient" />
       </Limiter>
       <style jsx>{`
         // gallery
+        .content-container {
+          gap:0rem 15rem;
+        }
         .page-root:global(strong) {
           box-shadow: inset 0.5em 0.25em 0.25em -0.4em red, inset -0.5em -0.25em 0.25em -0.4em red,
           inset -0.5em 1em 0.25em -0.4em red, inset -0.5em -0.3em 0.25em -0.4em red;

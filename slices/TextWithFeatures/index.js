@@ -56,4 +56,3 @@ const TextWithFeatures = ({ slice }) => {
 };
 
 export default TextWithFeatures;
-

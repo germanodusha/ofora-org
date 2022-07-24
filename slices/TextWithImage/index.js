@@ -46,4 +46,3 @@ const TextWithImage = ({ slice }) => {
 };
 
 export default TextWithImage;
-

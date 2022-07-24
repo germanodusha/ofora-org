@@ -7,7 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
-  const rgb ="152, 152, 152";
+  const rgb = "152, 152, 152";
 
   useEffect(() => {
     context.setPage(page);
@@ -16,8 +16,8 @@ const Projects = ({ projects, page }) => {
   return (
     <div className="projects-page flex grow items-stretch">
       <div className="project-title-container">
-      <div className="header-gradient"/>
-      <div className="footer-gradient"/>
+        <div className="header-gradient" />
+        <div className="footer-gradient" />
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
             <li
@@ -54,7 +54,7 @@ const Projects = ({ projects, page }) => {
           left: 0;
           width: 50%;
           height: 100px;
-          background:${rgb};
+          background: ${rgb};
           background-image: linear-gradient(
             180deg,
             rgba(${rgb}, 0) 0%,
@@ -68,7 +68,7 @@ const Projects = ({ projects, page }) => {
           left: 0;
           width: 50%;
           height: 100px;
-          background:${rgb};
+          background: ${rgb};
           background-image: linear-gradient(
             0deg,
             rgba(${rgb}, 0) 0%,
@@ -78,7 +78,7 @@ const Projects = ({ projects, page }) => {
         }
         .project-title-container {
           top: 0;
-          left:0;
+          left: 0;
           padding-top: 100px;
           overflow: auto;
           background-color: rgba(152, 152, 152, 1);
@@ -100,7 +100,7 @@ const Projects = ({ projects, page }) => {
           padding: 5px;
         }
         li.selected {
-          width:100%;
+          width: 100%;
           background: rgb(232, 255, 0);
           background: linear-gradient(
             180deg,
@@ -122,9 +122,8 @@ const Projects = ({ projects, page }) => {
           .imageContainer {
             height: 70vh;
           }
-          
         }
-                .teste {
+        .teste {
           background: red;
         }
       `}</style>

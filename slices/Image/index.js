@@ -2,7 +2,6 @@ import NextImage from "next/image";
 import * as prismicH from "@prismicio/helpers";
 import clsx from "clsx";
 
-
 const Image = ({ slice }) => {
   return (
     <section
@@ -33,4 +32,3 @@ const Image = ({ slice }) => {
 };
 
 export default Image;
-
