@@ -17,6 +17,11 @@ body, html, #__next {
 body::-webkit-scrollbar {
   display: none;
 }
+.paragraph-container {
+  font-size: 2rem;
+  padding: 5rem;
+  text-align: center;
+}
 strong {
   position: relative;
   z-index:1;

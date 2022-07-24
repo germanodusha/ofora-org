@@ -18,7 +18,7 @@ const Project = ({ project }) => {
     <div className="page-root">
       <div className="flex h-screen grow">
         <div className="title w-1/2 pt-16 text-center uppercase">
-          <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
+          <h1 className="text-3xl md:text-5xl title-container">{project.data.title}</h1>
           <h2 className="text-3xl md:text-5xl">
             {project.data.year}
             <br />
@@ -44,7 +44,7 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div className="text-center text-lg lg:text-3xl">
+        <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-4xl">
           <PrismicRichText field={project.data.intro} />
         </div>
         <div className="gallery p-20">
@@ -87,7 +87,7 @@ const Project = ({ project }) => {
             </>
           ))}
         </div>
-        <div className="content p-20 md:columns-2">
+        <div className="content p-20 md:columns-2 teste">
           <PrismicRichText
             field={project.data.content}
             components={{
@@ -156,7 +156,13 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.2;
         }
+
         @media only screen and (min-width: 780px) {
+          .title{
+            padding-left:1em;
+            padding-right :1em;
+
+          }
           .title > div {
             margin-top: calc(50vh - 200px);
           }

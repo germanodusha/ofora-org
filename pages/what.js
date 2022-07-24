@@ -50,7 +50,7 @@ const About = ({ page }) => {
       </div>
       <h1>{page.data.title}</h1>
       <div className="container-descript">
-        <div ref={firstTextRef} className={`mx-auto p-10 lg:p-20 text-center text-2xl lg:text-3xl ${isVisible(firstTextRef)?"is-visible":"is-not-visible"}`}>
+        <div ref={firstTextRef} className={`paragraph-container ${isVisible(firstTextRef)?"is-visible":"is-not-visible"}`}>
           <PrismicRichText field={page.data.content} />
         </div>
         <div className="infoContainer mx-auto p-20 text-center">
