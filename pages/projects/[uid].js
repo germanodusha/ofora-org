@@ -2,37 +2,49 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import Modal from "../../components/Modal";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
 import Link from "next/link";
+import useScrollPosition from "../../hooks/useScrollPosition";
+
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
   const [selected, onSelect] = useState();
   const [text, setText] = useState('')
-  const [counter, setCounter] = useState(-1);
+  const [isTypeVisible, setTypeVisibility] = useState(false)
+  const scroll = useScrollPosition();
+  const introRef = useRef(0);
+  const titleRef = useRef(0);
   //setText(text+=char)
   //project.data.intro[0].text
+
   useEffect(()=>{
+    if(scroll> introRef.current.offsetTop - titleRef.current.offsetHeight){
+      setTypeVisibility(true)
+      isTypeVisible?null:start();
+    }
+  },[scroll])
+  function start(counte=-1){
     setTimeout(
       ()=>{
-        if(counter<project.data.intro[0].text.length){
-          project.data.intro[0].text[counter]?
-          setText(text+=project.data.intro[0].text[counter])
+        if(counte<project.data.intro[0].text.length){
+          project.data.intro[0].text[counte]?
+          setText(text+=project.data.intro[0].text[counte])
           :null
         }
-        return setCounter(counter+1)
+        return start(counte+1)
       },8
     )
-  },[counter])
+  }
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
       <div className="flex h-screen grow">
-        <div className="title w-1/2 pt-16 text-center uppercase">
+        <div ref={titleRef} className="title w-1/2 pt-16 text-center uppercase">
           <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
           <h2 className="text-3xl md:text-5xl">
             {project.data.year}
@@ -59,7 +71,8 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
+        <button onClick={()=>{start(-1)}}>start</button>
+        <div ref={introRef}className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
           {text}
 
         </div>
