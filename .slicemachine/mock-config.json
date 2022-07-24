@@ -40,7 +40,20 @@
     "projects": {
       "projects": {}
     },
-    "project": {},
+    "project": {
+      "rightColumn": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "leftColumn": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
     "what": {
       "content": {
         "config": {

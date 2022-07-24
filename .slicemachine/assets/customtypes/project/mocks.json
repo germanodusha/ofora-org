@@ -1,11 +1,11 @@
 {
-  "id": "d1294572-bdd3-4e69-9533-6a987704f605",
-  "uid": "qui-aut-iste",
+  "id": "199728a3-145c-445c-af6a-bc1474ed7c78",
+  "uid": "dolorem-ut-nemo",
   "type": "project",
   "data": {
-    "title": "transition B2B methodologies",
-    "year": "envisioneer cutting-edge e-business",
-    "category": "enhance 24/7 ROI",
+    "title": "scale sticky markets",
+    "year": "strategize magnetic e-services",
+    "category": "benchmark world-class systems",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -13,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -22,25 +22,32 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Anim veniam ut nostrud aliqua adipisicing nulla sunt laboris enim nostrud officia sit nisi Lorem.",
+        "text": "Dolore velit quis laboris enim est quis ipsum deserunt.",
         "spans": []
       }
     ],
-    "content": [
+    "leftColumn": [
       {
         "type": "paragraph",
-        "text": "Aliquip nisi occaecat proident quis nostrud veniam elit veniam eu cupidatat esse ut consequat duis nulla. Labore aliqua ullamco ad ut incididunt nostrud non incididunt elit exercitation duis. Laboris do elit elit pariatur elit in proident.",
+        "text": "Exercitation consequat irure do.",
+        "spans": []
+      }
+    ],
+    "rightColumn": [
+      {
+        "type": "paragraph",
+        "text": "Et ea occaecat dolor.",
         "spans": []
       }
     ],
     "gallery": [
       {
-        "title": "synergize B2B channels",
+        "title": "leverage best-of-breed users",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -51,7 +58,7 @@
         }
       },
       {
-        "title": "aggregate synergistic systems",
+        "title": "reintermediate out-of-the-box architectures",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -62,7 +69,18 @@
         }
       },
       {
-        "title": "disintermediate dot-com ROI",
+        "title": "transition open-source web-readiness",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "disintermediate viral relationships",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
