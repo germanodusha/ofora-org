@@ -20,7 +20,7 @@ const Project = ({ project }) => {
   const titleRef = useRef(0);
   //setText(text+=char)
   //project.data.intro[0].text
-  console.log(project.data.content);
+  console.log(project.data);
   useEffect(() => {
     if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
       setTypeVisibility(true);
@@ -116,26 +116,45 @@ const Project = ({ project }) => {
             </>
           ))}
         </div>
-        <div className="content content-container p-20 md:columns-2">
-          <PrismicRichText
-            field={project.data.content}
-            components={{
-              hyperlink: ({ children, node }) => (
-                <Link href={node.text} passHref>
-                  <a>
-                    <Highlighted color="yellow">{children}</Highlighted>
-                  </a>
-                </Link>
-              ),
-            }}
-          />
+        <div className="content-container">
+          <div>
+            <PrismicRichText
+              field={project.data.leftColumn}
+              components={{
+                hyperlink: ({ children, node }) => (
+                  <Link href={node.text} passHref>
+                    <a>
+                      <Highlighted color="yellow">{children}</Highlighted>
+                    </a>
+                  </Link>
+                ),
+              }}
+            />
+          </div>
+          <div>
+            <PrismicRichText
+              field={project.data.rightColumn}
+              components={{
+                hyperlink: ({ children, node }) => (
+                  <Link href={node.text} passHref>
+                    <a>
+                      <Highlighted color="yellow">{children}</Highlighted>
+                    </a>
+                  </Link>
+                ),
+              }}
+            />
+          </div>
         </div>
         <div className="footer-gradient" />
       </Limiter>
       <style jsx>{`
         // gallery
         .content-container {
+          display:grid;
+          grid-template-columns: 1fr 1fr;
           gap:0rem 15rem;
+          padding:0px 5rem;
         }
         .page-root:global(strong) {
           box-shadow: inset 0.5em 0.25em 0.25em -0.4em red, inset -0.5em -0.25em 0.25em -0.4em red,
