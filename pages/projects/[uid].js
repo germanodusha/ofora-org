@@ -200,7 +200,7 @@ const Project = ({ project }) => {
           height:100px;
           background-image:linear-gradient(
             0deg,
-            white 40%,
+            #fff 40%,
             transparent 100%
           );
         }
