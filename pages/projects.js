@@ -7,7 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
-  const rgb = "152, 152, 152";
+  const rgb = "	989896";
 
   useEffect(() => {
     context.setPage(page);
@@ -189,7 +189,7 @@ const Projects = ({ projects, page }) => {
           background: ${rgb};
           background-image: linear-gradient(
             180deg,
-            rgba(${rgb}, 0) 0%,
+            rgba(transparent, 0) 0%,
             rgba(${rgb}, 1) 70%
           );
           z-index: 10;
@@ -203,7 +203,7 @@ const Projects = ({ projects, page }) => {
           background: ${rgb};
           background-image: linear-gradient(
             0deg,
-            rgba(${rgb}, 0) 0%,
+            rgba(transparent, 0) 0%,
             rgba(${rgb}, 1) 60%
           );
           z-index: 10;
