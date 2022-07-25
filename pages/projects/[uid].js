@@ -43,7 +43,7 @@ const Project = ({ project }) => {
   }, [scroll]);
   function start(counte = -1) {
     setTimeout(() => {
-      if (counte < project.data.intro[0].text.length) {
+      if (counte < project.data.intro[0]?.text.length) {
         project.data.intro[0].text[counte]
           ? setText((text += project.data.intro[0].text[counte]))
           : null;
@@ -174,7 +174,7 @@ const Project = ({ project }) => {
       </Limiter>
       <style jsx>{`
         // gallery
-        ::selection {
+        :global(*)::selection{
           text-shadow: 0px -1px 2px var(--yellow), 0px 1px 2px var(--yellow),
            -1px 0px 2px var(--yellow), 1px 0px 2px var(--yellow),
             2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow),
