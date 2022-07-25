@@ -17,7 +17,7 @@ const Project = ({ project }) => {
   const [selected, onSelect] = useState();
   const [text, setText] = useState("");
 
-  const [higherScroll, setHigherScroll] = useState(0)
+  const [higherScroll, setHigherScroll] = useState(0);
   const [isTypeVisible, setTypeVisibility] = useState(false);
 
   const scroll = useScrollPosition();
@@ -27,16 +27,19 @@ const Project = ({ project }) => {
   const rightColumnRef = useRef(0);
   //setText(text+=char)
   //project.data.intro[0].text
-  function isVisible(ref){
-    console.log(higherScroll, ref.current.offsetTop - ref.current.offsetHeight*2)
-    return higherScroll > ref.current.offsetTop - ref.current.offsetHeight*2;
+  function isVisible(ref) {
+    console.log(
+      higherScroll,
+      ref.current.offsetTop - ref.current.offsetHeight * 2
+    );
+    return higherScroll > ref.current.offsetTop - ref.current.offsetHeight * 2;
   }
   useEffect(() => {
     if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
       setTypeVisibility(true);
       isTypeVisible ? null : start();
     }
-    scroll>higherScroll?setHigherScroll(scroll):null
+    scroll > higherScroll ? setHigherScroll(scroll) : null;
   }, [scroll]);
   function start(counte = -1) {
     setTimeout(() => {
@@ -128,7 +131,12 @@ const Project = ({ project }) => {
           ))}
         </div>
         <div className="content-container">
-          <div className={`left-colunm ${isVisible(leftColumnRef)?'is-visible':'is-not-visible'}`} ref={leftColumnRef}>
+          <div
+            className={`left-colunm ${
+              isVisible(leftColumnRef) ? "is-visible" : "is-not-visible"
+            }`}
+            ref={leftColumnRef}
+          >
             <PrismicRichText
               field={project.data.leftColumn}
               components={{
@@ -142,7 +150,12 @@ const Project = ({ project }) => {
               }}
             />
           </div>
-          <div className={`right-colunm ${isVisible(rightColumnRef)?'is-visible':'is-not-visible'}`} ref={rightColumnRef}>
+          <div
+            className={`right-colunm ${
+              isVisible(rightColumnRef) ? "is-visible" : "is-not-visible"
+            }`}
+            ref={rightColumnRef}
+          >
             <PrismicRichText
               field={project.data.rightColumn}
               components={{
@@ -162,10 +175,11 @@ const Project = ({ project }) => {
       <style jsx>{`
         // gallery
         ::selection {
-  text-shadow: 0px -1px 2px var(--yellow), 0px 1px 2px var(--yellow), -1px 0px 2px var(--yellow),
-    1px 0px 2px var(--yellow), 2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow), 0px -2px 0px var(--yellow),
-    0px 2px 0px var(--yellow);
-}
+          text-shadow: 0px -1px 2px var(--yellow), 0px 1px 2px var(--yellow),
+           -1px 0px 2px var(--yellow), 1px 0px 2px var(--yellow),
+            2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow),
+            0px -2px 0px var(--yellow), 0px 2px 0px var(--yellow);
+        }
         .content-container {
           display:grid;
           grid-template-columns: 1fr 1fr;
