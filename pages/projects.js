@@ -128,34 +128,7 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
-        .footer-gradient {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 50%;
-          height: 100px;
-          background: ${rgb};
-          background-image: linear-gradient(
-            180deg,
-            rgba(${rgb}, 0) 0%,
-            rgba(${rgb}, 1) 70%
-          );
-          z-index: 10;
-        }
-        .header-gradient {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 50%;
-          height: 100px;
-          background: ${rgb};
-          background-image: linear-gradient(
-            0deg,
-            rgba(${rgb}, 0) 0%,
-            rgba(${rgb}, 1) 60%
-          );
-          z-index: 10;
-        }
+
         .project-title-container {
           top: 0;
           left: 0;
@@ -205,6 +178,36 @@ const Projects = ({ projects, page }) => {
         }
         .teste {
           background: red;
+        }
+        @media (min-width: 768px) {
+          .footer-gradient {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+          background: ${rgb};
+          background-image: linear-gradient(
+            180deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
+          );
+          z-index: 10;
+        }
+        .header-gradient {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+          background: ${rgb};
+          background-image: linear-gradient(
+            0deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 60%
+          );
+          z-index: 10;
+        }
         }
       `}</style>
     </div>
