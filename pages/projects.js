@@ -7,7 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
-  const rgb = "	989896";
+  const rgb = "152,152,150";
 
   useEffect(() => {
     context.setPage(page);
@@ -20,22 +20,6 @@ const Projects = ({ projects, page }) => {
         <div className="footer-gradient" />
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
-            <li
-              key={project.uid}
-              className={selected === project ? "selected" : ""}
-              onMouseEnter={() => setSelected(project)}
-              onClick={() => setSelected(project)}
-            >
-              <div
-                style={{ pointerEvents: project === selected ? "all" : "none" }}
-              >
-                <Link href={`/projects/${project.uid}`}>
-                  {project.data.title}
-                </Link>
-              </div>
-            </li>
-          ))}
-                    {projects.map((project) => (
             <li
               key={project.uid}
               className={selected === project ? "selected" : ""}
@@ -128,7 +112,6 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
-
         .project-title-container {
           top: 0;
           left: 0;
@@ -186,11 +169,11 @@ const Projects = ({ projects, page }) => {
           left: 0;
           width: 50%;
           height: 100px;
-          background: ${rgb};
+
           background-image: linear-gradient(
             180deg,
-            rgba(transparent) 0%,
-            rgba(${rgb}) 70%
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
           );
           z-index: 10;
         }
@@ -200,11 +183,11 @@ const Projects = ({ projects, page }) => {
           left: 0;
           width: 50%;
           height: 100px;
-          background: ${rgb};
+
           background-image: linear-gradient(
             0deg,
-            transparent 0%,
-            ${rgb} 60%
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 60%
           );
           z-index: 10;
         }
