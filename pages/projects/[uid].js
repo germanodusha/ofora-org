@@ -86,7 +86,7 @@ const Project = ({ project }) => {
       <Limiter>
         <div
           ref={introRef}
-          className="paragraph-container"
+          className="paragraph-container intro-container"
         >
           {text}
         </div>
@@ -179,6 +179,11 @@ const Project = ({ project }) => {
            -1px 0px 2px var(--yellow), 1px 0px 2px var(--yellow),
             2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow),
             0px -2px 0px var(--yellow), 0px 2px 0px var(--yellow);
+        }
+        .intro-container {
+          width:100%;
+
+          width:100vw;
         }
         .content-container {
           display:grid;
@@ -365,7 +370,11 @@ const Project = ({ project }) => {
             max-height: 180px;
           }
         }
-
+        @media only screen and (min-width:768px) {
+          .intro-container {
+            margin:0 -46px;
+          }
+        }
       `}</style>
     </div>
   );
