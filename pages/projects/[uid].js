@@ -161,6 +161,11 @@ const Project = ({ project }) => {
       </Limiter>
       <style jsx>{`
         // gallery
+        ::selection {
+  text-shadow: 0px -1px 2px var(--yellow), 0px 1px 2px var(--yellow), -1px 0px 2px var(--yellow),
+    1px 0px 2px var(--yellow), 2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow), 0px -2px 0px var(--yellow),
+    0px 2px 0px var(--yellow);
+}
         .content-container {
           display:grid;
           grid-template-columns: 1fr 1fr;
