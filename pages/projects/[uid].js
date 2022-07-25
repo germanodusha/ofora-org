@@ -198,10 +198,11 @@ const Project = ({ project }) => {
           left:0;
           width:100%;
           height:100px;
+          background:white;
           background-image: linear-gradient(
             0deg,
-            rgba(transparent) 0%,
-            rgba(white) 40%
+            transparent 0%,
+            white 40%
           );
         }
         .spacer {
