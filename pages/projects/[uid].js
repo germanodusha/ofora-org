@@ -86,7 +86,7 @@ const Project = ({ project }) => {
       <Limiter>
         <div
           ref={introRef}
-          className="mx-auto p-10 text-center text-2xl lg:p-20 lg:text-4xl"
+          className="paragraph-container"
         >
           {text}
         </div>
