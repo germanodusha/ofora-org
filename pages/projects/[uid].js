@@ -83,13 +83,13 @@ const Project = ({ project }) => {
         <span className="spacer" />
         {project.data.year}
       </Scroller>
-      <Limiter>
         <div
           ref={introRef}
           className="paragraph-container intro-container"
-        >
+          >
           {text}
         </div>
+          <Limiter>
         <div className="gallery p-20">
           {project.data.gallery.map((item, index) => (
             <>
@@ -182,8 +182,6 @@ const Project = ({ project }) => {
         }
         .intro-container {
           width:100%;
-
-          width:100vw;
         }
         .content-container {
           display:grid;
@@ -368,11 +366,6 @@ const Project = ({ project }) => {
           .item :global(img),
           .item :global(video) {
             max-height: 180px;
-          }
-        }
-        @media only screen and (min-width:768px) {
-          .intro-container {
-            margin:0 -46px;
           }
         }
       `}</style>
