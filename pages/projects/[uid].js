@@ -201,7 +201,7 @@ const Project = ({ project }) => {
           background-image: linear-gradient(
             0deg,
             rgba(255,255,255, 1) 40%,
-            rgba(255,255,255, 0) 100%,
+            rgba(255,255,255, 0) 100%
           );
         }
         .spacer {
