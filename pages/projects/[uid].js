@@ -9,6 +9,7 @@ import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
 import Link from "next/link";
 import useScrollPosition from "../../hooks/useScrollPosition";
+import { speed } from "../../speed";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
@@ -45,7 +46,7 @@ const Project = ({ project }) => {
           : null;
       }
       return start(counte + 1);
-    }, 53);
+    }, speed);
   }
   const image = banner.url ? banner : cover;
   return (
@@ -163,7 +164,7 @@ const Project = ({ project }) => {
         .content-container {
           display:grid;
           grid-template-columns: 1fr 1fr;
-          gap:0rem 15rem;
+          gap:0rem 5rem;
           padding:0px 5rem;
         }
         .page-root:global(strong) {

@@ -15,7 +15,8 @@
   text-shadow: 0px -1px 2px white, 0px 1px 2px white, -1px 0px 2px white,
     1px 0px 2px white, 2px 0px 0px white, -2px 0px 0px white, 0px -2px 0px white,
     0px 2px 0px white;
-  background: transparent;
+  background: var(--yellow);
+
 }
 body,
 html,
