@@ -160,11 +160,9 @@ const Project = ({ project }) => {
               field={project.data.rightColumn}
               components={{
                 hyperlink: ({ children, node }) => (
-                  <Link href={node.text} passHref>
-                    <a>
+                    <a target="_blank" href={node.text}>
                       <Highlighted color="yellow">{children}</Highlighted>
                     </a>
-                  </Link>
                 ),
               }}
             />
