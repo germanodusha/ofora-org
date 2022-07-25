@@ -7,7 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
-  const rgb = "152, 152, 152";
+  const rgb = "#989898";
 
   useEffect(() => {
     context.setPage(page);
@@ -20,6 +20,86 @@ const Projects = ({ projects, page }) => {
         <div className="footer-gradient" />
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
             <li
               key={project.uid}
               className={selected === project ? "selected" : ""}
