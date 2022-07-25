@@ -15,7 +15,6 @@ const Index = ({ page }) => {
 
   return (
     <>
-    
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
@@ -52,8 +51,8 @@ export async function getStaticProps({ locale, previewData }) {
 
   return {
     props: {
-      page
+      page,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }

@@ -7,6 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
+  const rgb = "152,152,150";
 
   useEffect(() => {
     context.setPage(page);
@@ -14,9 +15,75 @@ const Projects = ({ projects, page }) => {
 
   return (
     <div className="projects-page flex grow items-stretch">
-      <div>
+      <div className="project-title-container">
+        <div className="header-gradient" />
+        <div className="footer-gradient" />
         <ul className="text-center text-4xl font-semibold xl:text-5xl">
           {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
+            <li
+              key={project.uid}
+              className={selected === project ? "selected" : ""}
+              onMouseEnter={() => setSelected(project)}
+              onClick={() => setSelected(project)}
+            >
+              <div
+                style={{ pointerEvents: project === selected ? "all" : "none" }}
+              >
+                <Link href={`/projects/${project.uid}`}>
+                  {project.data.title}
+                </Link>
+              </div>
+            </li>
+          ))}
+                    {projects.map((project) => (
             <li
               key={project.uid}
               className={selected === project ? "selected" : ""}
@@ -45,6 +112,16 @@ const Projects = ({ projects, page }) => {
         )}
       </div>
       <style jsx>{`
+        .project-title-container {
+          top: 0;
+          left: 0;
+          padding-top: 100px;
+          overflow: auto;
+          background-color: rgba(152, 152, 152, 1);
+        }
+        .project-title-container::-webkit-scrollbar {
+          width: 0px;
+        }
         .projects-page {
           height: 100vh;
         }
@@ -55,14 +132,11 @@ const Projects = ({ projects, page }) => {
           width: 100%;
           position: relative;
         }
-        .projects-page > div:first-child {
-          background-color: rgba(152, 152, 152, 1);
-          padding-top: 100px;
-        }
         li {
           padding: 5px;
         }
         li.selected {
+          width: 100%;
           background: rgb(232, 255, 0);
           background: linear-gradient(
             180deg,
@@ -84,7 +158,39 @@ const Projects = ({ projects, page }) => {
           .imageContainer {
             height: 70vh;
           }
-          
+        }
+        .teste {
+          background: red;
+        }
+        @media (min-width: 768px) {
+          .footer-gradient {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+
+          background-image: linear-gradient(
+            180deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 70%
+          );
+          z-index: 10;
+        }
+        .header-gradient {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100px;
+
+          background-image: linear-gradient(
+            0deg,
+            rgba(${rgb}, 0) 0%,
+            rgba(${rgb}, 1) 60%
+          );
+          z-index: 10;
+        }
         }
       `}</style>
     </div>

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../pages/_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
@@ -8,11 +8,41 @@ import useScrollPosition from "../hooks/useScrollPosition";
 
 const About = ({ page }) => {
   const context = useContext(Context);
-  const scrollPosition = useScrollPosition();
+  const scroll = useScrollPosition();
+  const [higherScroll, setHigherScroll] = useState(0);
+
+  const firstImageRef = useRef(0);
+  const secondImageRef = useRef(0);
+  const firstTextRef = useRef(0);
+  const secondTextRef = useRef(0);
+  const thirdTextRef = useRef(0);
+
+  function imageStart(ref) {
+    const realTopPos = ref.current.offsetTop;
+    return higherScroll >= realTopPos;
+  }
+
+  const [higherScrollPosition, setHigherScrollPosition] = useState(0);
+  useEffect(() => {
+    if (scroll > higherScrollPosition) {
+      setHigherScrollPosition(scroll);
+    }
+  }, [scroll, higherScrollPosition]);
 
   useEffect(() => {
     context.setPage(page);
   }, []);
+
+  function isVisible(ref) {
+    if (ref?.current) {
+      return (
+        ref.current.offsetTop + ref.current.offsetHeight * 0.4 <
+        higherScrollPosition
+      );
+    }
+    return false;
+  }
+
   return (
     <div>
       <Scroller />
@@ -23,20 +53,45 @@ const About = ({ page }) => {
       </div>
       <h1>{page.data.title}</h1>
       <div className="container-descript">
-        <div className="mx-auto p-10 lg:p-20 text-center text-2xl lg:text-3xl">
+        <div
+          ref={firstTextRef}
+          className={`paragraph-container ${
+            isVisible(firstTextRef) ? "is-visible" : "is-not-visible"
+          }`}
+        >
           <PrismicRichText field={page.data.content} />
         </div>
         <div className="infoContainer mx-auto p-20 text-center">
-          <div className="reorder">
+          <div
+            ref={secondTextRef}
+            className={`reorder ${
+              isVisible(secondTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <PrismicRichText field={page.data.infoLeft} />
           </div>
-          <div>
+          <div
+            ref={thirdTextRef}
+            className={`${
+              isVisible(thirdTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <PrismicRichText field={page.data.infoRight} />
           </div>
-          <div className="imageContainer reorder">
+          <div
+            ref={firstImageRef}
+            className={`imageContainer reorder ${
+              isVisible(firstImageRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
           </div>
-          <div className="imageContainer">
+          <div
+            ref={secondImageRef}
+            className={`imageContainer ${
+              isVisible(secondImageRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
             <Image layout="fill" src="/G1.png" alt="G1 Logo" />
           </div>
         </div>
@@ -68,9 +123,10 @@ const About = ({ page }) => {
           all: unset;
           position: absolute;
           top: 100%;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.8s ease-in-out;
           padding-bottom: 139px;
           background: var(--yellow);
+
         }
         .infoContainer {
           width: 100%;
@@ -88,12 +144,22 @@ const About = ({ page }) => {
           width: 230px;
           height: 230px;  
           margin: 0 auto;
+          transition: all 0.8s ease-in-out;
         } 
         .container {
           all: unset;
         }
         .reorder {
           order:-1;
+        }
+        .is-not-visible {
+          opacity: 0;
+          transform: translateY(20%)
+        }
+        .is-visible {
+          transition: all 0.8s ease-in-out;
+          transform: translateY(0%)
+          opacity: 1;
         }
         @media (min-width: 768px) {
           h1 {

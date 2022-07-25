@@ -2,22 +2,63 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
 import { createClient } from "../../prismicio";
 import Modal from "../../components/Modal";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
+import Link from "next/link";
+import useScrollPosition from "../../hooks/useScrollPosition";
+import { speed } from "../../speed";
 
 const Project = ({ project }) => {
   const { cover, banner } = project.data;
-  const [selected, onSelect] = useState();
 
+  const [selected, onSelect] = useState();
+  const [text, setText] = useState("");
+
+  const [higherScroll, setHigherScroll] = useState(0);
+  const [isTypeVisible, setTypeVisibility] = useState(false);
+
+  const scroll = useScrollPosition();
+  const introRef = useRef(0);
+  const titleRef = useRef(0);
+  const leftColumnRef = useRef(0);
+  const rightColumnRef = useRef(0);
+  //setText(text+=char)
+  //project.data.intro[0].text
+  function isVisible(ref) {
+    console.log(
+      higherScroll,
+      ref.current.offsetTop - ref.current.offsetHeight * 2
+    );
+    return higherScroll > ref.current.offsetTop - ref.current.offsetHeight * 2;
+  }
+  useEffect(() => {
+    if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
+      setTypeVisibility(true);
+      isTypeVisible ? null : start();
+    }
+    scroll > higherScroll ? setHigherScroll(scroll) : null;
+  }, [scroll]);
+  function start(counte = -1) {
+    setTimeout(() => {
+      if (counte < project.data.intro[0]?.text.length) {
+        project.data.intro[0].text[counte]
+          ? setText((text += project.data.intro[0].text[counte]))
+          : null;
+      }
+      return start(counte + 1);
+    }, speed);
+  }
   const image = banner.url ? banner : cover;
   return (
     <div className="page-root">
-      <div className="flex h-screen grow">
+      <div ref={titleRef} className="cover-and-title flex h-screen grow">
         <div className="title w-1/2 pt-16 text-center uppercase">
-          <h1 className="text-3xl md:text-5xl">{project.data.title}</h1>
+          <h1 className="title-container text-3xl md:text-5xl">
+            {project.data.title}
+          </h1>
           <h2 className="text-3xl md:text-5xl">
             {project.data.year}
             <br />
@@ -43,8 +84,11 @@ const Project = ({ project }) => {
         {project.data.year}
       </Scroller>
       <Limiter>
-        <div className="intro p-10 text-center text-lg md:p-20 md:text-xl lg:text-3xl">
-          <PrismicRichText field={project.data.intro} />
+        <div
+          ref={introRef}
+          className="paragraph-container"
+        >
+          {text}
         </div>
         <div className="gallery p-20">
           {project.data.gallery.map((item, index) => (
@@ -86,19 +130,80 @@ const Project = ({ project }) => {
             </>
           ))}
         </div>
-        <div className="content p-20 md:columns-2">
-          <PrismicRichText
-            field={project.data.content}
-            components={{
-              hyperlink: ({ children, node }) => (
-                  <Highlighted color="yellow"><span>{children}</span></Highlighted>
-              ),
-            }}
-          />
+        <div className="content-container">
+          <div
+            className={`left-colunm ${
+              isVisible(leftColumnRef) ? "is-visible" : "is-not-visible"
+            }`}
+            ref={leftColumnRef}
+          >
+            <PrismicRichText
+              field={project.data.leftColumn}
+              components={{
+                hyperlink: ({ children, node }) => (
+                  <Link href={node.text} passHref>
+                    <a>
+                      <Highlighted color="yellow">{children}</Highlighted>
+                    </a>
+                  </Link>
+                ),
+              }}
+            />
+          </div>
+          <div
+            className={`right-colunm ${
+              isVisible(rightColumnRef) ? "is-visible" : "is-not-visible"
+            }`}
+            ref={rightColumnRef}
+          >
+            <PrismicRichText
+              field={project.data.rightColumn}
+              components={{
+                hyperlink: ({ children, node }) => (
+                  <Link target="_blank" href={node.text} passHref>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Highlighted color="yellow">{children}</Highlighted>
+                    </a>
+                  </Link>
+                ),
+              }}
+            />
+          </div>
         </div>
+        <div className="footer-gradient" />
       </Limiter>
       <style jsx>{`
         // gallery
+        :global(*)::selection{
+          text-shadow: 0px -1px 2px var(--yellow), 0px 1px 2px var(--yellow),
+           -1px 0px 2px var(--yellow), 1px 0px 2px var(--yellow),
+            2px 0px 0px var(--yellow), -2px 0px 0px var(--yellow),
+            0px -2px 0px var(--yellow), 0px 2px 0px var(--yellow);
+        }
+        .content-container {
+          display:grid;
+          grid-template-columns: 1fr 1fr;
+          gap:0rem 5rem;
+          padding:0px 5rem;
+          padding-bottom:8.6875rem;
+        }
+        .page-root:global(strong) {
+          box-shadow: inset 0.5em 0.25em 0.25em -0.4em red, inset -0.5em -0.25em 0.25em -0.4em red,
+          inset -0.5em 1em 0.25em -0.4em red, inset -0.5em -0.3em 0.25em -0.4em red;
+          border-radius: 0.5em !important;
+        }
+        .footer-gradient{
+          position:fixed;
+          bottom:0;
+          left:0;
+          width:100%;
+          height:100px;
+          background-image: linear-gradient(
+            0deg,
+            rgba(255,255,255, 1) 40%,
+            rgba(255,255,255, 0) 100%
+          );
+        }
         .spacer {
           padding-left: 3rem;
         }
@@ -133,7 +238,101 @@ const Project = ({ project }) => {
         .item :global(video):hover {
           opacity: 0.2;
         }
+
+        .title {
+          position:relative;
+          animation: appear-right 1.2s ease-in-out;
+        }
+        .banner {
+          position:relative;
+          animation:appear-left 1.2s ease-in-out;
+        }
+        .is-not-visible  {
+          opacity:0;
+        }
+        .left-colunm {
+          position:relative;
+          left:-20%;
+        }
+        .right-colunm{
+          position:relative;
+          left:20%;
+        }
+        .is-visible {
+          transition:all 2s ease-in-out;
+          opacity:1;
+          left:0;
+        }
+        @keyframes appear-left{
+          0% {
+            opacity:0;
+            transform:translateX(20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateX(0%);
+          }
+        }
+        @keyframes appear-right{
+          0% {
+            opacity:0;
+            transform:translateX(-20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateX(0%);
+          }
+        }
+        @media only screen and (max-width: 768px) {
+          .content-container {
+            grid-template-columns: 1fr;
+            gap:5rem;
+          }
+          .cover-and-title {
+            display:flex;
+            flex-direction:column;
+          }
+          .title {
+            width:100%;
+            display:grid;
+          }
+          .title{
+            display:grid;
+            gap:1rem;
+          }
+          .banner {
+            margin-top:1rem;
+            width:100%;
+            height:100%;
+          }
+        @keyframes appear-left{
+          0% {
+            opacity:0;
+            transform:translateY(20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateY(0%);
+          }
+        }
+        @keyframes appear-right{
+          0% {
+            opacity:0;
+            transform:translateY(-20%)
+          }
+          100% {
+            opacity:1;
+            transform:translateY(0%);
+          }
+        }
+        }
+
         @media only screen and (min-width: 780px) {
+          .title{
+            padding-left:1em;
+            padding-right :1em;
+
+          }
           .title > div {
             margin-top: calc(50vh - 200px);
           }
@@ -166,6 +365,7 @@ const Project = ({ project }) => {
             max-height: 180px;
           }
         }
+
       `}</style>
     </div>
   );
