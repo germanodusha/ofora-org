@@ -189,8 +189,8 @@ const Projects = ({ projects, page }) => {
           background: ${rgb};
           background-image: linear-gradient(
             180deg,
-            rgba(transparent, 0) 0%,
-            rgba(${rgb}, 1) 70%
+            rgba(transparent) 0%,
+            rgba(${rgb}) 70%
           );
           z-index: 10;
         }
@@ -203,8 +203,8 @@ const Projects = ({ projects, page }) => {
           background: ${rgb};
           background-image: linear-gradient(
             0deg,
-            rgba(transparent, 0) 0%,
-            rgba(${rgb}, 1) 60%
+            rgba(transparenttt) 0%,
+            rgba(${rgb}) 60%
           );
           z-index: 10;
         }
