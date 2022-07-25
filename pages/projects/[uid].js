@@ -198,7 +198,7 @@ const Project = ({ project }) => {
           left:0;
           width:100%;
           height:100px;
-          background:transparent;
+          background:white;
           background-image:linear-gradient(
             0deg,
             #fff 40%,
