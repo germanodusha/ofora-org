@@ -203,7 +203,7 @@ const Projects = ({ projects, page }) => {
           background: ${rgb};
           background-image: linear-gradient(
             0deg,
-            rgba(transparenttt) 0%,
+            rgba(transparent) 0%,
             rgba(${rgb}) 60%
           );
           z-index: 10;
