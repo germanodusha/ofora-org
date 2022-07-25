@@ -7,7 +7,7 @@ import Image from "next/image.js";
 const Projects = ({ projects, page }) => {
   const context = useContext(Context);
   const [selected, setSelected] = useState(projects[0]);
-  const rgb = "#989898";
+  const rgb = "152, 152, 152";
 
   useEffect(() => {
     context.setPage(page);
