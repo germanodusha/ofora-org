@@ -199,9 +199,9 @@ const Project = ({ project }) => {
           width:100%;
           height:100px;
           background-image: linear-gradient(
-            180deg,
-            rgba(255,255,255, 0) 0%,
-            rgba(255,255,255, 1) 40%
+            0deg,
+            rgba(255,255,255, 1) 40%,
+            rgba(255,255,255, 0) 100%,
           );
         }
         .spacer {
