@@ -44,16 +44,21 @@ const Index = ({ page }) => {
       <div className="logo-container">
         <Logo />
       </div>
-      <Canvas width={1000} height={1000}>
-        <pointLight position={[10, 10, 10]} color={0xffffff} intensity={0.8} />
-        <Suspense fallback={<Loader />}>
-          {flags.map((flag) => (
-            <Flag key={flag.id} flag={flag} />
-          ))}
-        </Suspense>
-        <Stats showPanel={0} />
-        <OrbitControls />
-      </Canvas>
+      <div className="canvas-container">
+        <Canvas width={1000} height={1000}>
+          <pointLight
+            position={[10, 10, 10]}
+            color={0xffffff}
+            intensity={0.8}
+          />
+          <Suspense fallback={<Loader />}>
+            <Flag flag={{ position: [0, 0, -500] }} />
+          </Suspense>
+          <Stats showPanel={0} />
+          <OrbitControls />
+        </Canvas>
+      </div>
+
       <style jsx>{`
         :global(body) {
           box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
@@ -70,6 +75,13 @@ const Index = ({ page }) => {
           min-width: 200px;
           min-height: 200px;
           fill: #e8ff00;
+        }
+        .canvas-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
         }
       `}</style>
     </>
