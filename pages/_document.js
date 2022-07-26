@@ -41,7 +41,7 @@ export default function Document() {
           rel="stylesheet"
         />
         {/* <!-- for Google -->*/}
-        <meta name="description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces." />     
+        <meta name="description" content="Fora is a pluri-disciplinary organization working with cultural expressions and its various intersections." />     
         <meta name="keywords" content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações" />     
         <meta name="author" content="Fora" />   
         {/*<!-- for Facebook -->*/ }   
@@ -49,7 +49,7 @@ export default function Document() {
         <meta property="og:type" content="article" />     
         <meta property="og:image" content="/fora.png" />     
         <meta property="og:url" content="/ofora.org" />     
-        <meta property="og:description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces" />
+        <meta property="og:description" content="Fora is a pluri-disciplinary organization working with cultural expressions and its various intersections." />
         <title>Fora</title>
       </Head>
       <body className="overflow-x-hidden antialiased">
