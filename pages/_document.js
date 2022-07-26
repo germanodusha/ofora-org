@@ -47,7 +47,7 @@ export default function Document() {
         {/*<!-- for Facebook -->*/ }   
         <meta property="og:title" content="Fora" />     
         <meta property="og:type" content="article" />     
-        <meta property="og:image" content="/fora_logo.svg" />     
+        <meta property="og:image" content="/fora.png" />     
         <meta property="og:url" content="/ofora.org" />     
         <meta property="og:description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces" />
       </Head>
