@@ -40,6 +40,16 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
           rel="stylesheet"
         />
+        {/* <!-- for Google -->*/}
+        <meta name="description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces." />     
+        <meta name="keywords" content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações" />     
+        <meta name="author" content="Fora" />   
+        {/*<!-- for Facebook -->*/ }   
+        <meta property="og:title" content="Fora" />     
+        <meta property="og:type" content="article" />     
+        <meta property="og:image" content="/images/fora.png" />     
+        <meta property="og:url" content="ofora.org" />     
+        <meta property="og:description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces" />
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
