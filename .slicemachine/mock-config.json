@@ -61,7 +61,8 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "home": {}
   },
   "slices": {
     "Text": {

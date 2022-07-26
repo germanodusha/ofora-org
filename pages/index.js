@@ -1,10 +1,33 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, Suspense } from "react";
 import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
 import { Logo } from "../components/Logo";
-import Modal from "../components/Modal";
+import { Canvas } from "@react-three/fiber";
+import Loader from "../components/Loader";
+import { Stats, OrbitControls } from "@react-three/drei";
+import Flag from "../components/Flag";
+
+const flags = [];
+
+const w = 5;
+const h = 5;
+const dx = 300;
+const dy = 300;
+const r = () => Math.random() * 30 - 60;
+for (let y = 0; y < h; y += 1) {
+  for (let x = 0; x < w; x += 1) {
+    flags.push({
+      id: `${x}-${y}`,
+      position: [
+        dx * x - (dx * w) / 2 + r(),
+        dy * y - (dy * h) / 2 + r(),
+        -550,
+      ],
+    });
+  }
+}
 
 const Index = ({ page }) => {
   const { setPage } = useContext(Context);
@@ -21,12 +44,22 @@ const Index = ({ page }) => {
       <div className="logo-container">
         <Logo />
       </div>
+      <Canvas width={1000} height={1000}>
+        <pointLight position={[10, 10, 10]} color={0xffffff} intensity={0.8} />
+        <Suspense fallback={<Loader />}>
+          {flags.map((flag) => (
+            <Flag key={flag.id} flag={flag} />
+          ))}
+        </Suspense>
+        <Stats showPanel={0} />
+        <OrbitControls />
+      </Canvas>
       <style jsx>{`
         :global(body) {
           box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
         }
         .logo-container {
-          position: fixed; 
+          position: fixed;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -36,7 +69,8 @@ const Index = ({ page }) => {
           max-height: 60vw;
           min-width: 200px;
           min-height: 200px;
-          fill: #E8FF00;
+          fill: #e8ff00;
+        }
       `}</style>
     </>
   );
@@ -47,7 +81,7 @@ export default Index;
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("page", "home", { lang: locale });
+  const page = await client.getSingle("home", { lang: locale });
 
   return {
     props: {
