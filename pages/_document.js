@@ -50,6 +50,7 @@ export default function Document() {
         <meta property="og:image" content="/fora.png" />     
         <meta property="og:url" content="/ofora.org" />     
         <meta property="og:description" content="Fora is a pluri-disciplinary organization working with cultural expressions, institutional strategies and meaningful initiatives in public and digital spaces" />
+        <title>Fora</title>
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
