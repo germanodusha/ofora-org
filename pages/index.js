@@ -52,7 +52,7 @@ const Index = ({ page }) => {
             intensity={0.8}
           />
           <Suspense fallback={<Loader />}>
-            <Flag flag={{ position: [0, 10, -250] }} />
+            <Flag flag={{ position: [-30, 10, -250] }} />
           </Suspense>
           <Stats showPanel={0} />
           <OrbitControls />
