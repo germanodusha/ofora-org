@@ -54,7 +54,7 @@ const Index = ({ page }) => {
           <pointLight
             position={[10, 10, 10]}
             color={0xffffff}
-            intensity={0.8}
+            intensity={0.90}
           />
           <Suspense fallback={<Loader />}>
             <Flag flag={{ position: [flagX, 20, flagZ] }} />
