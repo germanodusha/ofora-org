@@ -5,7 +5,7 @@ import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
-import { Stats, OrbitControls } from "@react-three/drei";
+import { Stats } from "@react-three/drei";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -56,7 +56,7 @@ const Index = ({ page }) => {
             color={0xffffff}
             intensity={0.90}
           />
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={null}>
             <Flag flag={{ position: [flagX, 20, flagZ] }} />
           </Suspense>
           <Stats showPanel={0} />
