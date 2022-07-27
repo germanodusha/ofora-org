@@ -11,12 +11,12 @@ const Flag = ({ flag }) => {
   const [cloth, setCloth] = useState(null);
   const [wind, setWind] = useState(true);
   const [hover, setHover] = useState(false);
-  const [flagTexture] = useLoader(TextureLoader, ['teste.jpg']);
+  const [flagTexture] = useLoader(TextureLoader, ['teste.png']);
   const mesh = useRef();
   const geometry = useRef();
 
   useEffect(() => {
-    setCloth(new Cloth(10, 10));
+    setCloth(new Cloth(20, 14));
   }, []);
 
   useFrame(() => {

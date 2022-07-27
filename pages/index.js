@@ -3,11 +3,11 @@ import Head from "next/head";
 import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
-import { Logo } from "../components/Logo";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import { Stats, OrbitControls } from "@react-three/drei";
 import Flag from "../components/Flag";
+import useWindowSize from "../hooks/useWindowSize";
 
 const flags = [];
 
@@ -36,6 +36,11 @@ const Index = ({ page }) => {
     setPage(page);
   }, [page, setPage]);
 
+  const windowSize = useWindowSize()
+  const windowWidth = windowSize.width || 0
+  const flagX = windowWidth > 1300 ? 50 : -30
+  const flagZ = windowWidth > 768 ? -180 : -300
+
   return (
     <>
       <Head>
@@ -52,7 +57,7 @@ const Index = ({ page }) => {
             intensity={0.8}
           />
           <Suspense fallback={<Loader />}>
-            <Flag flag={{ position: [130, 50, -180] }} />
+            <Flag flag={{ position: [flagX, 20, flagZ] }} />
           </Suspense>
           <Stats showPanel={0} />
         </Canvas>
