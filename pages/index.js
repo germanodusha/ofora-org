@@ -55,7 +55,6 @@ const Index = ({ page }) => {
             <Flag flag={{ position: [130, 50, -180] }} />
           </Suspense>
           <Stats showPanel={0} />
-          <OrbitControls />
         </Canvas>
       </div>
 
