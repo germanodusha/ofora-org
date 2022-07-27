@@ -41,9 +41,9 @@ const Index = ({ page }) => {
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
-      <div className="logo-container">
+      {/* <div className="logo-container">
         <Logo />
-      </div>
+      </div> */}
       <div className="canvas-container">
         <Canvas width={1000} height={1000}>
           <pointLight
@@ -52,7 +52,7 @@ const Index = ({ page }) => {
             intensity={0.8}
           />
           <Suspense fallback={<Loader />}>
-            <Flag flag={{ position: [0, 0, -500] }} />
+            <Flag flag={{ position: [0, 0, -250] }} />
           </Suspense>
           <Stats showPanel={0} />
           <OrbitControls />

@@ -43,8 +43,8 @@ const Flag = ({ flag }) => {
       <mesh
         ref={mesh}
         onClick={() => setWind(!wind)}
-        onPointerOver={(e) => setHover(true)}
-        onPointerOut={(e) => setHover(false)}
+        // onPointerOver={(e) => setHover(true)}
+        // onPointerOut={(e) => setHover(false)}
         castShadow
       >
         <parametricGeometry
