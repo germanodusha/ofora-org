@@ -42,7 +42,6 @@ const Flag = ({ flag }) => {
     <group position={flag.position}>
       <mesh
         ref={mesh}
-        onClick={() => setWind(!wind)}
         // onPointerOver={(e) => setHover(true)}
         // onPointerOut={(e) => setHover(false)}
         castShadow
