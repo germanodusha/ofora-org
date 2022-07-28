@@ -4,8 +4,6 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
 import { Canvas } from "@react-three/fiber";
-import Loader from "../components/Loader";
-import { Stats } from "@react-three/drei";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -59,7 +57,6 @@ const Index = ({ page }) => {
           <Suspense fallback={null}>
             <Flag flag={{ position: [flagX, 20, flagZ] }} />
           </Suspense>
-          <Stats showPanel={0} />
         </Canvas>
       </div>
 
