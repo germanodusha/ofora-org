@@ -36,8 +36,8 @@ const Index = ({ page }) => {
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
-  const flagX = -10 + (windowWidth / 20)
-  const flagZ = windowWidth > 768 ? -100 : -300
+  const flagX = -10 + (windowWidth / 17)
+  const flagZ = windowWidth > 768 ? -100 : -100
 
   return (
     <>
