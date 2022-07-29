@@ -36,8 +36,8 @@ const Index = ({ page }) => {
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
-  const flagX = windowWidth > 1300 ? 50 : -30
-  const flagZ = windowWidth > 768 ? -180 : -300
+  const flagX = -10 + (windowWidth / 20)
+  const flagZ = windowWidth > 768 ? -100 : -300
 
   return (
     <>
@@ -55,7 +55,7 @@ const Index = ({ page }) => {
             intensity={0.90}
           />
           <Suspense fallback={null}>
-            <Flag flag={{ position: [flagX, 20, flagZ] }} />
+            <Flag flag={{ position: [flagX, 40, flagZ] }} />
           </Suspense>
         </Canvas>
       </div>
