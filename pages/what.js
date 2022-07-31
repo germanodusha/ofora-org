@@ -138,7 +138,7 @@ const About = ({ page }) => {
           display: grid;
           grid-template-columns: 1fr;
           padding-top: 0px;
-          gap:5rem;
+          gap:4rem;
           padding-bottom: 5px;
           font-size: 14px;
         }
