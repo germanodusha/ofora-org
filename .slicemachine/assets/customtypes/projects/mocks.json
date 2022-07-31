@@ -1,19 +1,20 @@
 {
-  "id": "9b7158e7-1a13-4c06-8bfa-c2aa62e34568",
-  "uid": "doloribus-odio-rerum",
+  "id": "a0c62714-137e-40c3-b891-9bb4abdc026c",
+  "uid": "non-qui-repellendus",
   "type": "projects",
   "data": {
+    "title": "visualize end-to-end channels",
     "projects": [
       {
         "project": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://google.com"
         }
       },
       {
         "project": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "http://twitter.com"
         }
       },
       {

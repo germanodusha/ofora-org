@@ -5,6 +5,13 @@
   "status": true,
   "json": {
     "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
       "projects": {
         "type": "Group",
         "config": {
@@ -15,7 +22,9 @@
               "config": {
                 "label": "Project",
                 "select": "document",
-                "customtypes": ["project"]
+                "customtypes": [
+                  "project"
+                ]
               }
             }
           }

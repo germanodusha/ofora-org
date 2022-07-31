@@ -2,9 +2,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../pages/_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
+import * as prismicH from "@prismicio/helpers";
 import Image from "next/image";
 import Scroller from "../components/Scroller";
 import useScrollPosition from "../hooks/useScrollPosition";
+import Head from "next/head";
 
 const About = ({ page }) => {
   const context = useContext(Context);
@@ -45,6 +47,9 @@ const About = ({ page }) => {
 
   return (
     <div>
+      <Head>
+        <title>{prismicH.asText(page.data.title)}</title>
+      </Head>
       <Scroller />
       <div className="video">
         <video autoPlay loop muted playsInline>

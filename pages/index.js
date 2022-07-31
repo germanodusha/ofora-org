@@ -44,9 +44,6 @@ const Index = ({ page }) => {
       <Head>
         <title>{prismicH.asText(page.data.title)}</title>
       </Head>
-      {/* <div className="logo-container">
-        <Logo />
-      </div> */}
       <div className="canvas-container">
         <Canvas width={1000} height={1000}>
           <pointLight
