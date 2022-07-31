@@ -13,7 +13,7 @@ const Modal = ({ title, media, visible, onClose }) => {
               objectFit="contain"
             />
           ) : (
-            <video autoPlay playsInline muted>
+            <video controls>
               <source src={media.url} type="video/mp4" />
             </video>
           )}
