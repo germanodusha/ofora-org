@@ -1,28 +1,18 @@
 {
-  "id": "5460ba44-ed3e-4b97-9c4f-da98af9e5166",
-  "uid": "iure-architecto-incidunt",
+  "id": "2f0f7b14-6b08-48cf-a0f1-4daee3061edc",
+  "uid": "eos-occaecati-rerum",
   "type": "settings",
   "data": {
-    "siteTitle": [
-      {
-        "type": "heading1",
-        "text": "Synthesize world-class blockchains",
-        "spans": []
-      }
-    ],
-    "newsletterDescription": [
-      {
-        "type": "paragraph",
-        "text": "Esse labore ex cillum pariatur magna aliqua ullamco deserunt. Elit cupidatat sit et culpa sunt ea fugiat.",
-        "spans": []
-      }
-    ],
-    "newsletterDisclaimer": [
-      {
-        "type": "paragraph",
-        "text": "Exercitation quis quis non aliquip ipsum.",
-        "spans": []
-      }
-    ]
+    "description": "integrate extensible communities",
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+    },
+    "keywords": "empower cross-platform communities"
   }
 }

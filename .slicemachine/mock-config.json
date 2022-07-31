@@ -17,26 +17,7 @@
         }
       }
     },
-    "settings": {
-      "newsletterDescription": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      },
-      "newsletterDisclaimer": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      },
-      "siteTitle": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      }
-    },
+    "settings": {},
     "projects": {
       "projects": {}
     },

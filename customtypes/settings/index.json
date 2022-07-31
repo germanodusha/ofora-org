@@ -5,31 +5,26 @@
   "status": true,
   "json": {
     "Main": {
-      "siteTitle": {
-        "type": "StructuredText",
+      "description": {
+        "type": "Text",
         "config": {
-          "label": "Site Title",
-          "placeholder": "Title of the site",
-          "allowTargetBlank": false,
-          "single": "heading1"
+          "label": "Description",
+          "placeholder": ""
         }
       },
-      "newsletterDescription": {
-        "type": "StructuredText",
+      "image": {
+        "type": "Image",
         "config": {
-          "label": "Newsletter Description",
-          "placeholder": "Text above the sign up form",
-          "allowTargetBlank": true,
-          "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
-      "newsletterDisclaimer": {
-        "type": "StructuredText",
+      "keywords": {
+        "type": "Text",
         "config": {
-          "label": "Newsletter Disclaimer",
-          "placeholder": "Small text below sign up form",
-          "allowTargetBlank": true,
-          "multi": "paragraph,em,strong,hyperlink"
+          "label": "Keywords",
+          "placeholder": ""
         }
       }
     }
