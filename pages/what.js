@@ -48,7 +48,7 @@ const About = ({ page }) => {
   return (
     <div>
       <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
+        <title>{page.data.title}</title>
       </Head>
       <Scroller />
       <div className="video">

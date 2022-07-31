@@ -42,7 +42,7 @@ const Index = ({ page }) => {
   return (
     <>
       <Head>
-        <title>{prismicH.asText(page.data.title)}</title>
+        <title>{page.data.title}</title>
       </Head>
       <div className="canvas-container">
         <Canvas width={1000} height={1000}>
@@ -59,7 +59,7 @@ const Index = ({ page }) => {
 
       <style jsx>{`
         :global(body) {
-          box-shadow: inset 0px 0px 120px 150px rgba(152, 152, 152, 1);
+          background-color: var(--yellow);
         }
         .logo-container {
           position: fixed;

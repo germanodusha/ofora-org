@@ -215,7 +215,7 @@ const Project = ({ project }) => {
           position: relative;
           text-align: center;
           color: transparent;
-          margin: 15px 10px;
+          margin: 10px 10px;
           transition: .4s box-shadow;
           line-height: 0px;
         }
@@ -354,18 +354,25 @@ const Project = ({ project }) => {
           }
           .item :global(img),
           .item :global(video) {
-            max-height: 100px;
+            height: 180px !important;
+            width: 180px !important;
+            object-fit: cover;
           }
         }
-        @media only screen and (min-width: 980px) {
+        @media only screen and (min-width: 1024px) {
           .item :global(img),
           .item :global(video) {
-            max-height: 140px;
+            height: 195px !important;
+            width: 195px !important;
+            object-fit: cover;
           }
+        }
         @media only screen and (min-width: 1280px) {
           .item :global(img),
           .item :global(video) {
-            max-height: 180px;
+            height: 260px !important;
+            width: 260px !important;
+            object-fit: cover;
           }
         }
       `}</style>
