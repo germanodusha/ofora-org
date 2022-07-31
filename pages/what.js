@@ -66,23 +66,7 @@ const About = ({ page }) => {
         >
           <PrismicRichText field={page.data.content} />
         </div>
-        <div className="infoContainer mx-auto p-20 text-center">
-          <div
-            ref={secondTextRef}
-            className={`reorder ${
-              isVisible(secondTextRef) ? "is-visible" : "is-not-visible"
-            }`}
-          >
-            <PrismicRichText field={page.data.infoLeft} />
-          </div>
-          <div
-            ref={thirdTextRef}
-            className={`${
-              isVisible(thirdTextRef) ? "is-visible" : "is-not-visible"
-            }`}
-          >
-            <PrismicRichText field={page.data.infoRight} />
-          </div>
+        <div className="infoContainer mx-auto p-20">
           <div
             ref={firstImageRef}
             className={`imageContainer reorder ${
@@ -98,6 +82,22 @@ const About = ({ page }) => {
             }`}
           >
             <Image layout="fill" src="/G1.png" alt="G1 Logo" />
+          </div>
+          <div
+            ref={secondTextRef}
+            className={`reorder ${
+              isVisible(secondTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
+            <PrismicRichText field={page.data.infoLeft} />
+          </div>
+          <div
+            ref={thirdTextRef}
+            className={`${
+              isVisible(thirdTextRef) ? "is-visible" : "is-not-visible"
+            }`}
+          >
+            <PrismicRichText field={page.data.infoRight} />
           </div>
         </div>
       </div>
@@ -140,15 +140,12 @@ const About = ({ page }) => {
           padding-top: 0px;
           gap:5rem;
           padding-bottom: 5px;
-        }
-        .infoContainer > :global(*:first-child) {
-          font-size: 1.5rem;
+          font-size: 14px;
         }
         .imageContainer {
           position: relative;
           width: 230px;
           height: 230px;  
-          margin: 0 auto;
           transition: all 0.8s ease-in-out;
         } 
         .container {
@@ -173,6 +170,9 @@ const About = ({ page }) => {
           .infoContainer {
             grid-template-columns: 1fr 1fr;
             grid-auto-flow: row;
+          }
+          .infoContainer .reorder {
+            padding-left: 150px
           }
           .reorder {
           order:0;
