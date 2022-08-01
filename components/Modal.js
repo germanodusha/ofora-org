@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CloseIcon, SoundIcon } from "./Icons"
 
 const Modal = ({ title, media, visible, onClose }) => {
   return (
@@ -20,8 +21,12 @@ const Modal = ({ title, media, visible, onClose }) => {
         </div>
       </div>
       <div className="close" onClick={() => onClose(null)}>
-        &times;
+        <CloseIcon />
       </div>
+      <div className="sound" onClick={() => onClose(null)}>
+        <SoundIcon />
+      </div>
+      
       <style jsx>{`
         .backdrop {
           position: fixed;
@@ -52,15 +57,23 @@ const Modal = ({ title, media, visible, onClose }) => {
         }
         .close {
           position: absolute;
-          top: 122px;
-          right: 10vw;
+          top: 90px;
+          right: 40px;
           cursor: pointer;
-          font-size: 52px;
-          color: gray;
-          text-shadow: 2px 2px 2px gray;
+          opacity: 0.4;
         }
         .close:hover {
-          color: var(--yellow);
+          opacity: 1;
+        }
+        .sound {
+          position: absolute;
+          top: 140px;
+          right: 40px;
+          cursor: pointer;
+          opacity: 0.4;
+        }
+        .sound:hover {
+          opacity: 1;
         }
         video {
           width: 100%;
