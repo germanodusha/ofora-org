@@ -1,7 +1,10 @@
 import Image from "next/image";
-import { CloseIcon, SoundIcon } from "./Icons"
+import { useRef } from "react";
+import { CloseIcon, SoundIcon } from "./Icons";
 
 const Modal = ({ title, media, visible, onClose }) => {
+  const videoRef = useRef();
+
   return (
     <div className="backdrop">
       <div className="content">
@@ -14,19 +17,30 @@ const Modal = ({ title, media, visible, onClose }) => {
               objectFit="contain"
             />
           ) : (
-            <video controls>
+            <video autoPlay muted playsInline loop ref={videoRef}>
               <source src={media.url} type="video/mp4" />
             </video>
           )}
         </div>
       </div>
-      <div className="close" onClick={() => onClose(null)}>
+      <div
+        className="close"
+        onClick={() => {
+          videoRef.current.muted = true;
+          onClose(null);
+        }}
+      >
         <CloseIcon />
       </div>
-      <div className="sound" onClick={() => onClose(null)}>
+      <div
+        className="sound"
+        onClick={() => {
+          videoRef.current.muted = !videoRef.current.muted;
+        }}
+      >
         <SoundIcon />
       </div>
-      
+
       <style jsx>{`
         .backdrop {
           position: fixed;
@@ -41,7 +55,7 @@ const Modal = ({ title, media, visible, onClose }) => {
           align-items: center;
           pointer-events: ${visible ? "all" : "none"};
           opacity: ${visible ? 1 : 0};
-          transition: 0.7s opacity;
+          transition: 0.8s opacity;
         }
         .cover {
           position: relative;
@@ -70,7 +84,7 @@ const Modal = ({ title, media, visible, onClose }) => {
           top: 140px;
           right: 40px;
           cursor: pointer;
-          opacity: 0.4;
+          opacity: ${videoRef.current?.muted ? 0.4 : 1};
         }
         .sound:hover {
           opacity: 1;
