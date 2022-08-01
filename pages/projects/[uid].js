@@ -364,7 +364,6 @@ const Project = ({ project }) => {
             .gallery {
               display: flex;
               flex-wrap: wrap;
-              justify-content: space-between;
             }
             .item :global(img),
             .item :global(video) {

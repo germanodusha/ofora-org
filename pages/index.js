@@ -49,8 +49,8 @@ const Index = ({ page }) => {
         {/*<!-- for Facebook -->*/ }   
         <meta property="og:title" content={page.data.title} />     
         <meta property="og:type" content="article" />     
-        <meta property="og:image" content="/fora.png" />     
-        <meta property="og:url" content="/ofora.org" />     
+        <meta property="og:image" content={settings.data.image.url} />     
+        <meta property="og:url" content="https://ofora.org" />     
         <meta property="og:description" content={settings.data.description} />
       </Head>
       <div className="canvas-container">
