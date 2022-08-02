@@ -228,7 +228,7 @@ const Project = ({ project }) => {
           }
           .gallery { 
             opacity: ${scroll > galleryRef.current.offsetTop - 200 ? 1 : 0.01};
-            transition: 1s opacity;
+            transition: 1s opacity 0.4s;
           }
           .item {
             cursor: pointer;
