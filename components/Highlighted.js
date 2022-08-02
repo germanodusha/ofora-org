@@ -6,6 +6,7 @@ const Highlighted = ({ color = "white", children }) => {
         {`
           .highlighted {
             position: relative;
+            z-index: 1;
           }
           .highlighted::before {
             content: "";
@@ -21,6 +22,7 @@ const Highlighted = ({ color = "white", children }) => {
             box-shadow: 0px 0px 5px 3px
               ${color === "yellow" ? "var(--yellow)" : "white"};
             opacity: 0;
+            z-index: -1;
           }
           .highlighted:hover::before {
             right: 0%;

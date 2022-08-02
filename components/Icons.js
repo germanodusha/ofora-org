@@ -5,8 +5,8 @@ export const SoundIcon = (props) => (
     stroke="black"
     strokeWidth={2}
     fill="none"
-    width={32}
-    height={32}
+    width={48}
+    height={48}
     {...props}
   >
     <path d="M24.36 2.64v37.92l-9.82-9.83H3.58V12.85h10.39L24.36 2.64z" />

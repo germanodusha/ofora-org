@@ -7,6 +7,8 @@ import Image from "next/image";
 import Scroller from "../components/Scroller";
 import useScrollPosition from "../hooks/useScrollPosition";
 import Head from "next/head";
+import Highlighted from "../components/Highlighted";
+import Link from "next/link";
 
 const About = ({ page }) => {
   const context = useContext(Context);
@@ -97,7 +99,18 @@ const About = ({ page }) => {
               isVisible(thirdTextRef) ? "is-visible" : "is-not-visible"
             }`}
           >
-            <PrismicRichText field={page.data.infoRight} />
+            <PrismicRichText
+              field={page.data.infoRight}
+              components={{
+                hyperlink: ({ children, node }) => (
+                  <Link href={node.text} passHref>
+                    <a>
+                      <Highlighted color="white">{children}</Highlighted>
+                    </a>
+                  </Link>
+                ),
+              }}
+            />
           </div>
         </div>
       </div>
