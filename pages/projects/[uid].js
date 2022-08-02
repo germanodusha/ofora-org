@@ -27,6 +27,7 @@ const Project = ({ project }) => {
   const scroll = useScrollPosition();
   const introRef = useRef(0);
   const titleRef = useRef(0);
+  const galleryRef = useRef(0);
   const leftColumnRef = useRef(0);
   const rightColumnRef = useRef(0);
 
@@ -38,7 +39,7 @@ const Project = ({ project }) => {
       setTypeVisibility(true);
       isTypeVisible ? null : start();
     }
-    scroll > higherScroll ? setHigherScroll(scroll) : null;
+    scroll > higherScroll && setHigherScroll(scroll);
   }, [scroll]);
   function start(counte = -1) {
     setTimeout(() => {
@@ -103,7 +104,7 @@ const Project = ({ project }) => {
           {text}
         </div>
         <Limiter>
-          <div className="gallery p-20">
+          <div className="gallery p-20" ref={galleryRef}>
             {project.data.gallery.map((item, index) => (
               <>
                 <Modal
@@ -224,6 +225,10 @@ const Project = ({ project }) => {
           }
           .spacer {
             padding-left: 3rem;
+          }
+          .gallery { 
+            opacity: ${scroll > galleryRef.current.offsetTop - 200 ? 1 : 0.01};
+            transition: 1s opacity;
           }
           .item {
             cursor: pointer;
