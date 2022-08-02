@@ -103,8 +103,8 @@ const About = ({ page }) => {
               field={page.data.infoRight}
               components={{
                 hyperlink: ({ children, node }) => (
-                  <Link href={node.text} passHref>
-                    <a>
+                  <Link href={node.data.url} passHref target="_blank">
+                    <a target="_blank">
                       <Highlighted color="white">{children}</Highlighted>
                     </a>
                   </Link>
