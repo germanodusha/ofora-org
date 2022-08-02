@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CloseIcon, SoundIcon } from "./Icons";
 
 const Modal = ({ title, media, visible, onClose }) => {
   const videoRef = useRef();
+  const [muted, setMuted] = useState(true);
 
   return (
     <div className="backdrop">
@@ -26,20 +27,25 @@ const Modal = ({ title, media, visible, onClose }) => {
       <div
         className="close"
         onClick={() => {
-          videoRef.current.muted = true;
+          if (videoRef.current) {
+            videoRef.current.muted = true;
+          }
           onClose(null);
         }}
       >
         <CloseIcon />
       </div>
-      <div
-        className="sound"
-        onClick={() => {
-          videoRef.current.muted = !videoRef.current.muted;
-        }}
-      >
-        <SoundIcon />
-      </div>
+      {videoRef.current && (
+        <div
+          className="sound"
+          onClick={() => {
+            setMuted(!videoRef.current.muted);
+            videoRef.current.muted = !videoRef.current.muted;
+          }}
+        >
+          <SoundIcon />
+        </div>
+      )}
 
       <style jsx>{`
         .backdrop {
@@ -84,7 +90,7 @@ const Modal = ({ title, media, visible, onClose }) => {
           top: 140px;
           right: 40px;
           cursor: pointer;
-          opacity: ${videoRef.current?.muted ? 0.4 : 1};
+          opacity: ${muted ? 0.4 : 1};
         }
         .sound:hover {
           opacity: 1;
