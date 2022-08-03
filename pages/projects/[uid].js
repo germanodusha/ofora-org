@@ -13,6 +13,7 @@ import useScrollPosition from "../../hooks/useScrollPosition";
 import { speed } from "../../speed";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Slideshow from "../../components/Slideshow";
 
 const Project = ({ project }) => {
   const { asPath } = useRouter()
@@ -104,6 +105,7 @@ const Project = ({ project }) => {
           {text}
         </div>
         <Limiter>
+          <Slideshow items={project.data.gallery} />
           <div className="gallery p-20" ref={galleryRef}>
             {project.data.gallery.map((item, index) => (
               <>
