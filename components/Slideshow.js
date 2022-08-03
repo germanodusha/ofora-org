@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import { useElementSize, useInterval } from "usehooks-ts";
 
@@ -7,7 +8,7 @@ const Slideshow = ({ items }) => {
 
   useInterval(() => {
     setCurrentIndex((currentIndex + 1) % items.length);
-  }, 3000);
+  }, 1500);
 
   return (
     <>
@@ -21,7 +22,7 @@ const Slideshow = ({ items }) => {
                 items === currentIndex ? "active" : ""
               }`}
             >
-              <img src={item.media.url} alt={item.thumb.alt} />
+              <Image src={item.media.url} alt={item.media.alt} width={slideshowSize.width} height={600} objectFit="contain" />
             </div>
           ))}
         </div>
@@ -60,7 +61,7 @@ const Slideshow = ({ items }) => {
           width: ${slideshowSize.width}px;
           // position: relative;
           // width: 100%;
-          // height: 100%;
+           height: 100%;
           // background-size: cover;
           // background-position: center;
           // background-repeat: no-repeat;
