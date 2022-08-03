@@ -8,11 +8,10 @@ const Slideshow = ({ items }) => {
 
   useInterval(() => {
     setCurrentIndex((currentIndex + 1) % items.length);
-  }, 1500);
+  }, 3000);
 
   return (
     <>
-      {currentIndex}
       <div className="slideshow" ref={slideshowRef}>
         <div className="slideshow-inner">
           {items.map((item, index) => (
@@ -22,11 +21,17 @@ const Slideshow = ({ items }) => {
                 items === currentIndex ? "active" : ""
               }`}
             >
-              <Image src={item.media.url} alt={item.media.alt} width={slideshowSize.width} height={600} objectFit="contain" />
+              <Image
+                src={item.media.url}
+                alt={item.media.alt}
+                width={slideshowSize.width}
+                height={600}
+                objectFit="contain"
+              />
             </div>
           ))}
         </div>
-        <div className="slideshow-nav">
+        {/* <div className="slideshow-nav">
           {items.map((item, index) => (
             <div
               key={index}
@@ -38,34 +43,27 @@ const Slideshow = ({ items }) => {
               o
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <style jsx>{`
         .slideshow {
           position: relative;
           height: 600px;
-          background-color: #e8ff00;
         }
         .slideshow-inner {
           position: absolute;
           top: 0;
-          left: -${currentIndex * slideshowSize.width}px;
+          left: 0;
+          transform: translate3d(-${currentIndex * slideshowSize.width}px, 0, 0);
           height: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: all 0.8s ease-in-out;
-          background-color: red;
+          transition: transform 1s ease-in-out .3s;
         }
         .slideshow-item {
           width: ${slideshowSize.width}px;
-          // position: relative;
-          // width: 100%;
-           height: 100%;
-          // background-size: cover;
-          // background-position: center;
-          // background-repeat: no-repeat;
-          // transition: all 0.8s ease-in-out;
+          height: 100%;
         }
         .slideshow-item.active {
           opacity: 1;
@@ -79,7 +77,6 @@ const Slideshow = ({ items }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: all 0.8s ease-in-out;
         }
         .slideshow-nav-item {
           position: relative;
