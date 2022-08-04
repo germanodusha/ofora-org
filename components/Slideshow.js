@@ -51,7 +51,7 @@ const Slideshow = ({ items }) => {
       <style jsx>{`
         .slideshow {
           position: relative;
-          height: 70vh;
+          height: 30vh;
           // height: ${slideshowSize.width*HEIGHT_FACTOR}px;
           overflow: hidden;
         }
@@ -72,6 +72,7 @@ const Slideshow = ({ items }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          padding: 20px;
         }
         .slideshow-item.active {
           opacity: 1;
@@ -97,6 +98,11 @@ const Slideshow = ({ items }) => {
         }
         .slideshow-nav-item.active {
           opacity: 1;
+        }
+        @media (min-width: 768px) {
+          .slideshow {
+            height: 70vh;
+          }
         }
       `}</style>
     </>
