@@ -51,7 +51,8 @@ const Slideshow = ({ items }) => {
       <style jsx>{`
         .slideshow {
           position: relative;
-          height: 30vh;
+          height: 50vh;
+          min-height: 300px;
           // height: ${slideshowSize.width*HEIGHT_FACTOR}px;
           overflow: hidden;
         }
