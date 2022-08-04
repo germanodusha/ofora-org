@@ -25,7 +25,7 @@ const Slideshow = ({ items }) => {
                 src={item.media.url}
                 alt={item.media.alt}
                 width={slideshowSize.width}
-                height={600}
+                height={slideshowSize.width*0.5625}
                 objectFit="contain"
               />
             </div>
@@ -48,7 +48,7 @@ const Slideshow = ({ items }) => {
       <style jsx>{`
         .slideshow {
           position: relative;
-          height: 600px;
+          height: ${slideshowSize.width*0.5625}px;
         }
         .slideshow-inner {
           position: absolute;
@@ -60,10 +60,16 @@ const Slideshow = ({ items }) => {
           justify-content: center;
           align-items: center;
           transition: transform 1s ease-in-out .3s;
+          outline: 4px solid red;
         }
         .slideshow-item {
           width: ${slideshowSize.width}px;
           height: 100%;
+          outline: 3px solid green;
+          outline-offset: -3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .slideshow-item.active {
           opacity: 1;
