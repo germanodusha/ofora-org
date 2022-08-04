@@ -16,7 +16,7 @@ import { useRouter } from "next/router";
 import Slideshow from "../../components/Slideshow";
 
 const Project = ({ project }) => {
-  const { asPath } = useRouter()
+  const { asPath } = useRouter();
   const { cover, banner } = project.data;
 
   const [selected, onSelect] = useState();
@@ -58,7 +58,10 @@ const Project = ({ project }) => {
       <Head>
         <title>{project.data.title}</title>
         {/* <!-- for Google -->*/}
-        <meta name="description" content={prismicH.asText(project.data.intro)} />
+        <meta
+          name="description"
+          content={prismicH.asText(project.data.intro)}
+        />
         <meta
           name="keywords"
           content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações"
@@ -68,8 +71,11 @@ const Project = ({ project }) => {
         <meta property="og:title" content={project.data.title} />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={image.url} />
-        <meta property="og:url" content={"https://ofora.org"+asPath} />
-        <meta property="og:description" content={prismicH.asText(project.data.intro)} />
+        <meta property="og:url" content={"https://ofora.org" + asPath} />
+        <meta
+          property="og:description"
+          content={prismicH.asText(project.data.intro)}
+        />
       </Head>
       <div className="page-root">
         <div ref={titleRef} className="cover-and-title flex h-screen grow">
@@ -101,12 +107,12 @@ const Project = ({ project }) => {
           <span className="spacer" />
           {project.data.year}
         </Scroller>
-        <div ref={introRef} className="paragraph-container intro-container">
-          {text}
-        </div>
         <Limiter>
+          <div ref={introRef} className="paragraph-container intro-container" style={{background: "blue"}}>
+            {text}
+          </div>
           <Slideshow items={project.data.gallery} />
-          <div className="gallery p-20" ref={galleryRef}>
+          <div className="gallery p-20" ref={galleryRef} style={{background: "grey"}}>
             {project.data.gallery.map((item, index) => (
               <>
                 <Modal
@@ -228,8 +234,8 @@ const Project = ({ project }) => {
           .spacer {
             padding-left: 3rem;
           }
-          .gallery { 
-            opacity: ${scroll > galleryRef.current.offsetTop - 200 ? 1 : 0.01};
+          .gallery {
+            // opacity: ${scroll > galleryRef.current.offsetTop - 200 ? 1 : 0.01};
             transition: 1s opacity 0.4s;
           }
           .item {
