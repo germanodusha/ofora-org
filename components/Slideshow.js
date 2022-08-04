@@ -2,6 +2,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { useElementSize, useInterval } from "usehooks-ts";
 
+const HEIGHT_FACTOR = 0.5;
+
 const Slideshow = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideshowRef, slideshowSize] = useElementSize(null);
@@ -25,7 +27,7 @@ const Slideshow = ({ items }) => {
                 src={item.media.url}
                 alt={item.media.alt}
                 width={slideshowSize.width}
-                height={slideshowSize.width*0.5625}
+                height={slideshowSize.width*HEIGHT_FACTOR}
                 objectFit="contain"
               />
             </div>
@@ -48,7 +50,7 @@ const Slideshow = ({ items }) => {
       <style jsx>{`
         .slideshow {
           position: relative;
-          height: ${slideshowSize.width*0.5625}px;
+          height: ${slideshowSize.width*HEIGHT_FACTOR}px;
         }
         .slideshow-inner {
           position: absolute;
