@@ -10,7 +10,7 @@ const Slideshow = ({ items }) => {
 
   useInterval(() => {
     setCurrentIndex((currentIndex + 1) % items.length);
-  }, 3000);
+  }, 6000);
 
   return (
     <>
