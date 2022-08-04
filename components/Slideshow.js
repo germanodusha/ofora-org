@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { useState } from "react";
-import { useElementSize, useInterval } from "usehooks-ts";
+import { useElementSize, useInterval, useWindowSize } from "usehooks-ts";
 
 const HEIGHT_FACTOR = 0.5;
 
 const Slideshow = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideshowRef, slideshowSize] = useElementSize(null);
+  const windowSize = useWindowSize()
 
   useInterval(() => {
     setCurrentIndex((currentIndex + 1) % items.length);
@@ -27,7 +28,7 @@ const Slideshow = ({ items }) => {
                 src={item.media.url}
                 alt={item.media.alt}
                 width={slideshowSize.width}
-                height={slideshowSize.width*HEIGHT_FACTOR}
+                height={windowSize.height * 0.7}
                 objectFit="contain"
               />
             </div>
@@ -50,7 +51,9 @@ const Slideshow = ({ items }) => {
       <style jsx>{`
         .slideshow {
           position: relative;
-          height: ${slideshowSize.width*HEIGHT_FACTOR}px;
+          height: 70vh;
+          // height: ${slideshowSize.width*HEIGHT_FACTOR}px;
+          overflow: hidden;
         }
         .slideshow-inner {
           position: absolute;
@@ -62,13 +65,10 @@ const Slideshow = ({ items }) => {
           justify-content: center;
           align-items: center;
           transition: transform 1s ease-in-out .3s;
-          outline: 4px solid red;
         }
         .slideshow-item {
           width: ${slideshowSize.width}px;
           height: 100%;
-          outline: 3px solid green;
-          outline-offset: -3px;
           display: flex;
           justify-content: center;
           align-items: center;

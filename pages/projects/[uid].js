@@ -108,11 +108,11 @@ const Project = ({ project }) => {
           {project.data.year}
         </Scroller>
         <Limiter>
-          <div ref={introRef} className="paragraph-container intro-container" style={{background: "blue"}}>
+          <div ref={introRef} className="paragraph-container intro-container">
             {text}
           </div>
           <Slideshow items={project.data.gallery} />
-          <div className="gallery p-20" ref={galleryRef} style={{background: "grey"}}>
+          <div className="gallery p-20" ref={galleryRef}>
             {project.data.gallery.map((item, index) => (
               <>
                 <Modal
