@@ -113,9 +113,8 @@ const Slideshow = ({ items }) => {
         .slideshow-item :global(video) {
           transition: 0.4s opacity;
         }
-        .slideshow-item:hover :global(img),
-        .slideshow-item:hover :global(video) {
-          opacity: 0.2;
+        .slideshow-item:hover > :global(span),
+        .slideshow-item:hover > :global(video) {
           box-shadow: 0px 0px 55px 20px #e8ff00;
           background: #e8ff00;
           color: black;
