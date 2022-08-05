@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useElementSize, useInterval, useWindowSize } from "usehooks-ts";
+import Highlighted from "./Highlighted";
 
 const HEIGHT_FACTOR = 0.5;
 
@@ -17,7 +18,7 @@ const Slideshow = ({ items }) => {
 
   useInterval(() => {
     if (isNavigating) return;
-    next();
+    //next();
   }, 6000);
 
   return (
@@ -31,13 +32,27 @@ const Slideshow = ({ items }) => {
                 index === currentIndex ? "active" : ""
               }`}
             >
-              <Image
-                src={item.media.url}
-                alt={item.media.alt}
-                width={slideshowSize.width}
-                height={windowSize.height * 0.7}
-                objectFit="contain"
-              />
+              {item.media.kind === "image" ? (
+                <Image
+                  src={item.media.url}
+                  alt={item.media.alt}
+                  width={slideshowSize.width}
+                  height={windowSize.height * 0.7}
+                  objectFit="contain"
+                />
+              ) : (
+                <video
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                  onClick={() => {
+                    onSelect(index);
+                  }}
+                >
+                  <source src={item.media.url} type="video/mp4" />
+                </video>
+              )}
             </div>
           ))}
         </div>
@@ -46,8 +61,8 @@ const Slideshow = ({ items }) => {
           onMouseEnter={onNavMouseEnter}
           onMouseLeave={onNavMouseLeave}
         >
-          <div onClick={prev}>{"←"}</div>
-          <div onClick={next}>{"→"}</div>
+          <div onClick={prev}><Highlighted color="yellow">{"←"}</Highlighted></div>
+          <div onClick={next}><Highlighted color="yellow">{"→"}</Highlighted></div>
         </div>
       </div>
       <style jsx>{`
@@ -85,8 +100,25 @@ const Slideshow = ({ items }) => {
         }
         .slideshow-item.active {
           opacity: 1;
-          transition-delay: 0.6s;
+          transition-delay: 0.4s;
         }
+        .slideshow-item video {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+        .slideshow-item :global(img),
+        .slideshow-item :global(video) {
+          transition: 0.4s opacity;
+        }
+        .slideshow-item:hover :global(img),
+        .slideshow-item:hover :global(video) {
+          opacity: 0.2;
+          box-shadow: 0px 0px 55px 20px #e8ff00;
+          background: #e8ff00;
+          color: black;
+        }
+
         .slideshow-nav {
           position: absolute;
           bottom: -28px;
@@ -96,19 +128,21 @@ const Slideshow = ({ items }) => {
           align-items: center;
           font-size: 1.625rem;
         }
-        .slideshow-nav div {
-          padding: 0 10px;
-        }
         .slideshow-nav div:first-child {
           opacity: ${currentIndex === 0 ? 0 : 1};
           pointer-events: ${currentIndex === 0 ? "none" : "auto"};
+          margin-right: 20px;
         }
         .slideshow-nav div:last-child {
           opacity: ${currentIndex === items.length - 1 ? 0 : 1};
-          pointer-events: ${currentIndex === items.length - 1 ? "none" : "auto"};
+          pointer-events: ${currentIndex === items.length - 1
+            ? "none"
+            : "auto"};
         }
-        .slideshow-nav div:hover {
-          color: var(--yellow);
+        @media (max-width: 768px) {
+          .slideshow-nav {
+            display: none;
+          }
         }
         @media (min-width: 768px) {
           .slideshow {
