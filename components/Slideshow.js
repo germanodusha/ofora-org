@@ -126,7 +126,7 @@ const Slideshow = ({ items }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 1.625rem;
+          font-size: 1.25rem;
         }
         .slideshow-nav div:first-child {
           opacity: ${currentIndex === 0 ? 0 : 1};
