@@ -3,13 +3,11 @@ import { useState } from "react";
 import { useElementSize, useInterval, useWindowSize } from "usehooks-ts";
 import Highlighted from "./Highlighted";
 
-const HEIGHT_FACTOR = 0.5;
-
 const Slideshow = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const [slideshowRef, slideshowSize] = useElementSize(null);
-  const windowSize = useWindowSize();
+  const slideshowRatio = slideshowSize.width / slideshowSize.height;
 
   const next = () => setCurrentIndex((currentIndex + 1) % items.length);
   const prev = () => setCurrentIndex((currentIndex - 1) % items.length);
@@ -25,19 +23,20 @@ const Slideshow = ({ items }) => {
     <>
       <div className="slideshow" ref={slideshowRef}>
         <div className="slideshow-inner">
-          {items.map((item, index) => (
+          {items.map(({media}, index) => (
             <div
               key={index}
               className={`slideshow-item ${
                 index === currentIndex ? "active" : ""
               }`}
             >
-              {item.media.kind === "image" ? (
+
+              {media.kind === "image" ? (
                 <Image
-                  src={item.media.url}
-                  alt={item.media.alt}
-                  width={slideshowSize.width}
-                  height={windowSize.height * 0.7}
+                  src={media.url}
+                  alt={media.alt}
+                  width={media.width / media.height > slideshowRatio ? slideshowSize.width : slideshowSize.height * media.width / media.height}
+                  height={media.width / media.height > slideshowRatio ? slideshowSize.width * media.height / media.width : slideshowSize.height}
                   objectFit="contain"
                 />
               ) : (
@@ -50,7 +49,7 @@ const Slideshow = ({ items }) => {
                     onSelect(index);
                   }}
                 >
-                  <source src={item.media.url} type="video/mp4" />
+                  <source src={media.url} type="video/mp4" />
                 </video>
               )}
             </div>
@@ -61,8 +60,12 @@ const Slideshow = ({ items }) => {
           onMouseEnter={onNavMouseEnter}
           onMouseLeave={onNavMouseLeave}
         >
-          <div onClick={prev}><Highlighted color="yellow">{"←"}</Highlighted></div>
-          <div onClick={next}><Highlighted color="yellow">{"→"}</Highlighted></div>
+          <div onClick={prev}>
+            <Highlighted color="yellow">{"←"}</Highlighted>
+          </div>
+          <div onClick={next}>
+            <Highlighted color="yellow">{"→"}</Highlighted>
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -70,7 +73,6 @@ const Slideshow = ({ items }) => {
           position: relative;
           height: 50vh;
           min-height: 300px;
-          // height: ${slideshowSize.width * HEIGHT_FACTOR}px;
         }
         .slideshow-inner {
           position: absolute;
