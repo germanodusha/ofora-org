@@ -86,6 +86,13 @@ const Slideshow = ({ items }) => {
           align-items: center;
           font-size: 1.625rem;
         }
+        .slideshow-nav div {
+          cursor: pointer;
+          padding: 0 10px;
+        }
+        .slideshow-nav div:hover {
+          color: var(--yellow);
+        }
         @media (min-width: 768px) {
           .slideshow {
             height: 70vh;
