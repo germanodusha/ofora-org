@@ -56,7 +56,7 @@ const Project = ({ project }) => {
   return (
     <>
       <Head>
-        <title>{project.data.title}</title>
+        <title>Fora - {project.data.title}</title>
         {/* <!-- for Google -->*/}
         <meta
           name="description"

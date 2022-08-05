@@ -7,11 +7,12 @@ const HEIGHT_FACTOR = 0.5;
 const Slideshow = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideshowRef, slideshowSize] = useElementSize(null);
-  const windowSize = useWindowSize()
+  const windowSize = useWindowSize();
 
-  useInterval(() => {
-    setCurrentIndex((currentIndex + 1) % items.length);
-  }, 6000);
+  const next = () => setCurrentIndex((currentIndex + 1) % items.length);
+  const prev = () => setCurrentIndex((currentIndex - 1) % items.length);
+
+  useInterval(next, 6000);
 
   return (
     <>
@@ -21,7 +22,7 @@ const Slideshow = ({ items }) => {
             <div
               key={index}
               className={`slideshow-item ${
-                items === currentIndex ? "active" : ""
+                index === currentIndex ? "active" : ""
               }`}
             >
               <Image
@@ -34,38 +35,32 @@ const Slideshow = ({ items }) => {
             </div>
           ))}
         </div>
-        {/* <div className="slideshow-nav">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className={`slideshow-nav-item ${
-                items === currentIndex ? "active" : ""
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            >
-              o
-            </div>
-          ))}
-        </div> */}
+        <div className="slideshow-nav">
+          <div onClick={prev}>{"←"}</div>
+          <div onClick={next}>{"→"}</div>
+        </div>
       </div>
       <style jsx>{`
         .slideshow {
           position: relative;
           height: 50vh;
           min-height: 300px;
-          // height: ${slideshowSize.width*HEIGHT_FACTOR}px;
-          overflow: hidden;
+          // height: ${slideshowSize.width * HEIGHT_FACTOR}px;
         }
         .slideshow-inner {
           position: absolute;
           top: 0;
           left: 0;
-          transform: translate3d(-${currentIndex * slideshowSize.width}px, 0, 0);
+          transform: translate3d(
+            -${currentIndex * slideshowSize.width}px,
+            0,
+            0
+          );
           height: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: transform 1s ease-in-out .3s;
+          transition: transform 1s ease-in-out;
         }
         .slideshow-item {
           width: ${slideshowSize.width}px;
@@ -74,31 +69,22 @@ const Slideshow = ({ items }) => {
           justify-content: center;
           align-items: center;
           padding: 20px;
+          opacity: 0;
+          transition: opacity .5s ease-in-out;
+          transition-delay: 0s;
         }
         .slideshow-item.active {
           opacity: 1;
+          transition-delay: .6s;
         }
         .slideshow-nav {
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+          bottom: -28px;
+          right: 10px;
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-        .slideshow-nav-item {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          transition: all 0.8s ease-in-out;
-        }
-        .slideshow-nav-item.active {
-          opacity: 1;
+          font-size: 1.625rem;
         }
         @media (min-width: 768px) {
           .slideshow {
