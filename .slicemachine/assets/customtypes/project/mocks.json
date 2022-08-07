@@ -1,11 +1,11 @@
 {
-  "id": "199728a3-145c-445c-af6a-bc1474ed7c78",
-  "uid": "dolorem-ut-nemo",
+  "id": "a4fecc74-aad5-48fb-85e6-5693dbe693aa",
+  "uid": "et-libero-debitis",
   "type": "project",
   "data": {
-    "title": "scale sticky markets",
-    "year": "strategize magnetic e-services",
-    "category": "benchmark world-class systems",
+    "title": "transition scalable platforms",
+    "year": "embrace distributed systems",
+    "category": "architect collaborative e-markets",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -13,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -22,32 +22,33 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Dolore velit quis laboris enim est quis ipsum deserunt.",
+        "text": "Qui ex officia ut magna Lorem dolore ut dolor aute nostrud pariatur ipsum quis nulla. Est sit ullamco sit nulla occaecat sunt exercitation sunt.",
         "spans": []
       }
     ],
+    "galeryType": "Slider",
     "leftColumn": [
       {
         "type": "paragraph",
-        "text": "Exercitation consequat irure do.",
+        "text": "Aliquip proident id ut elit ipsum reprehenderit veniam est. Adipisicing tempor aliquip cillum quis consectetur amet consequat nisi nisi quis. Et sit ipsum excepteur eu et fugiat consequat irure.",
         "spans": []
       }
     ],
     "rightColumn": [
       {
         "type": "paragraph",
-        "text": "Et ea occaecat dolor.",
+        "text": "Non pariatur nulla commodo in esse amet cupidatat enim officia nulla officia ipsum nisi.",
         "spans": []
       }
     ],
     "gallery": [
       {
-        "title": "leverage best-of-breed users",
+        "title": "incubate front-end e-markets",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -58,7 +59,7 @@
         }
       },
       {
-        "title": "reintermediate out-of-the-box architectures",
+        "title": "engage user-centric technologies",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -69,7 +70,7 @@
         }
       },
       {
-        "title": "transition open-source web-readiness",
+        "title": "deploy open-source users",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -80,7 +81,29 @@
         }
       },
       {
-        "title": "disintermediate viral relationships",
+        "title": "iterate next-generation web services",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "engage revolutionary partnerships",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "visualize value-added schemas",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"

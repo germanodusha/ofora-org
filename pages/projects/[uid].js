@@ -111,46 +111,51 @@ const Project = ({ project }) => {
           <div ref={introRef} className="paragraph-container intro-container">
             {text}
           </div>
-          <Slideshow items={project.data.gallery} />
-          <div className="gallery p-20" ref={galleryRef}>
-            {project.data.gallery.map((item, index) => (
-              <>
-                <Modal
-                  media={item.media}
-                  title={item.title}
-                  visible={selected === index}
-                  onClose={onSelect}
-                  key={index}
-                />
-                <div className="item" key={item.url}>
-                  {item.thumb.kind === "image" ? (
-                    <Image
-                      key={item.thumb.url}
-                      src={item.thumb.url}
-                      width={(item.thumb.width / item.thumb.height) * 250}
-                      height={250}
-                      alt={item.thumb.alt}
-                      onClick={() => {
-                        onSelect(index);
-                      }}
+          <div className="gallery" ref={galleryRef}>
+            {project.data.galeryType === "Slider" ? (
+              <Slideshow items={project.data.gallery} />
+            ) : (
+              <div className="Gridshow  p-20">
+                {project.data.gallery.map((item, index) => (
+                  <>
+                    <Modal
+                      media={item.media}
+                      title={item.title}
+                      visible={selected === index}
+                      onClose={onSelect}
+                      key={index}
                     />
-                  ) : (
-                    <video
-                      playsInline
-                      muted
-                      loop
-                      autoPlay
-                      onClick={() => {
-                        onSelect(index);
-                      }}
-                    >
-                      <source src={item.thumb.url} type="video/mp4" />
-                    </video>
-                  )}
-                  <span>{item.title}</span>
-                </div>
-              </>
-            ))}
+                    <div className="item" key={item.url}>
+                      {item.thumb.kind === "image" ? (
+                        <Image
+                          key={item.thumb.url}
+                          src={item.thumb.url}
+                          width={(item.thumb.width / item.thumb.height) * 250}
+                          height={250}
+                          alt={item.thumb.alt}
+                          onClick={() => {
+                            onSelect(index);
+                          }}
+                        />
+                      ) : (
+                        <video
+                          playsInline
+                          muted
+                          loop
+                          autoPlay
+                          onClick={() => {
+                            onSelect(index);
+                          }}
+                        >
+                          <source src={item.thumb.url} type="video/mp4" />
+                        </video>
+                      )}
+                      <span>{item.title}</span>
+                    </div>
+                  </>
+                ))}
+              </div>
+            )}
           </div>
           <div className="content-container">
             <div
@@ -235,7 +240,7 @@ const Project = ({ project }) => {
             padding-left: 3rem;
           }
           .gallery {
-            // opacity: ${scroll > galleryRef.current.offsetTop - 200 ? 1 : 0.01};
+            opacity: ${scroll > galleryRef.current.offsetTop - 300 ? 1 : 0.01};
             transition: 1s opacity 0.4s;
           }
           .item {
@@ -374,15 +379,15 @@ const Project = ({ project }) => {
             .banner :global(img) {
               object-position: 100% 50%;
             }
-            .gallery {
-              display: flex;
-              flex-wrap: wrap;
-            }
             .item :global(img),
             .item :global(video) {
               height: 180px !important;
               width: 180px !important;
               object-fit: cover;
+            }
+            .Gridshow {
+              display: flex;
+              flex-wrap: wrap;
             }
           }
           @media only screen and (min-width: 1024px) {

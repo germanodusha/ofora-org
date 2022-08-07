@@ -37,7 +37,6 @@ const Slideshow = ({ items }) => {
                   alt={media.alt}
                   width={media.width / media.height > slideshowRatio ? slideshowSize.width : slideshowSize.height * media.width / media.height}
                   height={media.width / media.height > slideshowRatio ? slideshowSize.width * media.height / media.width : slideshowSize.height}
-                  objectFit="contain"
                 />
               ) : (
                 <video
@@ -109,17 +108,23 @@ const Slideshow = ({ items }) => {
           max-height: 100%;
           object-fit: contain;
         }
-        .slideshow-item :global(img),
-        .slideshow-item :global(video) {
-          transition: 0.4s opacity;
-        }
-        .slideshow-item:hover > :global(span),
-        .slideshow-item:hover > :global(video) {
+        .slideshow-item:hover > :global(*) {
           box-shadow: 0px 0px 55px 20px #e8ff00;
           background: #e8ff00;
           color: black;
+          position: relative;
         }
-
+        .slideshow-item:hover > :global(*):after {
+          background: #e8ff00;
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 10;
+          opacity: 0.7;
+        }
         .slideshow-nav {
           position: absolute;
           bottom: -28px;
