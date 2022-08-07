@@ -26,27 +26,34 @@ export const Footer = () => {
       </div>
       <nav className="flex w-1/2 justify-center">
         <ul className="flex flex-wrap gap-6 md:gap-10">
-          {languages.map((lang) => {
-            return lang.lang ? (
-              <li key={lang.lang}>
-                <Highlighted color={highlightedColor}>
-                  <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                    <span className="sr-only" style={{ fontWeight: "normal" }}>
-                      {lang.lang}
-                    </span>
-                    <a style={{ fontWeight: "normal" }}>
-                      {lang.lang.split("-")[0]}
-                    </a>
-                  </PrismicLink>
-                </Highlighted>
-              </li>
-            ) : (
-              <li key={lang} style={{ fontWeight: "normal" }}>
-                <span className="sr-only">{lang.lang}</span>
-                {lang.split("-")[0]}
-              </li>
-            );
-          })}
+          <li>
+            <Highlighted color={highlightedColor}>
+              <Link href={"/"} locale="pt">
+                <a>PT</a>
+              </Link>
+            </Highlighted>
+          </li>
+          <li>
+          <Highlighted color={highlightedColor}>
+              <Link href={"/"} locale="en">
+                <a>EN</a>
+              </Link>
+            </Highlighted>
+          </li>
+          {/* {languages.map((lang) => (
+            <li key={lang.lang}>
+              <Highlighted color={highlightedColor}>
+                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                  <span className="sr-only" style={{ fontWeight: "normal" }}>
+                    {lang.lang}
+                  </span>
+                  <a style={{ fontWeight: "normal" }}>
+                    {lang.lang.split("-")[0]}
+                  </a>
+                </PrismicLink>
+              </Highlighted>
+            </li>
+          ))} */}
         </ul>
       </nav>
     </footer>
