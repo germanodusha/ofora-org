@@ -2,9 +2,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { useElementSize, useInterval, useWindowSize } from "usehooks-ts";
 import Highlighted from "./Highlighted";
+import SlideshowItem from "./SlideshowItem";
 
 const Slideshow = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(items.length - 1);
   const [isNavigating, setIsNavigating] = useState(false);
   const [slideshowRef, slideshowSize] = useElementSize(null);
   const slideshowRatio = slideshowSize.width / slideshowSize.height;
@@ -23,35 +24,15 @@ const Slideshow = ({ items }) => {
     <>
       <div className="slideshow" ref={slideshowRef}>
         <div className="slideshow-inner">
-          {items.map(({media}, index) => (
-            <div
+          {items.map(({ media, title }, index) => (
+            <SlideshowItem
+              ratio={slideshowRatio}
+              size={slideshowSize}
+              media={media}
+              title={title}
+              active={index === currentIndex}
               key={index}
-              className={`slideshow-item ${
-                index === currentIndex ? "active" : ""
-              }`}
-            >
-
-              {media.kind === "image" ? (
-                <Image
-                  src={media.url}
-                  alt={media.alt}
-                  width={media.width / media.height > slideshowRatio ? slideshowSize.width : slideshowSize.height * media.width / media.height}
-                  height={media.width / media.height > slideshowRatio ? slideshowSize.width * media.height / media.width : slideshowSize.height}
-                />
-              ) : (
-                <video
-                  playsInline
-                  muted
-                  loop
-                  autoPlay
-                  onClick={() => {
-                    onSelect(index);
-                  }}
-                >
-                  <source src={media.url} type="video/mp4" />
-                </video>
-              )}
-            </div>
+            />
           ))}
         </div>
         <div
@@ -72,6 +53,7 @@ const Slideshow = ({ items }) => {
           position: relative;
           height: 50vh;
           min-height: 300px;
+          margin-bottom: 100px;
         }
         .slideshow-inner {
           position: absolute;
@@ -88,47 +70,10 @@ const Slideshow = ({ items }) => {
           align-items: center;
           transition: transform 1s ease-in-out;
         }
-        .slideshow-item {
-          width: ${slideshowSize.width}px;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 20px;
-          opacity: 0;
-          transition: opacity 0.5s ease-in-out;
-          transition-delay: 0s;
-        }
-        .slideshow-item.active {
-          opacity: 1;
-          transition-delay: 0.4s;
-        }
-        .slideshow-item video {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-        }
-        .slideshow-item:hover > :global(*) {
-          box-shadow: 0px 0px 55px 20px #e8ff00;
-          background: #e8ff00;
-          color: black;
-          position: relative;
-        }
-        .slideshow-item:hover > :global(*):after {
-          background: #e8ff00;
-          position: absolute;
-          content: "";
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 10;
-          opacity: 0.7;
-        }
         .slideshow-nav {
           position: absolute;
-          bottom: -28px;
-          right: 10px;
+          bottom: -38px;
+          right: 20px;
           display: flex;
           justify-content: center;
           align-items: center;
