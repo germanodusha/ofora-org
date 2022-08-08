@@ -235,6 +235,8 @@ const Project = ({ project }) => {
               rgba(255, 255, 255, 1) 40%,
               rgba(255, 255, 255, 0) 100%
             );
+            z-index: 899;
+            pointer-events: none;
           }
           .spacer {
             padding-left: 3rem;

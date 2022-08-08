@@ -16,31 +16,32 @@ export const Footer = () => {
   const highlightedColor = asPath.includes("/projects/") ? "yellow" : "white";
   console.log(highlightedColor);
   return (
-    <footer className="flex py-3 pt-14 font-bold uppercase">
-      <div className="whatIsButton flex w-1/2 justify-center">
-        <Highlighted color={highlightedColor}>
-          <Link href={"/what"} passHref>
-            {navigation.data.what}
-          </Link>
-        </Highlighted>
-      </div>
-      <nav className="flex w-1/2 justify-center">
-        <ul className="flex flex-wrap gap-6 md:gap-10">
-          <li>
-            <Highlighted color={highlightedColor}>
-              <a href={"/"}>
-                <a>PT</a>
-              </a>
-            </Highlighted>
-          </li>
-          <li>
+    <>
+      <footer className="flex py-3 pt-14 font-bold uppercase">
+        <div className="whatIsButton flex w-1/2 justify-center">
           <Highlighted color={highlightedColor}>
-              <a href="/en-us">
-                <a>EN</a>
-              </a>
-            </Highlighted>
-          </li>
-          {/* {languages.map((lang) => (
+            <Link href={"/what"} passHref>
+              {navigation.data.what}
+            </Link>
+          </Highlighted>
+        </div>
+        <nav className="flex w-1/2 justify-center">
+          <ul className="flex flex-wrap gap-6 md:gap-10">
+            <li>
+              <Highlighted color={highlightedColor}>
+                <a href={"/"}>
+                  <a>PT</a>
+                </a>
+              </Highlighted>
+            </li>
+            <li>
+              <Highlighted color={highlightedColor}>
+                <a href="/en-us">
+                  <a>EN</a>
+                </a>
+              </Highlighted>
+            </li>
+            {/* {languages.map((lang) => (
             <li key={lang.lang}>
               <Highlighted color={highlightedColor}>
                 <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
@@ -54,8 +55,17 @@ export const Footer = () => {
               </Highlighted>
             </li>
           ))} */}
-        </ul>
-      </nav>
-    </footer>
+          </ul>
+        </nav>
+        <style jsx>{`
+          footer {
+            pointer-events: none;
+          }
+          footer li {
+            pointer-events: auto;
+          }
+        `}</style>
+      </footer>
+    </>
   );
 };
