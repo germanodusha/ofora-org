@@ -5,7 +5,7 @@ import Highlighted from "./Highlighted";
 import SlideshowItem from "./SlideshowItem";
 
 const Slideshow = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(items.length - 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const [slideshowRef, slideshowSize] = useElementSize(null);
   const slideshowRatio = slideshowSize.width / slideshowSize.height;
@@ -17,7 +17,7 @@ const Slideshow = ({ items }) => {
 
   useInterval(() => {
     if (isNavigating) return;
-    //next();
+    next();
   }, 6000);
 
   return (
