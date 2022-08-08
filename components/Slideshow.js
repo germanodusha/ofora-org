@@ -39,7 +39,14 @@ const Slideshow = ({ items }) => {
             />
           ))}
         </div>
-        {selected && <Modal media={selected.media} visible={true} onClose={() => setSelected(null)} />}
+        {selected && (
+          <Modal
+            media={selected.media}
+            title={selected.title}
+            visible={true}
+            onClose={() => setSelected(null)}
+          />
+        )}
         <div
           className="slideshow-nav"
           onMouseEnter={onNavMouseEnter}
