@@ -28,9 +28,9 @@ export const Footer = () => {
         <ul className="flex flex-wrap gap-6 md:gap-10">
           <li>
             <Highlighted color={highlightedColor}>
-              <Link href={"/"} locale="pt-br">
+              <a href={"/"}>
                 <a>PT</a>
-              </Link>
+              </a>
             </Highlighted>
           </li>
           <li>
