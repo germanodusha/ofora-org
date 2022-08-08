@@ -1,7 +1,9 @@
 import Image from "next/image";
+import { useState } from "react";
 import { useElementSize } from "usehooks-ts";
+import Modal from "./Modal";
 
-const SlideshowItem = ({ media, title, active, ratio, size }) => {
+const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
   const [videoRef, videSize] = useElementSize(null);
 
   return (
@@ -21,13 +23,17 @@ const SlideshowItem = ({ media, title, active, ratio, size }) => {
                 ? (size.width * media.height) / media.width
                 : size.height
             }
+            onClick={() => onClick({ media, title })}
           />
         ) : (
           <>
             <video playsInline muted loop autoPlay ref={videoRef}>
               <source src={media.url} type="video/mp4" />
             </video>
-            <div className="slideshow-item-overlay"></div>
+            <div
+              className="slideshow-item-overlay"
+              onClick={() => onClick({ media, title })}
+            ></div>
           </>
         )}
         <div className="slideshow-item-title">{title}</div>
@@ -76,6 +82,7 @@ const SlideshowItem = ({ media, title, active, ratio, size }) => {
           z-index: 10;
           opacity: 0;
           transition: opacity 0.5s ease-in-out;
+          pointer-events: none;
         }
         .slideshow-item:hover > :global(span):after {
           opacity: 0.7;

@@ -35,7 +35,7 @@ const Modal = ({ title, media, visible, onClose }) => {
       >
         <CloseIcon />
       </div>
-      {videoRef.current && (
+      {media.kind !== "image"  && (
         <div
           className="sound"
           onClick={() => {
@@ -56,7 +56,7 @@ const Modal = ({ title, media, visible, onClose }) => {
           top: 0;
           left: 0;
           background: var(--yellow);
-          z-index: 1;
+          z-index: 901;
           display: flex;
           justify-content: center;
           align-items: center;

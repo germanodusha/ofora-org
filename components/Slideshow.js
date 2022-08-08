@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useElementSize, useInterval, useWindowSize } from "usehooks-ts";
 import Highlighted from "./Highlighted";
+import Modal from "./Modal";
 import SlideshowItem from "./SlideshowItem";
 
 const Slideshow = ({ items }) => {
@@ -15,9 +16,11 @@ const Slideshow = ({ items }) => {
   const onNavMouseEnter = () => setIsNavigating(true);
   const onNavMouseLeave = () => setIsNavigating(false);
 
+  const [selected, setSelected] = useState(null);
+
   useInterval(() => {
     if (isNavigating) return;
-    next();
+    //next();
   }, 6000);
 
   return (
@@ -32,9 +35,11 @@ const Slideshow = ({ items }) => {
               title={title}
               active={index === currentIndex}
               key={index}
+              onClick={setSelected}
             />
           ))}
         </div>
+        {selected && <Modal media={selected.media} visible={true} onClose={() => setSelected(null)} />}
         <div
           className="slideshow-nav"
           onMouseEnter={onNavMouseEnter}
