@@ -28,14 +28,14 @@ export const Footer = () => {
         <ul className="flex flex-wrap gap-6 md:gap-10">
           <li>
             <Highlighted color={highlightedColor}>
-              <Link href={"/"} locale="pt-BR">
+              <Link href={"/"} locale="pt-br">
                 <a>PT</a>
               </Link>
             </Highlighted>
           </li>
           <li>
           <Highlighted color={highlightedColor}>
-              <Link href={"/"} locale="en-US">
+              <Link href={"/"} locale="en-us">
                 <a>EN</a>
               </Link>
             </Highlighted>
