@@ -35,9 +35,9 @@ export const Footer = () => {
           </li>
           <li>
           <Highlighted color={highlightedColor}>
-              <Link href={"/"} locale="en-us">
+              <a href="/en-us">
                 <a>EN</a>
-              </Link>
+              </a>
             </Highlighted>
           </li>
           {/* {languages.map((lang) => (
