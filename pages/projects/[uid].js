@@ -112,50 +112,48 @@ const Project = ({ project }) => {
             {text}
           </div>
           <div className="gallery" ref={galleryRef}>
-            {project.data.galeryType === "Slider" ? (
-              <Slideshow items={project.data.gallery} />
-            ) : (
-              <div className="Gridshow  p-20">
-                {project.data.gallery.map((item, index) => (
-                  <>
-                    <Modal
-                      media={item.media}
-                      title={item.title}
-                      visible={selected === index}
-                      onClose={onSelect}
-                      key={index}
-                    />
-                    <div className="item" key={item.url}>
-                      {item.thumb.kind === "image" ? (
-                        <Image
-                          key={item.thumb.url}
-                          src={item.thumb.url}
-                          width={(item.thumb.width / item.thumb.height) * 250}
-                          height={250}
-                          alt={item.thumb.alt}
-                          onClick={() => {
-                            onSelect(index);
-                          }}
-                        />
-                      ) : (
-                        <video
-                          playsInline
-                          muted
-                          loop
-                          autoPlay
-                          onClick={() => {
-                            onSelect(index);
-                          }}
-                        >
-                          <source src={item.thumb.url} type="video/mp4" />
-                        </video>
-                      )}
-                      <span>{item.title}</span>
-                    </div>
-                  </>
-                ))}
-              </div>
-            )}
+            {JSON.stringify(project.data.mediaLayout)}
+            <Slideshow items={project.data.slider} />
+            <div className="Gridshow  p-20">
+              {project.data.gallery.map((item, index) => (
+                <>
+                  <Modal
+                    media={item.media}
+                    title={item.title}
+                    visible={selected === index}
+                    onClose={onSelect}
+                    key={index}
+                  />
+                  <div className="item" key={item.url}>
+                    {item.thumb.kind === "image" ? (
+                      <Image
+                        key={item.thumb.url}
+                        src={item.thumb.url}
+                        width={(item.thumb.width / item.thumb.height) * 250}
+                        height={250}
+                        alt={item.thumb.alt}
+                        onClick={() => {
+                          onSelect(index);
+                        }}
+                      />
+                    ) : (
+                      <video
+                        playsInline
+                        muted
+                        loop
+                        autoPlay
+                        onClick={() => {
+                          onSelect(index);
+                        }}
+                      >
+                        <source src={item.thumb.url} type="video/mp4" />
+                      </video>
+                    )}
+                    <span>{item.title}</span>
+                  </div>
+                </>
+              ))}
+            </div>
           </div>
           <div className="content-container">
             <div
