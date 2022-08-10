@@ -58,18 +58,6 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "galeryType": {
-        "type": "Select",
-        "config": {
-          "label": "Galery Type",
-          "placeholder": "Select",
-          "options": [
-            "Slider",
-            "Grid"
-          ],
-          "default_value": "Slider"
-        }
-      },
       "gallery": {
         "type": "Group",
         "config": {
@@ -99,6 +87,51 @@
               }
             }
           }
+        }
+      },
+      "slider": {
+        "type": "Group",
+        "config": {
+          "label": "Slider",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "thumb": {
+              "type": "Link",
+              "config": {
+                "label": "Thumb",
+                "placeholder": "",
+                "select": "media"
+              }
+            },
+            "media": {
+              "type": "Link",
+              "config": {
+                "label": "Media",
+                "placeholder": "",
+                "select": "media"
+              }
+            }
+          }
+        }
+      },
+      "mediaLayout": {
+        "type": "Select",
+        "config": {
+          "label": "Media Layout",
+          "placeholder": "Please Select",
+          "options": [
+            "Gallery + Slider",
+            "Slider + Gallery",
+            "Only Gallery",
+            "Only Slider"
+          ],
+          "default_value": "Gallery + Slider"
         }
       },
       "leftColumn": {

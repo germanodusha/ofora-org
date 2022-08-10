@@ -61,7 +61,8 @@ export const Footer = () => {
           footer {
             pointer-events: none;
           }
-          footer li {
+          footer li,
+          .whatIsButton {
             pointer-events: auto;
           }
         `}</style>

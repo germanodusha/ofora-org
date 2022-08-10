@@ -1,11 +1,11 @@
 {
-  "id": "a4fecc74-aad5-48fb-85e6-5693dbe693aa",
-  "uid": "et-libero-debitis",
+  "id": "be1ae57e-5a28-4c15-835e-ac5e38fac357",
+  "uid": "a-omnis-dicta",
   "type": "project",
   "data": {
-    "title": "transition scalable platforms",
-    "year": "embrace distributed systems",
-    "category": "architect collaborative e-markets",
+    "title": "expedite bricks-and-clicks interfaces",
+    "year": "deploy innovative bandwidth",
+    "category": "revolutionize front-end interfaces",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -13,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -22,33 +22,33 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Qui ex officia ut magna Lorem dolore ut dolor aute nostrud pariatur ipsum quis nulla. Est sit ullamco sit nulla occaecat sunt exercitation sunt.",
+        "text": "Dolore eiusmod reprehenderit officia minim laborum do culpa Lorem quis anim eiusmod nisi velit.",
         "spans": []
       }
     ],
-    "galeryType": "Slider",
+    "mediaLayout": "Gallery + Slider",
     "leftColumn": [
       {
         "type": "paragraph",
-        "text": "Aliquip proident id ut elit ipsum reprehenderit veniam est. Adipisicing tempor aliquip cillum quis consectetur amet consequat nisi nisi quis. Et sit ipsum excepteur eu et fugiat consequat irure.",
+        "text": "Amet pariatur aute occaecat sit adipisicing duis ipsum. Irure culpa amet aliqua laborum qui dolor fugiat incididunt cupidatat et consectetur. Et culpa cillum esse exercitation anim est mollit Lorem.",
         "spans": []
       }
     ],
     "rightColumn": [
       {
         "type": "paragraph",
-        "text": "Non pariatur nulla commodo in esse amet cupidatat enim officia nulla officia ipsum nisi.",
+        "text": "Voluptate consequat ut officia minim ut in. Amet sint deserunt irure reprehenderit ipsum.",
         "spans": []
       }
     ],
     "gallery": [
       {
-        "title": "incubate front-end e-markets",
+        "title": "revolutionize dot-com content",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -59,7 +59,7 @@
         }
       },
       {
-        "title": "engage user-centric technologies",
+        "title": "transform world-class relationships",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -70,7 +70,7 @@
         }
       },
       {
-        "title": "deploy open-source users",
+        "title": "integrate virtual communities",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -81,7 +81,20 @@
         }
       },
       {
-        "title": "iterate next-generation web services",
+        "title": "scale granular convergence",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      }
+    ],
+    "slider": [
+      {
+        "title": "harness customized platforms",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -92,7 +105,7 @@
         }
       },
       {
-        "title": "engage revolutionary partnerships",
+        "title": "unleash vertical experiences",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -103,7 +116,18 @@
         }
       },
       {
-        "title": "visualize value-added schemas",
+        "title": "architect 24/365 applications",
+        "thumb": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        },
+        "media": {
+          "link_type": "media",
+          "url": "https://source.unsplash.com/daily"
+        }
+      },
+      {
+        "title": "seize customized web-readiness",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
