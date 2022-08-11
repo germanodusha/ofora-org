@@ -40,9 +40,7 @@ const Index = ({ page }) => {
             color={0xffffff}
             intensity={0.90}
           />
-          <Suspense fallback={null}>
-            <Flag flag={{ position: [flagX, 60, flagZ] }} />
-          </Suspense>
+
         </Canvas>
       </div>
 
