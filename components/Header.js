@@ -1,14 +1,14 @@
-import * as prismicH from "@prismicio/helpers";
-import { PrismicLink, PrismicText } from "@prismicio/react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useContext } from "react";
-import useScrollPosition from "../hooks/useScrollPosition";
 import { Context } from "../pages/_app";
 import Highlighted from "./Highlighted";
 
 export const Header = () => {
   const { navigation } = useContext(Context);
+  
+  if (!navigation?.data) {
+    return <div>NO NAVIGATION!</div>
+  }
 
   return (
     <header className="header-root flex flex-wrap py-3 pb-14">
