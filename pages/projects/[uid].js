@@ -32,6 +32,11 @@ const Project = ({ project }) => {
   const leftColumnRef = useRef(0);
   const rightColumnRef = useRef(0);
 
+  const hasSlider = project.data.mediaLayout?.includes("Slider");
+  const hasGallery = project.data.mediaLayout?.includes("Gallery");
+  const sliderFirst =
+    hasSlider && project.data.mediaLayout?.startsWith("Slider");
+
   function isVisible(ref) {
     return higherScroll > ref.current.offsetTop - ref.current.offsetHeight * 2;
   }
@@ -112,8 +117,10 @@ const Project = ({ project }) => {
             {text}
           </div>
           <div className="gallery" ref={galleryRef}>
-            {JSON.stringify(project.data.mediaLayout)}
-            <Slideshow items={project.data.slider} />
+            {hasSlider && sliderFirst && (
+              <Slideshow items={project.data.slider} />
+            )}
+            {hasGallery && (
             <div className="Gridshow  p-20">
               {project.data.gallery.map((item, index) => (
                 <>
@@ -154,6 +161,10 @@ const Project = ({ project }) => {
                 </>
               ))}
             </div>
+            )}
+            {hasSlider && !sliderFirst && (
+              <Slideshow items={project.data.slider} />
+            )}
           </div>
           <div className="content-container">
             <div
