@@ -12,7 +12,6 @@ export const Layout = ({ children }) => {
     <div className="layout-root flex flex-col">
       <Header />
       {children}
-      <Footer />
       <style jsx>{`
         .layout-root {
           height: 100vh;
