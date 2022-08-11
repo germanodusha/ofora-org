@@ -7,6 +7,9 @@ import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
 
 const Index = ({ page }) => {
+
+  return <div> oi :D</div>
+
   const { setPage, settings } = useContext(Context);
 
   useEffect(() => {
@@ -34,7 +37,16 @@ const Index = ({ page }) => {
         <meta property="og:description" content={settings.data.description} />
       </Head>
       <div className="canvas-container">
-
+        <Canvas width={1000} height={1000}>
+          <pointLight
+            position={[10, 10, 10]}
+            color={0xffffff}
+            intensity={0.90}
+          />
+          <Suspense fallback={null}>
+            <Flag flag={{ position: [flagX, 60, flagZ] }} />
+          </Suspense>
+        </Canvas>
       </div>
 
       <style jsx>{`
