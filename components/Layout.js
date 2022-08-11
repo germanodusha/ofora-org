@@ -3,9 +3,7 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 export const Layout = ({ children }) => {
-
-  return <Header />
-
+  
   const router = useRouter();
   const showFrame = router.pathname !== "/projects";
   const rgb = router.pathname !== "/what" ? "152, 152, 152" : "232, 255, 0";
