@@ -12,17 +12,13 @@ export const Footer = () => {
   }
   const highlightedColor = asPath.includes("/projects/") ? "yellow" : "white";
 
-  if (!navigation?.data) {
-    return <div>NO NAVIGATION!</div>
-  }
-
   return (
     <>
       <footer className="flex py-3 pt-14 font-bold uppercase">
         <div className="whatIsButton flex w-1/2 justify-center">
           <Highlighted color={highlightedColor}>
             <Link href={"/what"} passHref>
-              {navigation.data.what}
+              {navigation?.data?.what}
             </Link>
           </Highlighted>
         </div>

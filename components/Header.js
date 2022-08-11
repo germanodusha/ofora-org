@@ -5,10 +5,6 @@ import Highlighted from "./Highlighted";
 
 export const Header = () => {
   const { navigation } = useContext(Context);
-  
-  if (!navigation?.data) {
-    return <div>NO NAVIGATION!</div>
-  }
 
   return (
     <header className="header-root flex flex-wrap py-3 pb-14">
@@ -17,14 +13,14 @@ export const Header = () => {
           <li className="">
             <Highlighted>
               <Link href={"/"}>
-                <a>{navigation.data.home}</a>
+                <a>{navigation?.data?.home}</a>
               </Link>
             </Highlighted>
           </li>
           <li className="">
             <Highlighted>
               <Link href={"/projects"}>
-                <a>{navigation.data.archive}</a>
+                <a>{navigation?.data?.archive}</a>
               </Link>
             </Highlighted>
           </li>

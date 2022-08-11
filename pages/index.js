@@ -21,17 +21,17 @@ const Index = ({ page }) => {
   return (
     <>
       <Head>
-        <title>{page.data.title}</title>
+        <title>{page?.data?.title}</title>
         {/* <!-- for Google -->*/}
-        <meta name="description" content={settings.data.description} />     
+        <meta name="description" content={settings?.data?.description} />     
         <meta name="keywords" content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações" />     
         <meta name="author" content="Fora" />   
         {/*<!-- for Facebook -->*/ }   
-        <meta property="og:title" content={page.data.title} />     
+        <meta property="og:title" content={page?.data?.title} />     
         <meta property="og:type" content="article" />     
-        <meta property="og:image" content={settings.data.image.url} />     
+        <meta property="og:image" content={settings?.data?.image.url} />     
         <meta property="og:url" content="https://ofora.org" />     
-        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:description" content={settings?.data?.description} />
       </Head>
       <div className="canvas-container">
         <Canvas width={1000} height={1000}>
