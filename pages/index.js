@@ -7,9 +7,6 @@ import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
 
 const Index = ({ page }) => {
-
-  return <div> oi :D</div>
-
   const { setPage, settings } = useContext(Context);
 
   useEffect(() => {
