@@ -34,14 +34,7 @@ const Index = ({ page }) => {
         <meta property="og:description" content={settings.data.description} />
       </Head>
       <div className="canvas-container">
-        <Canvas width={1000} height={1000}>
-          <pointLight
-            position={[10, 10, 10]}
-            color={0xffffff}
-            intensity={0.90}
-          />
 
-        </Canvas>
       </div>
 
       <style jsx>{`
