@@ -7,9 +7,7 @@ import Highlighted from "./Highlighted";
 export const Footer = () => {
   const { navigation } = useContext(Context);
   const { asPath } = useRouter();
-  if (asPath === "/what") {
-    return <div></div>;
-  }
+  if (asPath === "/what") return null;
   const highlightedColor = asPath.includes("/projects/") ? "yellow" : "white";
 
   return (
@@ -26,16 +24,12 @@ export const Footer = () => {
           <ul className="flex flex-wrap gap-6 md:gap-10">
             <li>
               <Highlighted color={highlightedColor}>
-                <a href={"/pt-br"}>
-                  PT
-                </a>
+                <a href={"/pt-br"}>PT</a>
               </Highlighted>
             </li>
             <li>
               <Highlighted color={highlightedColor}>
-                <a href="/en-us">
-                  EN
-                </a>
+                <a href="/en-us">EN</a>
               </Highlighted>
             </li>
           </ul>
