@@ -6,26 +6,6 @@ import { Canvas } from "@react-three/fiber";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
 
-const flags = [];
-
-const w = 5;
-const h = 5;
-const dx = 300;
-const dy = 300;
-const r = () => Math.random() * 30 - 60;
-for (let y = 0; y < h; y += 1) {
-  for (let x = 0; x < w; x += 1) {
-    flags.push({
-      id: `${x}-${y}`,
-      position: [
-        dx * x - (dx * w) / 2 + r(),
-        dy * y - (dy * h) / 2 + r(),
-        -550,
-      ],
-    });
-  }
-}
-
 const Index = ({ page }) => {
   const { setPage, settings } = useContext(Context);
 

@@ -16,7 +16,7 @@ export const Header = () => {
         <ul className="header-content flex w-full flex-wrap justify-around text-center font-semibold uppercase">
           <li className="">
             <Highlighted>
-              <Link href={"/"} passHref>
+              <Link href={"/"}>
                 <a>{navigation.data.home}</a>
               </Link>
             </Highlighted>
