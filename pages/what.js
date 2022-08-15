@@ -47,6 +47,8 @@ const About = ({ page }) => {
     return false;
   }
 
+  //return JSON.stringify(page.data.content)
+
   return (
     <div>
       <Head>

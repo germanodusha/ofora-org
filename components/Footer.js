@@ -7,7 +7,7 @@ import Highlighted from "./Highlighted";
 export const Footer = () => {
   const { navigation } = useContext(Context);
   const { asPath } = useRouter();
-  if (asPath === "/what") return null;
+  if (asPath === "/what") return <div />;
   const highlightedColor = asPath.includes("/projects/") ? "yellow" : "white";
 
   return (
