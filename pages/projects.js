@@ -23,7 +23,7 @@ const Projects = ({ projects, page }) => {
         <div className="project-title-container">
           <div className="header-gradient" />
           <div className="footer-gradient" />
-          <ul className="text-center text-3xl font-semibold xl:text-5xl">
+          <ul className="text-center font-semibold text-2xl md:text-4xl xl:text-5xl">
             {projects.map((project) => (
               <li
                 key={project.uid}
