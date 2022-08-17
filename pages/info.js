@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Context } from "../pages/_app";
+import { Context } from "./_app";
 import { createClient } from "../prismicio";
 import { PrismicRichText } from "@prismicio/react";
 import Image from "next/image";
@@ -29,43 +29,47 @@ const About = ({ page }) => {
       </video>
       <h1>{page.data.title}</h1>
       <div className="container-descript">
-        <div className="content sm:p-20 p-10">
+        <div className="content p-10 sm:p-20">
           <FadeIn>
             <PrismicRichText field={page.data.content} />
           </FadeIn>
         </div>
-        <div className="infoContainer mx-auto p-20">
-          <FadeIn>
-            <div className={`imageContainer reorder`}>
-              <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className={`imageContainer`}>
-              <Image layout="fill" src="/G1.png" alt="G1 Logo" />
-            </div>
-          </FadeIn>
-          <div className={`reorder`}>
+        <div className="info mx-auto p-20">
+          <div className="left">
             <FadeIn>
-              <PrismicRichText field={page.data.infoLeft} />
+              <div className="image">
+                <Image layout="fill" src="/fora_logo.svg" alt="Logo do fora" />
+              </div>
             </FadeIn>
+            <div className="text">
+              <FadeIn>
+                <PrismicRichText field={page.data.infoLeft} />
+              </FadeIn>
+            </div>
           </div>
-          <div>
+          <div className="right">
             <FadeIn>
-              <PrismicRichText
-                field={page.data.infoRight}
-                components={{
-                  hyperlink: ({ children, node }) => (
-                    <Link href={node.data.url} passHref target="_blank">
-                      <a target="_blank">
-                        <Highlighted color="white">{children}</Highlighted>
-                      </a>
-                    </Link>
-                  ),
-                }}
-              />
+              <div className="image">
+                <Image layout="fill" src="/G1.png" alt="G1 Logo" />
+              </div>
             </FadeIn>
+
+            <div className="text">
+              <FadeIn>
+                <PrismicRichText
+                  field={page.data.infoRight}
+                  components={{
+                    hyperlink: ({ children, node }) => (
+                      <Link href={node.data.url} passHref target="_blank">
+                        <a target="_blank">
+                          <Highlighted color="white">{children}</Highlighted>
+                        </a>
+                      </Link>
+                    ),
+                  }}
+                />
+              </FadeIn>
+            </div>
           </div>
         </div>
       </div>
@@ -111,26 +115,18 @@ const About = ({ page }) => {
           font-size: 1.5rem;
           text-align: center;
         }
-        .infoContainer {
-          width: 100%;
-          display: grid;
-          grid-template-columns: 1fr;
-          padding-top: 0px;
-          gap:4rem;
+        .info {
           padding-bottom: 5px;
           font-size: 14px;
         }
-        .imageContainer {
+        .image {
           position: relative;
           width: 230px;
-          height: 230px;  
-          transition: all 0.8s ease-in-out;
+          height: 230px; 
+          margin: 4rem 0 2rem; 
         } 
         .container {
           all: unset;
-        }
-        .reorder {
-          order:-1;
         }
         @media (min-width: 768px) {
           h1 {
@@ -139,16 +135,15 @@ const About = ({ page }) => {
           .content {
             font-size: 2rem;
           }
-          .infoContainer {
-            grid-template-columns: 1fr 1fr;
-            grid-auto-flow: row;
+          .info {
+            display: flex;
           }
-          .infoContainer .reorder {
-            padding-left: 150px
+          .info > div {
+            flex: 1;
           }
-          .reorder {
-          order:0;
-        }
+          .left .text {
+            padding-left: 155px
+          }
       `}</style>
     </div>
   );

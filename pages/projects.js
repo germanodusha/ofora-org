@@ -21,8 +21,6 @@ const Projects = ({ projects, page }) => {
       </Head>
       <div className="projects-page flex grow items-stretch">
         <div className="project-title-container">
-          <div className="header-gradient" />
-          <div className="footer-gradient" />
           <ul className="text-center font-semibold text-2xl md:text-4xl xl:text-5xl">
             {projects.map((project) => (
               <li
@@ -43,6 +41,8 @@ const Projects = ({ projects, page }) => {
               </li>
             ))}
           </ul>
+          <div className="header-gradient" />
+          <div className="footer-gradient" />
         </div>
         <div className="imageContainer w-full">
           {selected?.data?.cover && (

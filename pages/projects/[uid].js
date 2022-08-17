@@ -342,9 +342,6 @@ const Project = ({ project }) => {
             .title {
               width: 100%;
               display: grid;
-            }
-            .title {
-              display: grid;
               gap: 1rem;
             }
             .banner {
