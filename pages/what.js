@@ -22,14 +22,12 @@ const About = ({ page }) => {
         <title>{page.data.title}</title>
       </Head>
       <Scroller />
-      <div className="video">
-        <video autoPlay loop muted playsInline>
-          <source src={page.data.video.url} type="video/mp4" />
-        </video>
-      </div>
+      <video autoPlay loop muted playsInline onLoadedData={() => alert("what")}>
+        <source src={page.data.video.url} type="video/mp4" />
+      </video>
       <h1>{page.data.title}</h1>
       <div className="container-descript">
-        <div className={`content`}>
+        <div className="content sm:p-20 p-10">
           <FadeIn>
             <PrismicRichText field={page.data.content} />
           </FadeIn>
@@ -48,23 +46,23 @@ const About = ({ page }) => {
           </FadeIn>
           <div className={`reorder`}>
             <FadeIn>
-            <PrismicRichText field={page.data.infoLeft} />
+              <PrismicRichText field={page.data.infoLeft} />
             </FadeIn>
           </div>
           <div>
             <FadeIn>
-            <PrismicRichText
-              field={page.data.infoRight}
-              components={{
-                hyperlink: ({ children, node }) => (
-                  <Link href={node.data.url} passHref target="_blank">
-                    <a target="_blank">
-                      <Highlighted color="white">{children}</Highlighted>
-                    </a>
-                  </Link>
-                ),
-              }}
-            />
+              <PrismicRichText
+                field={page.data.infoRight}
+                components={{
+                  hyperlink: ({ children, node }) => (
+                    <Link href={node.data.url} passHref target="_blank">
+                      <a target="_blank">
+                        <Highlighted color="white">{children}</Highlighted>
+                      </a>
+                    </Link>
+                  ),
+                }}
+              />
             </FadeIn>
           </div>
         </div>
@@ -102,8 +100,7 @@ const About = ({ page }) => {
 
         }
         .content {
-          font-size: 2rem;
-          padding: 5rem;
+          font-size: 1.5rem;
           text-align: center;
         }
         .infoContainer {
@@ -130,6 +127,9 @@ const About = ({ page }) => {
         @media (min-width: 768px) {
           h1 {
             font-size: 8rem;
+          }
+          .content {
+            font-size: 2rem;
           }
           .infoContainer {
             grid-template-columns: 1fr 1fr;

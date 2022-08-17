@@ -1,6 +1,6 @@
 import useElementVisible from "../hooks/useElementVisible";
 
-const FadeIn = ({ children, offset = 100, delay = 0.5, ...props }) => {
+const FadeIn = ({ children, offset = 100, delay = 0.2, ...props }) => {
   const [ref, isVisible] = useElementVisible({ offset });
 
   return (
