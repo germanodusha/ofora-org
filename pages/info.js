@@ -34,7 +34,7 @@ const About = ({ page }) => {
             <PrismicRichText field={page.data.content} />
           </FadeIn>
         </div>
-        <div className="info mx-auto p-20">
+        <div className="info mx-auto p-10 sm:p-20 pt-0">
           <div className="left">
             <FadeIn>
               <div className="image">
@@ -107,7 +107,7 @@ const About = ({ page }) => {
           position: absolute;
           top: 100%;
           transition: all 0.8s ease-in-out;
-          padding-bottom: 139px;
+          padding-bottom: 3rem;
           background: var(--yellow);
 
         }
@@ -116,14 +116,14 @@ const About = ({ page }) => {
           text-align: center;
         }
         .info {
-          padding-bottom: 5px;
           font-size: 14px;
+          text-align: center;
         }
         .image {
           position: relative;
           width: 230px;
           height: 230px; 
-          margin: 4rem 0 2rem; 
+          margin: 2rem auto; 
         } 
         .container {
           all: unset;
@@ -137,6 +137,10 @@ const About = ({ page }) => {
           }
           .info {
             display: flex;
+            text-align: left;
+          }
+          .image {
+            margin: 0 0 2rem;
           }
           .info > div {
             flex: 1;
