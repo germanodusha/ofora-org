@@ -11,9 +11,11 @@ import FadeIn from "../components/FadeIn";
 
 const About = ({ page }) => {
   const context = useContext(Context);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     context.setPage(page);
+    setIsLoaded(true);
   }, []);
 
   return (
@@ -22,7 +24,7 @@ const About = ({ page }) => {
         <title>{page.data.title}</title>
       </Head>
       <Scroller />
-      <video autoPlay loop muted playsInline onLoadedData={() => alert("what")}>
+      <video autoPlay loop muted playsInline>
         <source src={page.data.video.url} type="video/mp4" />
       </video>
       <h1>{page.data.title}</h1>
@@ -68,7 +70,7 @@ const About = ({ page }) => {
         </div>
       </div>
       <style jsx>{`
-        * {
+        :global(body) {
           background-color: #e8ff00;
         }
         video {
@@ -78,6 +80,9 @@ const About = ({ page }) => {
           position: fixed;
           z-index: -1;
           background: var(--yellow);
+          opacity: ${isLoaded ? 1 : 0};
+          transition: opacity 1.4s;
+          transition-delay: 0.4s;
         }
         h1 {
           position: fixed;
@@ -88,7 +93,10 @@ const About = ({ page }) => {
           font-size: 5rem;
           background: transparent;
           text-align: center;
-          width: 80vw
+          width: 80vw;
+          opacity: ${isLoaded ? 1 : 0};
+          transition: opacity 1.5s;
+          transition-delay: 0.8s;
         }
         .container-descript {
           all: unset;
