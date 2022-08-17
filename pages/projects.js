@@ -23,7 +23,7 @@ const Projects = ({ projects, page }) => {
         <div className="project-title-container">
           <div className="header-gradient" />
           <div className="footer-gradient" />
-          <ul className="text-center text-4xl font-semibold xl:text-5xl">
+          <ul className="text-center text-3xl font-semibold xl:text-5xl">
             {projects.map((project) => (
               <li
                 key={project.uid}
@@ -90,20 +90,12 @@ const Projects = ({ projects, page }) => {
             );
           }
           @media (max-width: 768px) {
-            .projects-page {
-              display: flex;
-              flex-direction: column;
-            }
             .projects-page > div:first-child {
-              height: 50vh;
               overflow-y: scroll;
             }
             .imageContainer {
-              height: 70vh;
+              display: none;
             }
-          }
-          .teste {
-            background: red;
           }
           @media (min-width: 768px) {
             .footer-gradient {

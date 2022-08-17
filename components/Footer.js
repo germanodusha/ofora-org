@@ -7,7 +7,7 @@ import Highlighted from "./Highlighted";
 export const Footer = () => {
   const { navigation } = useContext(Context);
   const { asPath } = useRouter();
-  if (asPath === "/what") return <div />;
+  if (asPath === "/info") return <div />;
   const highlightedColor = asPath.includes("/projects/") ? "yellow" : "white";
 
   return (
@@ -15,7 +15,7 @@ export const Footer = () => {
       <footer className="flex py-3 pt-14 font-bold uppercase">
         <div className="whatIsButton flex w-1/2 justify-center">
           <Highlighted color={highlightedColor}>
-            <Link href={"/what"} passHref>
+            <Link href={"/info"} passHref>
               {navigation?.data?.what}
             </Link>
           </Highlighted>
