@@ -365,6 +365,9 @@ const Project = ({ project }) => {
             .category {
               margin-bottom: 2rem;
             }
+            .Gridshow .item {
+              margin-bottom: 6rem
+            }
             @keyframes appear-left {
               0% {
                 opacity: 0;
