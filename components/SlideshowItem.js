@@ -23,7 +23,9 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
                 ? (size.width * media.height) / media.width
                 : size.height
             }
-            onClick={() => onClick({ media, title })}
+            onClick={() => {
+              //onClick({ media, title })
+            }}
           />
         ) : (
           <>
@@ -64,8 +66,8 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
         .slideshow-item > :global(span) {
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:hover > :global(video),
-        .slideshow-item:hover > :global(span) {
+        .slideshow-item:nover > :global(video),
+        .slideshow-item:nover > :global(span) {
           box-shadow: 0px 0px 55px 20px #e8ff00;
           background: #e8ff00;
           color: black;
@@ -84,7 +86,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           transition: opacity 0.5s ease-in-out;
           pointer-events: none;
         }
-        .slideshow-item:hover > :global(span):after {
+        .slideshow-item:nover > :global(span):after {
           opacity: 0.7;
         }
         .slideshow-item-overlay {
@@ -95,7 +97,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           opacity: 0;
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:hover > .slideshow-item-overlay {
+        .slideshow-item:nover > .slideshow-item-overlay {
           opacity: 0.7;
         }
         .slideshow-item-title {

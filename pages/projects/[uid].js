@@ -148,7 +148,7 @@ const Project = ({ project }) => {
                             height={250}
                             alt={item.thumb.alt}
                             onClick={() => {
-                              onSelect(index);
+                              //onSelect(index);
                             }}
                           />
                         ) : (
@@ -273,7 +273,7 @@ const Project = ({ project }) => {
             transition: 0.4s box-shadow;
             line-height: 0px;
           }
-          .item:hover {
+          .item:nover {
             box-shadow: 0px 0px 55px 20px #e8ff00;
             background: #e8ff00;
             color: black;
@@ -291,8 +291,8 @@ const Project = ({ project }) => {
             text-transform: uppercase;
             line-height: 1.5rem;
           }
-          .item :global(img):hover,
-          .item :global(video):hover {
+          .item :global(img):nover,
+          .item :global(video):nover {
             opacity: 0.2;
           }
 
