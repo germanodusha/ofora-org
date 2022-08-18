@@ -158,7 +158,7 @@ const Project = ({ project }) => {
                             loop
                             autoPlay
                             onClick={() => {
-                              onSelect(index);
+                              //onSelect(index);
                             }}
                           >
                             <source src={item.thumb.url} type="video/mp4" />
