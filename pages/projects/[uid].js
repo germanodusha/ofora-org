@@ -117,7 +117,7 @@ const Project = ({ project }) => {
         <Limiter>
           <div
             ref={introRef}
-            className="paragraph-container intro-container p-10 sm:p-20"
+            className="paragraph-container intro-container px-10 sm:p-20"
           >
             {text}
           </div>
@@ -129,7 +129,7 @@ const Project = ({ project }) => {
             )}
             {hasGallery && (
               <FadeIn>
-                <div className="Gridshow  p-20">
+                <div className="Gridshow p-3 sm:p-20">
                   {project.data.gallery.map((item, index) => (
                     <>
                       <Modal

@@ -65,7 +65,6 @@ const Slideshow = ({ items }) => {
           position: relative;
           height: 50vh;
           min-height: 300px;
-          margin-bottom: 100px;
         }
         .slideshow-inner {
           position: absolute;
