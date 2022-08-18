@@ -343,7 +343,7 @@ const Project = ({ project }) => {
           @media only screen and (max-width: 768px) {
             .content-container {
               grid-template-columns: 1fr;
-              gap: 5rem;
+              gap: 2rem;
             }
             .cover-and-title {
               display: flex;
