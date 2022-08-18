@@ -112,7 +112,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           z-index: 20;
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:hover .slideshow-item-title {
+        .slideshow-item:nover .slideshow-item-title {
           opacity: 1;
           transition-delay: 0.5s;
         }
