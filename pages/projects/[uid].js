@@ -343,6 +343,7 @@ const Project = ({ project }) => {
           @media only screen and (max-width: 768px) {
             .content-container {
               grid-template-columns: 1fr;
+              padding: 0px 2rem;
               gap: 2rem;
             }
             .cover-and-title {
