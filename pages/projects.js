@@ -22,7 +22,7 @@ const Projects = ({ projects, page }) => {
       <div className="projects-page flex grow items-stretch">
         <div className="project-title-container">
           <ul className="text-center font-semibold text-2xl md:text-4xl xl:text-5xl">
-            {projects.map((project) => (
+            {[...projects, ...projects].map((project) => (
               <li
                 key={project.uid}
                 className={selected === project ? "selected" : ""}
