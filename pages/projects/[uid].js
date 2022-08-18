@@ -384,7 +384,7 @@ const Project = ({ project }) => {
             }
           }
 
-          @media only screen and (min-width: 780px) {
+          @media only screen and (min-width: 768px) {
             .title {
               padding-left: 1em;
               padding-right: 1em;

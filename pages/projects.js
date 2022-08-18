@@ -21,7 +21,7 @@ const Projects = ({ projects, page }) => {
       </Head>
       <div className="projects-page flex grow items-stretch">
         <div className="project-title-container">
-          <ul className="text-center font-semibold text-2xl md:text-4xl xl:text-5xl">
+          <ul className="text-center text-2xl font-semibold md:text-4xl xl:text-5xl">
             {[...projects, ...projects].map((project) => (
               <li
                 key={project.uid}
@@ -41,8 +41,8 @@ const Projects = ({ projects, page }) => {
               </li>
             ))}
           </ul>
-          <div className="header-gradient" />
-          <div className="footer-gradient" />
+          <div className="header gradient" />
+          <div className="footer gradient" />
         </div>
         <div className="imageContainer w-full">
           {selected?.data?.cover && (
@@ -89,42 +89,43 @@ const Projects = ({ projects, page }) => {
               rgba(232, 255, 0, 0) 100%
             );
           }
+          .gradient {
+            position: fixed;
+            left: 0;
+            width: 50%;
+            height: 120px;
+            pointer-events: none;
+          }
+          .footer {
+            bottom: 0;
+
+            background-image: linear-gradient(
+              180deg,
+              rgba(${rgb}, 0) 0%,
+              rgba(${rgb}, 1) 80%
+            );
+            z-index: 10;
+          }
+          .header {
+            top: 0;
+
+            background-image: linear-gradient(
+              0deg,
+              rgba(${rgb}, 0) 0%,
+              rgba(${rgb}, 1) 80%
+            );
+            z-index: 10;
+          }
+
           @media (max-width: 768px) {
+            .gradient {
+              width: 100%;
+            }
             .projects-page > div:first-child {
               overflow-y: scroll;
             }
             .imageContainer {
               display: none;
-            }
-          }
-          @media (min-width: 768px) {
-            .footer-gradient {
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              width: 50%;
-              height: 100px;
-
-              background-image: linear-gradient(
-                180deg,
-                rgba(${rgb}, 0) 0%,
-                rgba(${rgb}, 1) 70%
-              );
-              z-index: 10;
-            }
-            .header-gradient {
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 50%;
-              height: 100px;
-
-              background-image: linear-gradient(
-                0deg,
-                rgba(${rgb}, 0) 0%,
-                rgba(${rgb}, 1) 60%
-              );
-              z-index: 10;
             }
           }
         `}</style>
