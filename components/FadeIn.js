@@ -8,7 +8,7 @@ const FadeIn = ({ children, offset = 100, delay = 0.2, ...props }) => {
       {children}
       <style jsx>{`
         .fade {
-          transition: all 0.8s ease-in-out 60s;
+          transition: all 0.8s ease-in-out 1s;
           opacity: 0;
           transform: translateY(80px);
         }

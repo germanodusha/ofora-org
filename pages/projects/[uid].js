@@ -14,6 +14,7 @@ import { speed } from "../../speed";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Slideshow from "../../components/Slideshow";
+import FadeIn from "../../components/FadeIn";
 
 const Project = ({ project }) => {
   const { asPath } = useRouter();
@@ -28,7 +29,6 @@ const Project = ({ project }) => {
   const scroll = useScrollPosition();
   const introRef = useRef(0);
   const titleRef = useRef(0);
-  const galleryRef = useRef(0);
   const leftColumnRef = useRef(0);
   const rightColumnRef = useRef(0);
 
@@ -92,7 +92,9 @@ const Project = ({ project }) => {
               {project.data.year}
               <br />
             </h2>
-            <div className="pt-1/2 pt-5 text-xl">{project.data.category}</div>
+            <div className="category pt-1/2 pt-5 text-xl">
+              {project.data.category}
+            </div>
           </div>
           <div className="banner w-1/2">
             {image.url && (
@@ -113,54 +115,61 @@ const Project = ({ project }) => {
           {project.data.year}
         </Scroller>
         <Limiter>
-          <div ref={introRef} className="paragraph-container intro-container">
+          <div
+            ref={introRef}
+            className="paragraph-container intro-container p-10 sm:p-20"
+          >
             {text}
           </div>
-          <div className="gallery" ref={galleryRef}>
+          <div className="gallery">
             {hasSlider && sliderFirst && (
-              <Slideshow items={project.data.slider} />
+              <FadeIn>
+                <Slideshow items={project.data.slider} />
+              </FadeIn>
             )}
             {hasGallery && (
-            <div className="Gridshow  p-20">
-              {project.data.gallery.map((item, index) => (
-                <>
-                  <Modal
-                    media={item.media}
-                    title={item.title}
-                    visible={selected === index}
-                    onClose={onSelect}
-                    key={index}
-                  />
-                  <div className="item" key={item.url}>
-                    {item.thumb.kind === "image" ? (
-                      <Image
-                        key={item.thumb.url}
-                        src={item.thumb.url}
-                        width={(item.thumb.width / item.thumb.height) * 250}
-                        height={250}
-                        alt={item.thumb.alt}
-                        onClick={() => {
-                          onSelect(index);
-                        }}
+              <FadeIn>
+                <div className="Gridshow  p-20">
+                  {project.data.gallery.map((item, index) => (
+                    <>
+                      <Modal
+                        media={item.media}
+                        title={item.title}
+                        visible={selected === index}
+                        onClose={onSelect}
+                        key={index}
                       />
-                    ) : (
-                      <video
-                        playsInline
-                        muted
-                        loop
-                        autoPlay
-                        onClick={() => {
-                          onSelect(index);
-                        }}
-                      >
-                        <source src={item.thumb.url} type="video/mp4" />
-                      </video>
-                    )}
-                    <span>{item.title}</span>
-                  </div>
-                </>
-              ))}
-            </div>
+                      <div className="item" key={item.url}>
+                        {item.thumb.kind === "image" ? (
+                          <Image
+                            key={item.thumb.url}
+                            src={item.thumb.url}
+                            width={(item.thumb.width / item.thumb.height) * 250}
+                            height={250}
+                            alt={item.thumb.alt}
+                            onClick={() => {
+                              onSelect(index);
+                            }}
+                          />
+                        ) : (
+                          <video
+                            playsInline
+                            muted
+                            loop
+                            autoPlay
+                            onClick={() => {
+                              onSelect(index);
+                            }}
+                          >
+                            <source src={item.thumb.url} type="video/mp4" />
+                          </video>
+                        )}
+                        <span>{item.title}</span>
+                      </div>
+                    </>
+                  ))}
+                </div>
+              </FadeIn>
             )}
             {hasSlider && !sliderFirst && (
               <Slideshow items={project.data.slider} />
@@ -247,12 +256,13 @@ const Project = ({ project }) => {
             z-index: 899;
             pointer-events: none;
           }
+          .paragraph-container {
+            font-size: 1.5rem;
+            text-align: center;
+            min-height: 250px;
+          }
           .spacer {
             padding-left: 3rem;
-          }
-          .gallery {
-            opacity: ${scroll > galleryRef.current.offsetTop - 300 ? 1 : 0.01};
-            transition: 1s opacity 0.4s;
           }
           .item {
             cursor: pointer;
@@ -349,6 +359,9 @@ const Project = ({ project }) => {
               width: 100%;
               height: 100%;
             }
+            .category {
+              margin-bottom: 2rem;
+            }
             @keyframes appear-left {
               0% {
                 opacity: 0;
@@ -386,6 +399,9 @@ const Project = ({ project }) => {
             }
             .banner :global(img) {
               object-position: 100% 50%;
+            }
+            .paragraph-container {
+              font-size: 2rem;
             }
             .item :global(img),
             .item :global(video) {
