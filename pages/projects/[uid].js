@@ -360,7 +360,7 @@ const Project = ({ project }) => {
               height: 100%;
             }
             .paragraph-container {
-              margin-top: 2rem;
+              margin-top: 3rem;
             }
             .category {
               margin-bottom: 2rem;
