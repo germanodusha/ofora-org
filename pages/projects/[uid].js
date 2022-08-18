@@ -355,6 +355,9 @@ const Project = ({ project }) => {
               display: grid;
               gap: 1rem;
             }
+            .title > * {
+              padding: 0 0.9rem;
+            }
             .banner {
               margin-top: 1rem;
               width: 100%;
