@@ -359,6 +359,9 @@ const Project = ({ project }) => {
               width: 100%;
               height: 100%;
             }
+            .paragraph-container {
+              margin-top: 2rem;
+            }
             .category {
               margin-bottom: 2rem;
             }
