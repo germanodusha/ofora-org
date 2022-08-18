@@ -233,7 +233,7 @@ const Project = ({ project }) => {
             grid-template-columns: 1fr 1fr;
             gap: 0rem 5rem;
             padding: 0px 5rem;
-            padding-bottom: 8.6875rem;
+            padding-bottom: 5rem;
           }
           .page-root:global(strong) {
             box-shadow: inset 0.5em 0.25em 0.25em -0.4em red,
