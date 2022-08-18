@@ -369,6 +369,9 @@ const Project = ({ project }) => {
             .category {
               margin-bottom: 2rem;
             }
+            .gallery {
+              margin-top: 3rem;
+            }
             .Gridshow .item {
               margin-bottom: 6rem
             }
