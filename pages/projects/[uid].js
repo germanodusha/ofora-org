@@ -148,7 +148,7 @@ const Project = ({ project }) => {
                             height={250}
                             alt={item.thumb.alt}
                             onClick={() => {
-                              //onSelect(index);
+                              onSelect(index);
                             }}
                           />
                         ) : (
@@ -158,7 +158,7 @@ const Project = ({ project }) => {
                             loop
                             autoPlay
                             onClick={() => {
-                              //onSelect(index);
+                              onSelect(index);
                             }}
                           >
                             <source src={item.thumb.url} type="video/mp4" />
@@ -172,7 +172,9 @@ const Project = ({ project }) => {
               </FadeIn>
             )}
             {hasSlider && !sliderFirst && (
-              <Slideshow items={project.data.slider} />
+              <FadeIn>
+                <Slideshow items={project.data.slider} />
+              </FadeIn>
             )}
           </div>
           <div className="content-container">

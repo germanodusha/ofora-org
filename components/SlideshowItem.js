@@ -24,7 +24,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
                 : size.height
             }
             onClick={() => {
-              //onClick({ media, title })
+              onClick({ media, title })
             }}
           />
         ) : (
@@ -35,7 +35,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
             <div
               className="slideshow-item-overlay"
               onClick={() => {
-                //onClick({ media, title })
+                onClick({ media, title })
               }}
             ></div>
           </>
