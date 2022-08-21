@@ -15,12 +15,12 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Slideshow from "../../components/Slideshow";
 import FadeIn from "../../components/FadeIn";
+import Gridshow from "../../components/Gridshow";
 
 const Project = ({ project }) => {
   const { asPath } = useRouter();
   const { cover, banner } = project.data;
 
-  const [selected, onSelect] = useState();
   const [text, setText] = useState("");
 
   const [higherScroll, setHigherScroll] = useState(0);
@@ -128,48 +128,7 @@ const Project = ({ project }) => {
               </FadeIn>
             )}
             {hasGallery && (
-              <FadeIn>
-                <div className="Gridshow p-3 sm:p-20">
-                  {project.data.gallery.map((item, index) => (
-                    <>
-                      <Modal
-                        media={item.media}
-                        title={item.title}
-                        visible={selected === index}
-                        onClose={onSelect}
-                        key={index}
-                      />
-                      <div className="item" key={item.url}>
-                        {item.thumb.kind === "image" ? (
-                          <Image
-                            key={item.thumb.url}
-                            src={item.thumb.url}
-                            width={(item.thumb.width / item.thumb.height) * 250}
-                            height={250}
-                            alt={item.thumb.alt}
-                            onClick={() => {
-                              onSelect(index);
-                            }}
-                          />
-                        ) : (
-                          <video
-                            playsInline
-                            muted
-                            loop
-                            autoPlay
-                            onClick={() => {
-                              onSelect(index);
-                            }}
-                          >
-                            <source src={item.thumb.url} type="video/mp4" />
-                          </video>
-                        )}
-                        <span>{item.title}</span>
-                      </div>
-                    </>
-                  ))}
-                </div>
-              </FadeIn>
+                <Gridshow gallery={project.data.gallery} />
             )}
             {hasSlider && !sliderFirst && (
               <FadeIn>
@@ -266,38 +225,6 @@ const Project = ({ project }) => {
           .spacer {
             padding-left: 3rem;
           }
-          .item {
-            cursor: pointer;
-            position: relative;
-            text-align: center;
-            color: transparent;
-            margin: 10px 10px;
-            transition: 0.4s box-shadow;
-            line-height: 0px;
-          }
-          .item:nover {
-            box-shadow: 0px 0px 55px 20px #e8ff00;
-            background: #e8ff00;
-            color: black;
-          }
-          .item :global(img),
-          .item :global(video) {
-            transition: 0.4s opacity;
-          }
-          .item > span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            text-transform: uppercase;
-            line-height: 1.5rem;
-          }
-          .item :global(img):nover,
-          .item :global(video):nover {
-            opacity: 0.2;
-          }
-
           .title {
             position: relative;
             animation: appear-right 1.2s ease-in-out;
@@ -379,9 +306,6 @@ const Project = ({ project }) => {
             .gallery {
               margin-top: 3rem;
             }
-            .Gridshow .item {
-              margin-bottom: 6rem
-            }
             @keyframes appear-left {
               0% {
                 opacity: 0;
@@ -423,33 +347,7 @@ const Project = ({ project }) => {
             .paragraph-container {
               font-size: 2rem;
             }
-            .item :global(img),
-            .item :global(video) {
-              height: 180px !important;
-              width: 180px !important;
-              object-fit: cover;
-            }
-            .Gridshow {
-              display: flex;
-              flex-wrap: wrap;
-            }
-          }
-          @media only screen and (min-width: 1024px) {
-            .item :global(img),
-            .item :global(video) {
-              height: 195px !important;
-              width: 195px !important;
-              object-fit: cover;
-            }
-          }
-          @media only screen and (min-width: 1280px) {
-            .item :global(img),
-            .item :global(video) {
-              height: 260px !important;
-              width: 260px !important;
-              object-fit: cover;
-            }
-          }
+
         `}</style>
       </div>
     </>
