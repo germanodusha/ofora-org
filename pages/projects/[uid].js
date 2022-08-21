@@ -312,10 +312,12 @@ const Project = ({ project }) => {
           .left-colunm {
             position: relative;
             left: -20%;
+            min-height: 300px;
           }
           .right-colunm {
             position: relative;
             left: 20%;
+            min-height: 300px;
           }
           .is-visible {
             transition: all 2s ease-in-out;
