@@ -60,16 +60,11 @@ const Gridshow = ({ gallery }) => {
           transition: 0.4s box-shadow;
           line-height: 0px;
         }
-        .item:nover {
-          box-shadow: 0px 0px 55px 20px #e8ff00;
-          background: #e8ff00;
-          color: black;
-        }
         .item :global(img),
         .item :global(video) {
           transition: 0.4s opacity;
         }
-        .item > span {
+        .item span {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -77,10 +72,6 @@ const Gridshow = ({ gallery }) => {
           pointer-events: none;
           text-transform: uppercase;
           line-height: 1.5rem;
-        }
-        .item :global(img):nover,
-        .item :global(video):nover {
-          opacity: 0.2;
         }
         @media only screen and (max-width: 768px) {
           .Gridshow .item {
@@ -97,6 +88,15 @@ const Gridshow = ({ gallery }) => {
             height: 180px !important;
             width: 180px !important;
             object-fit: cover;
+          }
+          .item :global(img):hover,
+          .item :global(video):hover {
+            opacity: 0.2;
+          }
+          .item:hover {
+            box-shadow: 0px 0px 55px 20px #e8ff00;
+            background: #e8ff00;
+            color: black;
           }
         }
         @media only screen and (min-width: 1024px) {

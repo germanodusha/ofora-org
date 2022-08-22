@@ -68,13 +68,6 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
         .slideshow-item > :global(span) {
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:nover > :global(video),
-        .slideshow-item:nover > :global(span) {
-          box-shadow: 0px 0px 55px 20px #e8ff00;
-          background: #e8ff00;
-          color: black;
-          position: relative;
-        }
         .slideshow-item > :global(span):after {
           background: #e8ff00;
           position: absolute;
@@ -88,9 +81,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           transition: opacity 0.5s ease-in-out;
           pointer-events: none;
         }
-        .slideshow-item:nover > :global(span):after {
-          opacity: 0.7;
-        }
+
         .slideshow-item-overlay {
           position: absolute;
           width: ${videSize.width}px;
@@ -99,9 +90,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           opacity: 0;
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:nover > .slideshow-item-overlay {
-          opacity: 0.7;
-        }
+
         .slideshow-item-title {
           position: absolute;
           left: 50%;
@@ -114,9 +103,25 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           z-index: 20;
           transition: all 0.5s ease-in-out;
         }
-        .slideshow-item:nover .slideshow-item-title {
-          opacity: 1;
-          transition-delay: 0.5s;
+
+        @media (min-width: 768px) {
+          .slideshow-item:hover > :global(span):after {
+            opacity: 0.7;
+          }
+          .slideshow-item:hover > .slideshow-item-overlay {
+            opacity: 0.7;
+          }
+          .slideshow-item:hover .slideshow-item-title {
+            opacity: 1;
+            transition-delay: 0.5s;
+          }
+          .slideshow-item:hover > :global(video),
+          .slideshow-item:hover > :global(span) {
+            box-shadow: 0px 0px 55px 20px #e8ff00;
+            background: #e8ff00;
+            color: black;
+            position: relative;
+          }
         }
       `}</style>
     </>
