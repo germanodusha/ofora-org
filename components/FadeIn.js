@@ -15,7 +15,7 @@ const FadeIn = ({ children, offset = 100, delay = 0.2, ...props }) => {
         .fade.visible {
           opacity: 1;
           transition: all 0.8s ease-in-out ${delay}s;
-          transform: translateY(0px);
+          transform: none;
         }
       `}</style>
     </div>
