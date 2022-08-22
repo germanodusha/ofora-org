@@ -29,17 +29,12 @@ const Project = ({ project }) => {
   const scroll = useScrollPosition();
   const introRef = useRef(0);
   const titleRef = useRef(0);
-  const leftColumnRef = useRef(0);
-  const rightColumnRef = useRef(0);
 
   const hasSlider = project.data.mediaLayout?.includes("Slider");
   const hasGallery = project.data.mediaLayout?.includes("Gallery");
   const sliderFirst =
     hasSlider && project.data.mediaLayout?.startsWith("Slider");
 
-  function isVisible(ref) {
-    return higherScroll > ref.current.offsetTop - ref.current.offsetHeight * 2;
-  }
   useEffect(() => {
     if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
       setTypeVisibility(true);

@@ -24,29 +24,31 @@ const Modal = ({ title, media, visible, onClose }) => {
           )}
         </div>
       </div>
-      <div
-        className="close"
-        onClick={() => {
-          if (videoRef.current) {
-            videoRef.current.muted = true;
-          }
-          onClose(null);
-        }}
-      >
-        <CloseIcon />
-      </div>
-      {media.kind !== "image"  && (
+      <div className="actions">
         <div
-          className="sound"
+          className="close"
           onClick={() => {
-            console.log(videoRef.current?.audioTracks)
-            setMuted(!videoRef.current.muted);
-            videoRef.current.muted = !videoRef.current.muted;
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+            }
+            onClose(null);
           }}
         >
-          <SoundIcon />
+          <CloseIcon />
         </div>
-      )}
+        {media.kind !== "image" && (
+          <div
+            className="sound"
+            onClick={() => {
+              console.log(videoRef.current?.audioTracks);
+              setMuted(!videoRef.current.muted);
+              videoRef.current.muted = !videoRef.current.muted;
+            }}
+          >
+            <SoundIcon />
+          </div>
+        )}
+      </div>
 
       <style jsx>{`
         .backdrop {
@@ -88,8 +90,8 @@ const Modal = ({ title, media, visible, onClose }) => {
         }
         .sound {
           position: absolute;
-          top: 140px;
-          right: 30px;
+          top: 83px;
+          right: 80px;
           cursor: pointer;
           opacity: ${muted ? 0.4 : 1};
         }

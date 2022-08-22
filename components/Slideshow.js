@@ -102,11 +102,6 @@ const Slideshow = ({ items }) => {
             ? "none"
             : "auto"};
         }
-        @media (max-width: 768px) {
-          .slideshow-nav {
-            display: none;
-          }
-        }
         @media (min-width: 768px) {
           .slideshow {
             height: 70vh;
