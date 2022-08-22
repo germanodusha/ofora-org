@@ -89,7 +89,7 @@ const Modal = ({ title, media, visible, onClose }) => {
         }
         .sound {
           position: absolute;
-          top: 83px;
+          top: 89px;
           right: 80px;
           cursor: pointer;
           opacity: ${muted ? 0.4 : 1};
