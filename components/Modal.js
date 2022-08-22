@@ -40,8 +40,7 @@ const Modal = ({ title, media, visible, onClose }) => {
           <div
             className="sound"
             onClick={() => {
-              console.log(videoRef.current?.audioTracks);
-              setMuted(!videoRef.current.muted);
+              setMuted(!muted);
               videoRef.current.muted = !videoRef.current.muted;
             }}
           >
