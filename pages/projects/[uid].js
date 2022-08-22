@@ -127,9 +127,7 @@ const Project = ({ project }) => {
                 <Slideshow items={project.data.slider} />
               </FadeIn>
             )}
-            {hasGallery && (
-                <Gridshow gallery={project.data.gallery} />
-            )}
+            {hasGallery && <Gridshow gallery={project.data.gallery} />}
             {hasSlider && !sliderFirst && (
               <FadeIn>
                 <Slideshow items={project.data.slider} />
@@ -137,43 +135,37 @@ const Project = ({ project }) => {
             )}
           </div>
           <div className="content-container">
-            <div
-              className={`left-colunm ${
-                isVisible(leftColumnRef) ? "is-visible" : "is-not-visible"
-              }`}
-              ref={leftColumnRef}
-            >
-              <PrismicRichText
-                field={project.data.leftColumn}
-                components={{
-                  hyperlink: ({ children, node }) => (
-                    <Link href={node.text} passHref>
-                      <a>
-                        <Highlighted color="yellow">{children}</Highlighted>
-                      </a>
-                    </Link>
-                  ),
-                }}
-              />
+            <div className={`left-colunm`}>
+              <FadeIn>
+                <PrismicRichText
+                  field={project.data.leftColumn}
+                  components={{
+                    hyperlink: ({ children, node }) => (
+                      <Link href={node.text} passHref>
+                        <a>
+                          <Highlighted color="yellow">{children}</Highlighted>
+                        </a>
+                      </Link>
+                    ),
+                  }}
+                />
+              </FadeIn>
             </div>
-            <div
-              className={`right-colunm ${
-                isVisible(rightColumnRef) ? "is-visible" : "is-not-visible"
-              }`}
-              ref={rightColumnRef}
-            >
-              <PrismicRichText
-                field={project.data.rightColumn}
-                components={{
-                  hyperlink: ({ children, node }) => (
-                    <Link target="_blank" href={node.data.url} passHref>
-                      <a target="_blank" rel="noopener noreferrer">
-                        <Highlighted color="yellow">{children}</Highlighted>
-                      </a>
-                    </Link>
-                  ),
-                }}
-              />
+            <div className={`right-colunm`}>
+              <FadeIn>
+                <PrismicRichText
+                  field={project.data.rightColumn}
+                  components={{
+                    hyperlink: ({ children, node }) => (
+                      <Link target="_blank" href={node.data.url} passHref>
+                        <a target="_blank" rel="noopener noreferrer">
+                          <Highlighted color="yellow">{children}</Highlighted>
+                        </a>
+                      </Link>
+                    ),
+                  }}
+                />
+              </FadeIn>
             </div>
           </div>
           <div className="footer-gradient" />
@@ -238,18 +230,12 @@ const Project = ({ project }) => {
           }
           .left-colunm {
             position: relative;
-            left: -20%;
-            min-height: 300px;
+            left: 0;
           }
           .right-colunm {
             position: relative;
-            left: 20%;
-            min-height: 300px;
-          }
-          .is-visible {
-            transition: all 2s ease-in-out;
-            opacity: 1;
             left: 0;
+            min-height: 300px;
           }
           @keyframes appear-left {
             0% {
