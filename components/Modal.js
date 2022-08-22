@@ -94,12 +94,14 @@ const Modal = ({ title, media, visible, onClose }) => {
           cursor: pointer;
           opacity: ${muted ? 0.4 : 1};
         }
-        .sound:hover {
-          opacity: 1;
-        }
         video {
           width: 100%;
           height: 100%;
+        }
+        @media (min-width: 768px) {
+          .sound:hover {
+            opacity: 1;
+          }
         }
       `}</style>
     </div>
