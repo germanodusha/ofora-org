@@ -58,7 +58,7 @@ const Projects = ({ projects, page }) => {
           .project-title-container {
             top: 0;
             left: 0;
-            padding: 100px 0;
+            padding: 70px 0;
             overflow: auto;
             background-color: rgba(152, 152, 152, 1);
           }
