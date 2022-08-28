@@ -19,7 +19,7 @@ const Gridshow = ({ gallery }) => {
               key={index}
             />
             <div className="item" key={item.url}>
-              <FadeIn>
+              <FadeIn offset={210}>
                 {item.thumb.kind === "image" ? (
                   <Image
                     key={item.thumb.url}

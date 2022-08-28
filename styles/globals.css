@@ -7,7 +7,8 @@
 :root {
   --yellow: #e8ff00;
 }
-* {
+html,
+a {
   cursor: url("/cursor.cur"), auto;
   font-weight: 200 !important;
 }

@@ -124,7 +124,7 @@ const Project = ({ project }) => {
             )}
             {hasGallery && <Gridshow gallery={project.data.gallery} />}
             {hasSlider && !sliderFirst && (
-              <FadeIn>
+              <FadeIn offset={200}>
                 <Slideshow items={project.data.slider} />
               </FadeIn>
             )}
