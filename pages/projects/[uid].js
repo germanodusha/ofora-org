@@ -128,7 +128,7 @@ const Project = ({ project }) => {
               </FadeIn>
             )}
             {hasSlider && !sliderFirst && (
-              <FadeIn offset={200}>
+              <FadeIn offset={250}>
                 <Slideshow items={project.data.slider} />
               </FadeIn>
             )}
