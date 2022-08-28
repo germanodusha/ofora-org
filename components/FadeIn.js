@@ -11,11 +11,13 @@ const FadeIn = ({ children, offset = 100, delay = 0.2, ...props }) => {
           transition: all 0.8s ease-in-out 1s;
           opacity: 0;
           transform: translateY(80px);
+          pointer-events: none;
         }
         .fade.visible {
           opacity: 1;
           transition: all 0.8s ease-in-out ${delay}s;
           transform: none;
+          pointer-events: all;
         }
       `}</style>
     </div>

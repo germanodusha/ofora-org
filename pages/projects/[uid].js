@@ -118,7 +118,7 @@ const Project = ({ project }) => {
           </div>
           <div className="gallery">
             {hasSlider && sliderFirst && (
-              <FadeIn>
+              <FadeIn offset={250}>
                 <Slideshow items={project.data.slider} />
               </FadeIn>
             )}
