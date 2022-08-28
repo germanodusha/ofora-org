@@ -123,7 +123,7 @@ const Project = ({ project }) => {
               </FadeIn>
             )}
             {hasGallery && (
-              <FadeIn offset={270}>
+              <FadeIn offset={300}>
                 <Gridshow gallery={project.data.gallery} />
               </FadeIn>
             )}
