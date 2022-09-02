@@ -52,7 +52,6 @@ const Gridshow = ({ gallery }) => {
       </div>
       <style jsx>{`
         .item {
-          cursor: pointer;
           position: relative;
           text-align: center;
           color: transparent;

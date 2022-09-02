@@ -81,7 +81,6 @@ const Modal = ({ title, media, visible, onClose }) => {
           position: absolute;
           top: 90px;
           right: 40px;
-          cursor: pointer;
           opacity: 0.4;
         }
         .close:hover {
@@ -91,7 +90,6 @@ const Modal = ({ title, media, visible, onClose }) => {
           position: absolute;
           top: 89px;
           right: 80px;
-          cursor: pointer;
           opacity: ${muted ? 0.4 : 1};
         }
         video {
