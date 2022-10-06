@@ -21,7 +21,7 @@ const About = ({ page }) => {
   return (
     <div>
       <Head>
-        <title>{page.data.title}</title>
+        <title>Fora</title>
       </Head>
       <Scroller />
       <video autoPlay loop muted playsInline>

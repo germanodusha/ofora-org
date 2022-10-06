@@ -23,11 +23,6 @@ const Project = ({ project }) => {
 
   const [text, setText] = useState("");
 
-  const [higherScroll, setHigherScroll] = useState(0);
-  const [isTypeVisible, setTypeVisibility] = useState(false);
-
-  const scroll = useScrollPosition();
-  const introRef = useRef(0);
   const titleRef = useRef(0);
 
   const hasSlider = project.data.mediaLayout?.includes("Slider");
@@ -35,23 +30,6 @@ const Project = ({ project }) => {
   const sliderFirst =
     hasSlider && project.data.mediaLayout?.startsWith("Slider");
 
-  useEffect(() => {
-    if (scroll > introRef.current.offsetTop - titleRef.current.offsetHeight) {
-      setTypeVisibility(true);
-      isTypeVisible ? null : start();
-    }
-    scroll > higherScroll && setHigherScroll(scroll);
-  }, [scroll]);
-  function start(counte = -1) {
-    setTimeout(() => {
-      if (counte < project.data.intro[0]?.text.length) {
-        project.data.intro[0].text[counte]
-          ? setText((text += project.data.intro[0].text[counte]))
-          : null;
-      }
-      return start(counte + 1);
-    }, speed);
-  }
   const image = banner.url ? banner : cover;
   return (
     <>
@@ -110,12 +88,13 @@ const Project = ({ project }) => {
           {project.data.year}
         </Scroller>
         <Limiter>
+          <FadeIn offset={0}>
           <div
-            ref={introRef}
             className="paragraph-container intro-container px-10 sm:p-20"
           >
-            {text}
+            {project.data.intro[0].text}
           </div>
+          </FadeIn>
           <div className="gallery">
             {hasSlider && sliderFirst && (
               <FadeIn offset={250}>

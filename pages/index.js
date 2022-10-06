@@ -48,7 +48,7 @@ const Index = ({ page }) => {
 
       <style jsx>{`
         :global(body) {
-          background-color: var(--yellow);
+          background-color: white;
         }
         .logo-container {
           position: fixed;
