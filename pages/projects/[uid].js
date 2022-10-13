@@ -92,7 +92,7 @@ const Project = ({ project }) => {
           <div
             className="paragraph-container intro-container px-10 sm:p-20"
           >
-            {project.data.intro[0].text}
+            {project.data.intro[0]?.text}
           </div>
           </FadeIn>
           <div className="gallery">
