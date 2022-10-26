@@ -63,7 +63,8 @@ export default function App({ Component, pageProps, navigation, settings }) {
 
   useEffect(() => {
     router.beforePopState(({ as }) => {
-        alert('!')
+      setTimeout(()=> alert('asdf'), 1000)
+      return true
     });
 
     return () => {
