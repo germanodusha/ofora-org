@@ -1,21 +1,24 @@
-import { useEffect, useContext, Suspense } from "react";
+import { useEffect, useContext, Suspense, useState } from "react";
 import Head from "next/head";
 import { createClient } from "../prismicio";
 import { Context } from "./_app.js";
 import { Canvas } from "@react-three/fiber";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
-import { useRouter } from "next/router";
 
 const Index = ({ page }) => {
   const { setPage, settings } = useContext(Context);
-  const router = useRouter()
-
-  console.log(router.route)
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setPage(page);
   }, [page, setPage]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, []);
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
@@ -38,7 +41,7 @@ const Index = ({ page }) => {
         <meta property="og:description" content={settings?.data?.description} />
       </Head>
       <div className="canvas-container">
-        <Canvas width={1000} height={1000}>
+        {loaded && <Canvas width={1000} height={1000}>
           <pointLight
             position={[10, 10, 10]}
             color={0xffffff}
@@ -47,7 +50,7 @@ const Index = ({ page }) => {
           <Suspense fallback={null}>
             <Flag flag={{ position: [flagX, 60, flagZ] }} />
           </Suspense>
-        </Canvas>
+        </Canvas>}
       </div>
 
       <style jsx>{`
