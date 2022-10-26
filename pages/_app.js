@@ -63,7 +63,7 @@ export default function App({ Component, pageProps, navigation, settings }) {
 
   useEffect(() => {
     router.beforePopState(({ as }) => {
-      setTimeout(()=> alert('asdf'), 1000)
+      setTimeout(()=> window.location.reload(), 1500)
       return true
     });
 
