@@ -8,9 +8,11 @@ import useWindowSize from "../hooks/useWindowSize";
 
 const Index = ({ page }) => {
   const { setPage, settings } = useContext(Context);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     setPage(page);
+    setLoaded(true)
   }, [page, setPage]);
 
   const windowSize = useWindowSize()
@@ -34,7 +36,7 @@ const Index = ({ page }) => {
         <meta property="og:description" content={settings?.data?.description} />
       </Head>
       <div className="canvas-container">
-        <Canvas width={1000} height={1000}>
+        {loaded && <Canvas width={1000} height={1000}>
           <pointLight
             position={[10, 10, 10]}
             color={0xffffff}
@@ -43,7 +45,7 @@ const Index = ({ page }) => {
           <Suspense fallback={null}>
             <Flag flag={{ position: [flagX, 60, flagZ] }} />
           </Suspense>
-        </Canvas>
+        </Canvas>}
       </div>
 
       <style jsx>{`
