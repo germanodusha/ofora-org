@@ -5,7 +5,7 @@ import { createClient } from "../prismicio";
 import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles/globals.css";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Layout } from "../components/Layout";
 import { useRouter } from "next/router";
 
@@ -62,7 +62,6 @@ export default function App({ Component, pageProps, navigation, settings }) {
   };
 
   useEffect(() => {
-
     router.beforePopState(({ as }) => {
         alert('!')
     });
