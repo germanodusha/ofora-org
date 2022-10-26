@@ -7,6 +7,7 @@ import { repositoryName, linkResolver } from "../prismicio";
 import "../styles/globals.css";
 import { createContext, useState } from "react";
 import { Layout } from "../components/Layout";
+import { useRouter } from "next/router";
 
 const NextLinkShim = ({ href, children, locale, ...props }) => {
   return (
@@ -52,12 +53,24 @@ export const Context = createContext(null);
 
 export default function App({ Component, pageProps, navigation, settings }) {
   const [page, setPage] = useState(null);
+  const router = useRouter()
   const context = {
     page,
     setPage,
     navigation,
     settings,
   };
+
+  useEffect(() => {
+
+    router.beforePopState(({ as }) => {
+        alert('!')
+    });
+
+    return () => {
+        router.beforePopState(() => true);
+    };
+}, [router]);
 
   return (
     <PrismicProvider

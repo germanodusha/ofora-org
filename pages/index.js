@@ -5,24 +5,13 @@ import { Context } from "./_app.js";
 import { Canvas } from "@react-three/fiber";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
-import { useRouter } from "next/router";
 
 const Index = ({ page }) => {
   const { setPage, settings } = useContext(Context);
-  const [loaded, setLoaded] = useState(false);
-  const router = useRouter()
 
   useEffect(() => {
     setPage(page);
   }, [page, setPage]);
-
-  useEffect(() => {
-    setLoaded(false);
-    alert('uau')
-    setTimeout(() => {
-      setLoaded(true);
-    }, 3000);
-  }, [router, page, settings]);
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
@@ -45,7 +34,16 @@ const Index = ({ page }) => {
         <meta property="og:description" content={settings?.data?.description} />
       </Head>
       <div className="canvas-container">
-        <Canvas width={1000} height={1000} />
+        <Canvas width={1000} height={1000}>
+          <pointLight
+            position={[10, 10, 10]}
+            color={0xffffff}
+            intensity={0.90}
+          />
+          <Suspense fallback={null}>
+            <Flag flag={{ position: [flagX, 60, flagZ] }} />
+          </Suspense>
+        </Canvas>
       </div>
 
       <style jsx>{`
