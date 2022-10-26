@@ -22,7 +22,7 @@ const Index = ({ page }) => {
     setTimeout(() => {
       setLoaded(true);
     }, 3000);
-  }, []);
+  });
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
