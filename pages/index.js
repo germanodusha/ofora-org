@@ -5,20 +5,23 @@ import { Context } from "./_app.js";
 import { Canvas } from "@react-three/fiber";
 import Flag from "../components/Flag";
 import useWindowSize from "../hooks/useWindowSize";
+import { useRouter } from "next/router";
 
 const Index = ({ page }) => {
   const { setPage, settings } = useContext(Context);
   const [loaded, setLoaded] = useState(false);
+  const router = useRouter()
 
   useEffect(() => {
     setPage(page);
   }, [page, setPage]);
 
   useEffect(() => {
+    setLoaded(false);
     setTimeout(() => {
       setLoaded(true);
     }, 3000);
-  }, []);
+  }, [router]);
 
   const windowSize = useWindowSize()
   const windowWidth = windowSize.width || 0
