@@ -18,6 +18,7 @@ const Index = ({ page }) => {
 
   useEffect(() => {
     setLoaded(false);
+    alert('uau')
     setTimeout(() => {
       setLoaded(true);
     }, 3000);
@@ -45,9 +46,11 @@ const Index = ({ page }) => {
       </Head>
       <div className="canvas-container">
         {loaded && <Canvas width={1000} height={1000}>
-          <Suspense fallback={null}>
-            <Flag flag={{ position: [flagX, 60, flagZ] }} />
-          </Suspense>
+          <pointLight
+            position={[10, 10, 10]}
+            color={0xffffff}
+            intensity={0.90}
+          />
         </Canvas>}
       </div>
 
