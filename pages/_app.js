@@ -63,12 +63,12 @@ export default function App({ Component, pageProps, navigation, settings }) {
 
   useEffect(() => {
     router.beforePopState(({ as }) => {
-      setTimeout(()=> window.location.reload(), 1500)
+      setTimeout(()=> window.location.reload(), 1000)
       return true
     });
 
     return () => {
-        router.beforePopState(() => true);
+      router.beforePopState(() => true);
     };
 }, [router]);
 
