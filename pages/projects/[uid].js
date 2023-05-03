@@ -22,7 +22,6 @@ const Project = ({ project }) => {
   const { cover, banner } = project.data;
 
   const [text, setText] = useState("");
-
   const titleRef = useRef(0);
 
   const hasSlider = project.data.mediaLayout?.includes("Slider");
