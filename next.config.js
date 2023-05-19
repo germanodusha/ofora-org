@@ -25,6 +25,13 @@ const nextConfig = async () => {
         {
           source: "/acoes",
           destination: "https://acoes.ofora.org",
+          locale: false,
+          permanent: true,
+        },
+        {
+          source: "/acoes/:path*",
+          destination: "https://acoes.ofora.org/:path*",
+          locale: false,
           permanent: true,
         },
       ];
