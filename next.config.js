@@ -29,7 +29,7 @@ const nextConfig = async () => {
         },
         {
           source: "/acoes/:path*",
-          destination: "https://acoes.ofora.org/:path*",
+          destination: "https://acoes.ofora.org/acoes/:path*",
           permanent: true,
         },
       ];
