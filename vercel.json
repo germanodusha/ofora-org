@@ -4,8 +4,7 @@
     { "source": "/acoes", "destination": "https://acoes.ofora.org" },
     {
       "source": "/acoes/:path*",
-      "destination": "https://acoes.ofora.org/:path*",
-      "permanent": true
+      "destination": "https://acoes.ofora.org/:path*"
     }
   ]
 }
