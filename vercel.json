@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/acoes2", "destination": "/" },
     { "source": "/acoes", "destination": "https://acoes.ofora.org" },
     {
       "source": "/acoes/:path*",
