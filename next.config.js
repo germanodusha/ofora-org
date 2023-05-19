@@ -20,6 +20,13 @@ const nextConfig = async () => {
     images: {
       domains: ["images.prismic.io", "ofora.cdn.prismic.io"],
     },
+    redirects: [
+      {
+        source: '/acoes',
+        destination: 'https://acoes.ofora.org',
+        permanent: true,
+      },
+    ]
   };
 };
 
