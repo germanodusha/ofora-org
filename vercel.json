@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/acoes", "destination": "https://acoes.ofora.org" },
+    {
+      "source": "/acoes/:slug",
+      "destination": "https://acoes.ofora.org/:slug"
+    }
+  ]
+}
