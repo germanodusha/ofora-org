@@ -2,8 +2,9 @@
   "redirects": [
     { "source": "/acoes", "destination": "https://acoes.ofora.org" },
     {
-      "source": "/acoes/:slug",
-      "destination": "https://acoes.ofora.org/:slug"
+      "source": "/acoes/:path*",
+      "destination": "https://acoes.ofora.org/:path*",
+      "permanent": true
     }
   ]
 }
