@@ -13,7 +13,6 @@ const useElementVisible = (param) => {
     ? position < 0 - offset
     : false;
 
-  console.log(ref.current?.getBoundingClientRect().top - windowSize.height);
   return [ref, isVisible];
 };
 

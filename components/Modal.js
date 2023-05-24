@@ -5,7 +5,6 @@ import { CloseIcon, SoundIcon } from "./Icons";
 const Modal = ({ title, media, visible, onClose }) => {
   const videoRef = useRef();
   const [muted, setMuted] = useState(true);
-
   return (
     <div className="backdrop">
       <div className="content">

@@ -124,6 +124,9 @@ const Project = ({ project }) => {
                         </a>
                       </Link>
                     ),
+                    paragraph: ({ children }) => (
+                      <p className="mb-4 last:mb-0">{children}</p>
+                      ),
                   }}
                 />
               </FadeIn>
@@ -140,6 +143,10 @@ const Project = ({ project }) => {
                         </a>
                       </Link>
                     ),
+                    paragraph: ({ children }) => (
+                      <p className="mb-4 last:mb-0">{children}</p>
+                      ),
+                    
                   }}
                 />
               </FadeIn>
@@ -165,6 +172,9 @@ const Project = ({ project }) => {
             padding: 0px 5rem;
             padding-bottom: 5rem;
           }
+          .content-container * > p {
+            margin-bottom: 0.5rem !important;
+          }
           .page-root:global(strong) {
             box-shadow: inset 0.5em 0.25em 0.25em -0.4em red,
               inset -0.5em -0.25em 0.25em -0.4em red,
@@ -187,7 +197,7 @@ const Project = ({ project }) => {
             pointer-events: none;
           }
           .paragraph-container {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-align: center;
             min-height: 250px;
           }

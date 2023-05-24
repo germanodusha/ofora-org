@@ -26,9 +26,11 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
             onClick={() => {
               onClick({ media, title })
             }}
+            objectFit="contain"
           />
         ) : (
           <>
+          video
             <video playsInline muted loop autoPlay ref={videoRef}>
               <source src={media.url} type="video/mp4" />
             </video>
@@ -89,6 +91,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           background: #e8ff00;
           opacity: 0;
           transition: all 0.5s ease-in-out;
+          z-index: 10;
         }
 
         .slideshow-item-title {
@@ -104,7 +107,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           transition: all 0.5s ease-in-out;
         }
 
-        @media (min-width: 768px) {
+{/*         @media (min-width: 768px) {
           .slideshow-item:hover > :global(span):after {
             opacity: 0.7;
           }
@@ -122,7 +125,7 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
             color: black;
             position: relative;
           }
-        }
+        } */}
       `}</style>
     </>
   );
