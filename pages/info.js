@@ -112,7 +112,7 @@ const About = ({ page }) => {
 
         }
         .content {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           text-align: center;
         }
         .info {

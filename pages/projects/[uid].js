@@ -211,6 +211,8 @@ const Project = ({ project }) => {
           .banner {
             position: relative;
             animation: appear-left 1.2s ease-in-out;
+            max-width: 90%;
+            margin: 0 auto;
           }
           .is-not-visible {
             opacity: 0;
