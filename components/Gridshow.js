@@ -11,6 +11,7 @@ const Gridshow = ({ gallery }) => {
       <div className="Gridshow p-3 sm:p-20">
         {gallery.map((item, index) => (
           <>
+            <div className="item" key={item.url}>
             <Modal
               media={item.media}
               title={item.title}
@@ -18,7 +19,6 @@ const Gridshow = ({ gallery }) => {
               onClose={onSelect}
               key={index}
             />
-            <div className="item" key={item.url}>
               <FadeIn offset={210}>
                 {item.thumb.kind === "image" ? (
                   <Image
@@ -30,6 +30,7 @@ const Gridshow = ({ gallery }) => {
                     onClick={() => {
                       onSelect(index);
                     }}
+                    className="teste"
                   />
                 ) : (
                   <video
@@ -72,10 +73,22 @@ const Gridshow = ({ gallery }) => {
           text-transform: uppercase;
           line-height: 1.5rem;
         }
+
+
+        .Gridshow .item :global(img),
+        .Gridshow .item :global(video) {
+          object-fit: cover;
+          height: 100px;
+        }
         @media only screen and (max-width: 768px) {
-          .Gridshow .item {
-            margin-bottom: 6rem;
+          .Gridshow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
           }
+          .Gridshow .item {
+            margin-bottom: 0;
+          }
+
         }
         @media only screen and (min-width: 768px) {
           .Gridshow {
@@ -112,6 +125,16 @@ const Gridshow = ({ gallery }) => {
             height: 260px !important;
             width: 260px !important;
             object-fit: cover;
+          }
+        }
+        @media only screen and (max-width: 768px) {
+          .item :global(img) {
+            height: 100px !important;
+            object-fit: cover;
+
+          }
+          .item :global(span) {
+            width: 100% !important;
           }
         }
       `}</style>
