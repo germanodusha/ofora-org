@@ -1,33 +1,44 @@
 {
-  "id": "161db8f3-35d5-4585-bcee-b151031c3ce9",
-  "uid": "ut-nobis-dolor",
+  "id": "326a4bfa-0e6b-4731-9f55-0c352a6ec244",
+  "uid": "quis-repudiandae-laudantium",
   "type": "what",
   "data": {
+    "Image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+    },
     "video": {
       "link_type": "media",
       "url": "https://source.unsplash.com/daily"
     },
-    "title": "streamline cutting-edge functionalities",
+    "title": "envisioneer frictionless web-readiness",
+    "Description": "exploit distributed channels",
     "content": [
       {
         "type": "paragraph",
-        "text": "Eiusmod ut magna culpa.",
+        "text": "Reprehenderit veniam deserunt sint aliqua proident voluptate consectetur deserunt ea ex quis minim nostrud. Esse pariatur nostrud mollit laborum do dolore aute eiusmod.",
         "spans": []
       }
     ],
     "infoLeft": [
       {
         "type": "paragraph",
-        "text": "Exercitation fugiat cupidatat laborum consequat laboris nostrud incididunt ea ea excepteur magna incididunt velit commodo. Consectetur deserunt sunt culpa.",
+        "text": "Minim eu eiusmod occaecat. Tempor quis nulla occaecat. Adipisicing est nostrud voluptate est anim aliquip voluptate sint labore minim mollit quis.",
         "spans": []
       }
     ],
     "infoRight": [
       {
         "type": "paragraph",
-        "text": "Est nulla incididunt ut minim labore mollit. Voluptate cillum occaecat excepteur magna.",
+        "text": "Minim eiusmod cillum reprehenderit laborum ut nostrud labore.",
         "spans": []
       }
-    ]
+    ],
+    "Keywords": "incentivize user-centric e-services"
   }
 }

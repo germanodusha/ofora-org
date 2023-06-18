@@ -21,7 +21,17 @@ const About = ({ page }) => {
   return (
     <div>
       <Head>
-        <title>Fora</title>
+        <title>Fora - {page.data.title}</title>
+        {/* <!-- for Google -->*/}
+        <meta name="description" content={page.data.Description} />     
+        <meta name="keywords" content={page.data.Keywords} />     
+        <meta name="author" content="Fora" />   
+        {/*<!-- for Facebook -->*/ }   
+        <meta property="og:title" content={"Fora - " + page.data.title} />     
+        <meta property="og:type" content="article" />     
+        <meta property="og:image" content={page.data.Image?.url} />     
+        <meta property="og:url" content="https://ofora.org" />     
+        <meta property="og:description" content={page.data.Description} />
       </Head>
       <Scroller />
       <video autoPlay loop muted playsInline>
@@ -101,6 +111,7 @@ const About = ({ page }) => {
           opacity: ${isLoaded ? 1 : 0};
           transition: opacity 1.5s;
           transition-delay: 0.8s;
+          text-transform: uppercase;
         }
         .container-descript {
           all: unset;

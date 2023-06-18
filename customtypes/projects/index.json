@@ -5,10 +5,25 @@
   "status": true,
   "json": {
     "Main": {
+      "Image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "title": {
         "type": "Text",
         "config": {
           "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "Description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
           "placeholder": ""
         }
       },
@@ -28,6 +43,13 @@
               }
             }
           }
+        }
+      },
+      "Keyworkds": {
+        "type": "Text",
+        "config": {
+          "label": "Keyworkds",
+          "placeholder": ""
         }
       }
     }

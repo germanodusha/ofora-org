@@ -17,7 +17,17 @@ const Projects = ({ projects, page }) => {
   return (
     <>
       <Head>
-        <title>{page.data.title}</title>
+        <title>Fora - {page.data.title}</title>
+        {/* <!-- for Google -->*/}
+        <meta name="description" content={page.data.description} />     
+        <meta name="keywords" content={page.data.keywords} />     
+        <meta name="author" content="Fora" />   
+        {/*<!-- for Facebook -->*/ }   
+        <meta property="og:title" content={"Fora - " + page.data.title} />     
+        <meta property="og:type" content="article" />     
+        <meta property="og:image" content={page.data.image?.url} />     
+        <meta property="og:url" content="https://ofora.org" />     
+        <meta property="og:description" content={page.data.description} />
       </Head>
       <div className="projects-page flex grow items-stretch">
         <div className="project-title-container">

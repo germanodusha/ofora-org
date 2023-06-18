@@ -24,7 +24,7 @@ const Index = ({ page }) => {
         <title>{page?.data?.title}</title>
         {/* <!-- for Google -->*/}
         <meta name="description" content={settings?.data?.description} />     
-        <meta name="keywords" content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações" />     
+        <meta name="keywords" content={settings?.data?.description} />     
         <meta name="author" content="Fora" />   
         {/*<!-- for Facebook -->*/ }   
         <meta property="og:title" content={page?.data?.title} />     
