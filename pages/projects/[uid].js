@@ -9,8 +9,6 @@ import { Limiter } from "../../components/Limiter";
 import Scroller from "../../components/Scroller";
 import Highlighted from "../../components/Highlighted";
 import Link from "next/link";
-import useScrollPosition from "../../hooks/useScrollPosition";
-import { speed } from "../../speed";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Slideshow from "../../components/Slideshow";
@@ -41,7 +39,7 @@ const Project = ({ project }) => {
         />
         <meta
           name="keywords"
-          content="fora, genesys, cultural, production, art, contemporary, institutional, strategy, public, digital, spaces, research, exhibitions, design, expography, books, publications, cultura, produção, cultural, arte, contemporânea, estratégia, institucional, espaços, públicos, comum, pesquisa, exposições, expografia, livros, publicações"
+          content={project.data.Keywords}
         />
         <meta name="author" content="Fora" />
         {/*<!-- for Facebook -->*/}
