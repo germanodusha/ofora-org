@@ -1,11 +1,11 @@
 {
-  "id": "be1ae57e-5a28-4c15-835e-ac5e38fac357",
-  "uid": "a-omnis-dicta",
+  "id": "529f4e5a-ebdc-4111-a657-6e35b4931c14",
+  "uid": "consequuntur-laboriosam-nisi",
   "type": "project",
   "data": {
-    "title": "expedite bricks-and-clicks interfaces",
-    "year": "deploy innovative bandwidth",
-    "category": "revolutionize front-end interfaces",
+    "title": "aggregate virtual initiatives",
+    "year": "iterate enterprise relationships",
+    "category": "transition out-of-the-box initiatives",
     "cover": {
       "dimensions": {
         "width": 900,
@@ -13,7 +13,7 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
     },
     "banner": {
       "dimensions": {
@@ -22,12 +22,12 @@
       },
       "alt": "Placeholder image",
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
     },
     "intro": [
       {
         "type": "paragraph",
-        "text": "Dolore eiusmod reprehenderit officia minim laborum do culpa Lorem quis anim eiusmod nisi velit.",
+        "text": "Occaecat ex sint nisi duis duis eiusmod cillum nulla sunt. Dolore quis consequat eu veniam esse.",
         "spans": []
       }
     ],
@@ -35,20 +35,21 @@
     "leftColumn": [
       {
         "type": "paragraph",
-        "text": "Amet pariatur aute occaecat sit adipisicing duis ipsum. Irure culpa amet aliqua laborum qui dolor fugiat incididunt cupidatat et consectetur. Et culpa cillum esse exercitation anim est mollit Lorem.",
+        "text": "Eiusmod culpa minim nulla commodo excepteur esse ex consequat proident. Amet irure esse mollit eiusmod commodo excepteur consectetur sit id laborum amet irure commodo.",
         "spans": []
       }
     ],
     "rightColumn": [
       {
         "type": "paragraph",
-        "text": "Voluptate consequat ut officia minim ut in. Amet sint deserunt irure reprehenderit ipsum.",
+        "text": "Qui incididunt exercitation dolore minim eu labore dolore. Ea magna eiusmod aute occaecat enim cillum deserunt.",
         "spans": []
       }
     ],
+    "Keywords": "empower dot-com synergies",
     "gallery": [
       {
-        "title": "revolutionize dot-com content",
+        "title": "generate revolutionary partnerships",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -59,29 +60,7 @@
         }
       },
       {
-        "title": "transform world-class relationships",
-        "thumb": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        },
-        "media": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        }
-      },
-      {
-        "title": "integrate virtual communities",
-        "thumb": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        },
-        "media": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        }
-      },
-      {
-        "title": "scale granular convergence",
+        "title": "visualize cutting-edge architectures",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -94,7 +73,7 @@
     ],
     "slider": [
       {
-        "title": "harness customized platforms",
+        "title": "enable best-of-breed web-readiness",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -105,7 +84,7 @@
         }
       },
       {
-        "title": "unleash vertical experiences",
+        "title": "grow next-generation e-commerce",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"
@@ -116,18 +95,7 @@
         }
       },
       {
-        "title": "architect 24/365 applications",
-        "thumb": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        },
-        "media": {
-          "link_type": "media",
-          "url": "https://source.unsplash.com/daily"
-        }
-      },
-      {
-        "title": "seize customized web-readiness",
+        "title": "seize viral action-items",
         "thumb": {
           "link_type": "media",
           "url": "https://source.unsplash.com/daily"

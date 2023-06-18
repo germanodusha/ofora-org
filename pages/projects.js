@@ -25,9 +25,9 @@ const Projects = ({ projects, page }) => {
         {/*<!-- for Facebook -->*/ }   
         <meta property="og:title" content={"Fora - " + page.data.title} />     
         <meta property="og:type" content="article" />     
-        <meta property="og:image" content={page.data.image?.url} />     
+        <meta property="og:image" content={page.data.Image?.url} />     
         <meta property="og:url" content="https://ofora.org" />     
-        <meta property="og:description" content={page.data.description} />
+        <meta property="og:description" content={page.data.Description} />
       </Head>
       <div className="projects-page flex grow items-stretch">
         <div className="project-title-container">

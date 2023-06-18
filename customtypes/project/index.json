@@ -151,6 +151,13 @@
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
+      },
+      "Keywords": {
+        "type": "Text",
+        "config": {
+          "label": "Keywords",
+          "placeholder": ""
+        }
       }
     }
   }

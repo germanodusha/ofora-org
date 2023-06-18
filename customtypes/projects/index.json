@@ -45,10 +45,10 @@
           }
         }
       },
-      "Keyworkds": {
+      "Keywords": {
         "type": "Text",
         "config": {
-          "label": "Keyworkds",
+          "label": "Keywords",
           "placeholder": ""
         }
       }
