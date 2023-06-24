@@ -11,14 +11,15 @@ const Gridshow = ({ gallery }) => {
       <div className="Gridshow p-3 sm:p-20">
         {gallery.map((item, index) => (
           <>
-            <div className="item" key={item.url}>
-            <Modal
+                     <Modal
               media={item.media}
               title={item.title}
               visible={selected === index}
               onClose={onSelect}
               key={index}
-            />
+            />  
+            <div className="item" key={item.url}>
+ 
               <FadeIn offset={210}>
                 {item.thumb.kind === "image" ? (
                   <Image
@@ -30,7 +31,6 @@ const Gridshow = ({ gallery }) => {
                     onClick={() => {
                       onSelect(index);
                     }}
-                    className="teste"
                   />
                 ) : (
                   <video

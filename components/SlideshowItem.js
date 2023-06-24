@@ -30,7 +30,6 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           />
         ) : (
           <>
-          video
             <video playsInline muted loop autoPlay ref={videoRef}>
               <source src={media.url} type="video/mp4" />
             </video>
@@ -106,26 +105,6 @@ const SlideshowItem = ({ media, title, active, ratio, size, onClick }) => {
           z-index: 20;
           transition: all 0.5s ease-in-out;
         }
-
-{/*         @media (min-width: 768px) {
-          .slideshow-item:hover > :global(span):after {
-            opacity: 0.7;
-          }
-          .slideshow-item:hover > .slideshow-item-overlay {
-            opacity: 0.7;
-          }
-          .slideshow-item:hover .slideshow-item-title {
-            opacity: 1;
-            transition-delay: 0.5s;
-          }
-          .slideshow-item:hover > :global(video),
-          .slideshow-item:hover > :global(span) {
-            box-shadow: 0px 0px 55px 20px #e8ff00;
-            background: #e8ff00;
-            color: black;
-            position: relative;
-          }
-        } */}
       `}</style>
     </>
   );
