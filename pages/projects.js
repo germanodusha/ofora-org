@@ -151,9 +151,16 @@ export async function getStaticProps({ locale, previewData }) {
 
   const page = await client.getSingle("projects", { lang: locale });
 
-  const ids = page.data.projects.map((p) => p.project.id);
+  const ids = page.data.projects.map((p) => {
+    const { id } = p.project;
+    if (id) {
+      return id;
+    }
+    console.log("Missing project id", p);
+  }).filter(
+    (id) => typeof id === "string"
+  );
 
-  console.log(ids);
 
   const projects = await client.getAllByIDs(ids, { lang: locale });
 
